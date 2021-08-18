@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../myxmlpp/include/Doc.hpp
+string
+-
+
+../myxmlpp/include/exceptions/FileException.hpp
+exception
+-
+string
+-
+utility
+-
+
+/home/ajublot/Documents/Perso/programmation/c++/myxmlpp/myxmlpp/src/Doc.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+Doc.hpp
+/home/ajublot/Documents/Perso/programmation/c++/myxmlpp/myxmlpp/src/Doc.hpp
+exceptions/FileException.hpp
+/home/ajublot/Documents/Perso/programmation/c++/myxmlpp/myxmlpp/src/exceptions/FileException.hpp
+
