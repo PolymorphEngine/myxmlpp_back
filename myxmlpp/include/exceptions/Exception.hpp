@@ -41,7 +41,13 @@ namespace myxmlpp {
              */
             virtual std::string what();
 
+            /**
+             * Error message displaying only file and line of the error
+             * @return partial error message
+             */
             virtual std::string baseWhat() const;
+
+            virtual std::string details() const;
 
             const std::string &getFile() const;
 

@@ -21,8 +21,7 @@ std::string myxmlpp::Exception::what() {
         std::string(" at line ") +
         mLine +
         std::string(": ") +
-        mDescription +
-        std::string("\n");
+        details();
 }
 
 std::string myxmlpp::Exception::baseWhat() const {
@@ -31,6 +30,15 @@ std::string myxmlpp::Exception::baseWhat() const {
            std::string(" at line ") +
            mLine +
            std::string(": ");
+}
+
+std::string myxmlpp::Exception::details() const {
+    if (mDescription.length())
+        return std::string("\nOptionnal details : ")
+                + mDescription
+                + std::string("\n");
+    else
+        return std::string("\n");
 }
 
 const std::string &myxmlpp::Exception::getFile() const {

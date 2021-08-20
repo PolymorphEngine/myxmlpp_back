@@ -19,17 +19,8 @@ const std::string &myxmlpp::FileException::getFilepath() const {
 }
 
 std::string myxmlpp::FileException::what() {
-    std::string mandatoryMessage = this->baseWhat()
+    return this->baseWhat()
         + std::string("error while interacting with file ")
-        + mFilepath;
-    std::string fullMessage;
-
-    if (mDescription.length()) {
-        fullMessage = mandatoryMessage
-            + std::string("\nOther description: ")
-            + mDescription
-            + std::string("\n");
-    } else
-        fullMessage = mandatoryMessage + std::string("\n");
-    return fullMessage;
+        + mFilepath
+        +details();
 }
