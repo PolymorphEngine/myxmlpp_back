@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/myxmlpp.dir/myxmlpp/src/Attribute.cpp.o CMakeFiles/myxmlpp.dir/myxmlpp/src/Doc.cpp.o  -o myxmlpp 
