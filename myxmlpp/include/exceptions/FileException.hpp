@@ -47,7 +47,6 @@ namespace myxmlpp {
             virtual ~FileException() throw()
             {}
     };
-int level = node->findAttribute("name")->getValueInt()
 }
 
 

@@ -32,3 +32,4 @@
 *.app
 
 docs/doxygen/**
+cmake-build-debug
