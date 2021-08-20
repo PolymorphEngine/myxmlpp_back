@@ -17,9 +17,15 @@ namespace myxmlpp {
      */
     class NodeNotFoundException: public Exception {
         protected:
+            /**
+             * Tag of the wanted node
+             */
             std::string mTag;
 
         public:
+            NodeNotFoundException(std::string tag, std::string file,
+                                  std::string line, std::string description);
+
             std::string getTag() const;
 
             /**

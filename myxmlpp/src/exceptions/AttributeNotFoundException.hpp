@@ -1,0 +1,44 @@
+/*
+** EPITECH PROJECT, 2020
+** AttributeNotFoundException.hpp.h
+** File description:
+** header for AttributeNotFoundException.c
+*/
+
+#ifndef MYXMLPP_ATTRIBUTENOTFOUNDEXCEPTION_HPP
+#define MYXMLPP_ATTRIBUTENOTFOUNDEXCEPTION_HPP
+
+#include <string>
+#include <Exception.hpp>
+
+namespace myxmlpp {
+    /**
+     * Exception to throw when an attribute is not found in findAttribute*
+     * methods
+     */
+    class AttributeNotFoundException: public Exception {
+        protected:
+            /**
+             * Key of the anted attribute
+             */
+            std::string mKey;
+
+        public:
+            AttributeNotFoundException(std::string key, std::string file,
+                    std::string line, std::string description);
+
+            std::string getKey() const;
+
+            /**
+             * Complete error message, ready to log in the console/terminal
+             * @return error message
+             */
+            virtual std::string what();
+
+            virtual ~AttributeNotFoundException() throw()
+            {}
+    };
+}
+
+
+#endif //MYXMLPP_ATTRIBUTENOTFOUNDEXCEPTION_HPP
