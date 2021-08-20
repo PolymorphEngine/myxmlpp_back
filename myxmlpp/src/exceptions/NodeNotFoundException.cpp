@@ -8,10 +8,10 @@
 
 #include "NodeNotFoundException.hpp"
 
-myxmlpp::NodeNotFoundException::NodeNotFoundException(std::string tag,
-        std::string file,
-        std::string line,
-        std::string description)
+myxmlpp::NodeNotFoundException::NodeNotFoundException(const std::string& tag,
+        const std::string& file,
+        int line,
+        const std::string& description)
     :mTag(tag), Exception(file, line, description)
 {}
 

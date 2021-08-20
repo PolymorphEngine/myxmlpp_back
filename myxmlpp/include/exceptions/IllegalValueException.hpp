@@ -30,10 +30,10 @@ namespace myxmlpp {
 
         public:
             IllegalValueException(std::string legalType,
-                                std::string key,
-                                std::string file,
-                                std::string line,
-                                std::string description);
+                                  std::string key,
+                                  std::string file,
+                                  int line,
+                                  std::string description="");
 
             std::string getKey() const;
 

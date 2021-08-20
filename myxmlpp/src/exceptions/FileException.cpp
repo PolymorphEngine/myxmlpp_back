@@ -9,7 +9,7 @@
 
 myxmlpp::FileException::FileException(const std::string &filepath,
                                       const std::string &file,
-                                      const std::string &line,
+                                      int line,
                                       const std::string &description)
     :mFilepath(filepath), Exception(file, line, description)
 {}

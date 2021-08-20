@@ -9,10 +9,10 @@
 #include "IllegalValueException.hpp"
 
 myxmlpp::IllegalValueException::IllegalValueException(std::string legalType,
-        std::string key,
-        std::string file,
-        std::string line,
-        std::string description)
+                                                      std::string key,
+                                                      std::string file,
+                                                      int line,
+                                                      std::string description)
     :mLegalType(legalType), mKey(key), Exception(file, line, description)
 {}
 

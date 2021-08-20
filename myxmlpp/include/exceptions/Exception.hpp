@@ -10,6 +10,8 @@
 
 #include <string>
 
+#define MYXMLPP_ERROR_LOCATION __FILE__, __LINE__
+
 namespace myxmlpp {
     /**
      * Base exception for the lib, only containing mandatory informations to debug
@@ -32,7 +34,7 @@ namespace myxmlpp {
             std::string mLine;
 
         public:
-            Exception(const std::string& file, const std::string& line,
+            Exception(const std::string& file, int line,
                       const std::string& description="");
 
             /**

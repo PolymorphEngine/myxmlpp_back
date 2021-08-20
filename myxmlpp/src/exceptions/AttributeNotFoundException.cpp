@@ -9,10 +9,10 @@
 #include "AttributeNotFoundException.hpp"
 
 myxmlpp::AttributeNotFoundException::AttributeNotFoundException(
-        std::string key,
-        std::string file,
-        std::string line,
-        std::string description)
+        const std::string& key,
+        const std::string& file,
+        int line,
+        const std::string& description)
     :mKey(key), Exception(file, line, description)
 {}
 

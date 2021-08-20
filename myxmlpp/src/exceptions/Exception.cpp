@@ -5,15 +5,19 @@
 ** Exception.cpp.cc
 */
 
-
+#include <iostream>
+#include <sstream>
 #include "Exception.hpp"
 
-myxmlpp::Exception::Exception(const std::string &file, const std::string &line,
+myxmlpp::Exception::Exception(const std::string &file, int line,
                               const std::string &description) :
     mFile(file),
-    mLine(line),
     mDescription(description)
-{}
+{
+    std::ostringstream str;
+    str << line;
+    mLine = str.str();
+}
 
 std::string myxmlpp::Exception::what() {
     return std::string("\nError in ") +
