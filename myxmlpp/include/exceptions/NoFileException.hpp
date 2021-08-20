@@ -11,6 +11,9 @@
 #include <FileException.hpp>
 
 namespace myxmlpp {
+    /**
+     * Exception to throw when a file does not exist.
+     */
     class NoFileException: public myxmlpp::FileException {
         public:
             /**
