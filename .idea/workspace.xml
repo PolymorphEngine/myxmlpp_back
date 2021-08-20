@@ -12,9 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/FileException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/FileException.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/NoFileException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/NoFileException.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +47,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="myxmlpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="myxmlpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myxmlpp" RUN_TARGET_NAME="myxmlpp">
@@ -75,8 +73,20 @@
       <option name="presentableId" value="Default" />
       <updated>1629456398224</updated>
       <workItem from="1629456400958" duration="123000" />
-      <workItem from="1629459452686" duration="7344000" />
+      <workItem from="1629459452686" duration="8347000" />
+      <workItem from="1629476850985" duration="1033000" />
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

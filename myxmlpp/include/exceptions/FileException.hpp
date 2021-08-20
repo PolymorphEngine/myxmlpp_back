@@ -19,17 +19,17 @@ namespace myxmlpp {
      * Generic exception relative to file manipulation
      */
     class FileException: public myxmlpp::Exception {
-        private:
+        protected:
             /**
              * Path of the problematic file
              */
             std::string mFilepath;
 
         public:
-            explicit FileException(const std::string&  filepath,
-                                   const std::string&  file,
-                                   const std::string& line,
-                                   const std::string& description="");
+            FileException(const std::string&  filepath,
+                          const std::string&  file,
+                          const std::string& line,
+                          const std::string& description="");
 
             const std::string &getFilepath() const;
 
