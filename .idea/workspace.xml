@@ -5,17 +5,18 @@
       <config projectName="myxmlpp" targetName="myxmlpp" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Doxyfile" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Doxyfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/FileException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/FileException.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629456398224</updated>
       <workItem from="1629456400958" duration="123000" />
-      <workItem from="1629459452686" duration="3539000" />
+      <workItem from="1629459452686" duration="6539000" />
     </task>
     <servers />
   </component>

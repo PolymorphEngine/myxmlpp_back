@@ -15,7 +15,7 @@ namespace myxmlpp {
      * Base exception for the lib, only containing mandatory informations to debug
      */
     class Exception: public std::exception {
-        private:
+        protected:
             /**
              * Short descripition of the error
              */
@@ -33,13 +33,15 @@ namespace myxmlpp {
 
         public:
             Exception(const std::string& file, const std::string& line,
-                      const std::string& description);
+                      const std::string& description="");
 
             /**
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
             virtual std::string what();
+
+            virtual std::string baseWhat() const;
 
             const std::string &getFile() const;
 

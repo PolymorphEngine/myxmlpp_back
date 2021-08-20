@@ -11,38 +11,33 @@
 #include <exception>
 #include <string>
 #include <utility>
+#include "Exception.hpp"
 
 namespace myxmlpp {
 
     /**
-     * test exception
+     * Generic exception relative to file manipulation
      */
-    class FileException: public std::exception{
+    class FileException: public myxmlpp::Exception {
         private:
+            /**
+             * Path of the problematic file
+             */
             std::string mFilepath;
-            std::string mDescription;
-            int mSeverity;
 
         public:
-            explicit FileException(const std::string&  filepath, const std::string&  description="", int severity=1) throw()
-                :mFilepath(filepath), mDescription(description), mSeverity(severity)
-                {}
+            explicit FileException(const std::string&  filepath,
+                                   const std::string&  file,
+                                   const std::string& line,
+                                   const std::string& description="");
 
-            std::string getError() {
-                return mDescription + " in " + mFilepath;
-            };
+            const std::string &getFilepath() const;
 
-            std::string getFilePath() {
-                return mFilepath;
-            }
-
-            std::string getDescription() {
-                return mDescription;
-            }
-
-            int getSeverity() {
-                return mSeverity;
-            }
+            /**
+             * Complete error message, ready to log in the console/terminal
+             * @return error message
+             */
+            virtual std::string what();
 
             virtual ~FileException() throw()
             {}

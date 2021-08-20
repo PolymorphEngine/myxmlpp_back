@@ -6,7 +6,7 @@
 */
 
 
-#include "exceptions/Exception.hpp"
+#include "Exception.hpp"
 
 myxmlpp::Exception::Exception(const std::string &file, const std::string &line,
                               const std::string &description) :
@@ -16,12 +16,21 @@ myxmlpp::Exception::Exception(const std::string &file, const std::string &line,
 {}
 
 std::string myxmlpp::Exception::what() {
-    return std::string("Error in ") +
+    return std::string("\nError in ") +
         mFile +
         std::string(" at line ") +
         mLine +
         std::string(": ") +
-        mDescription;
+        mDescription +
+        std::string("\n");
+}
+
+std::string myxmlpp::Exception::baseWhat() const {
+    return std::string("\nError in ") +
+           mFile +
+           std::string(" at line ") +
+           mLine +
+           std::string(": ");
 }
 
 const std::string &myxmlpp::Exception::getFile() const {
