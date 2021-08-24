@@ -12,9 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Attribute.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Attribute.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Attribute.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Attribute.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Attribute.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +47,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="myxmlpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="myxmlpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myxmlpp" RUN_TARGET_NAME="myxmlpp">
       <method v="2">
         <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_generateDoc" />
@@ -72,7 +75,7 @@
       <workItem from="1629456400958" duration="123000" />
       <workItem from="1629459452686" duration="8347000" />
       <workItem from="1629476850985" duration="1033000" />
-      <workItem from="1629822058270" duration="2530000" />
+      <workItem from="1629822058270" duration="3023000" />
     </task>
     <servers />
   </component>
