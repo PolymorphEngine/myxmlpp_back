@@ -9,6 +9,7 @@
 #define MYXML_DOC_HPP
 
 #include <string>
+#include <fstream>
 
 namespace myxmlpp {
 
@@ -30,7 +31,7 @@ namespace myxmlpp {
             /**
              * The file stream to red/write structure into file
              */
-            std::fstream mFile;
+            std::fstream *mFile;
 
             /**
              * @param filepath path of the xml file
@@ -39,6 +40,7 @@ namespace myxmlpp {
             void readFile(const std::string& filepath, bool keepOpen);
 
         public:
+            Doc(const std::string& filepath);
             const std::string &getMFilepath() const;
 
             void setMFilepath(const std::string &m_filepath);

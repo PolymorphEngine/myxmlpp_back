@@ -64,7 +64,8 @@ bool myxmlpp::Attribute::getValueBool(const std::string &trueElement,
 }
 
 myxmlpp::Doc myxmlpp::Attribute::getValueXmlDoc() const {
-    return myxmlpp::Doc(mValue);
+    myxmlpp::Doc test(mValue);
+    return test;
 }
 
 std::ios_base::openmode myxmlpp::Attribute::getValueFileOpenMode(
@@ -83,16 +84,15 @@ std::ios_base::openmode myxmlpp::Attribute::getValueFileOpenMode(
     }
 }
 
-std::fstream myxmlpp::Attribute::getValueFile(openMode_t mode) const {
-    std::fstream result;
+std::fstream *myxmlpp::Attribute::getValueFile(openMode_t mode) const {
     std::ios_base::openmode openMode = getValueFileOpenMode(mode);
     
     try {
-        result.open(mValue.c_str(), openMode);
+        return new std::fstream(mValue.c_str(), openMode);
     } catch (std::ios_base::failure &e) {
         throw myxmlpp::FileException(mValue, MYXMLPP_ERROR_LOCATION);
     }
-    return result;
+
 }
 
 void myxmlpp::Attribute::setValue(const std::string& value) {

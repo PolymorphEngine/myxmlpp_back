@@ -59,7 +59,7 @@ namespace myxmlpp {
             Doc getValueXmlDoc() const;
 
 
-            std::fstream getValueFile(openMode_t mode) const;
+            std::fstream *getValueFile(openMode_t mode) const;
 
 
             void setValue(const std::string& value);
