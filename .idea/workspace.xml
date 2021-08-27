@@ -13,6 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/AttributeNotFoundException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/AttributeNotFoundException.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +79,7 @@
       <workItem from="1629456400958" duration="123000" />
       <workItem from="1629459452686" duration="8347000" />
       <workItem from="1629476850985" duration="1033000" />
-      <workItem from="1629822058270" duration="17090000" />
+      <workItem from="1629822058270" duration="20545000" />
     </task>
     <servers />
   </component>

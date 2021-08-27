@@ -31,7 +31,7 @@ namespace myxmlpp {
             /**
              * A reference to the parent node
              */
-            Node& mParent;
+            Node *mParent;
 
             /**
              * List of attributes present in the node
@@ -44,24 +44,24 @@ namespace myxmlpp {
             std::vector<Node *> mChildren;
 
         public:
-            std::string getTag();
+            std::string getTag() const;
 
-            std::string getData();
+            std::string getData() const;
 
-            Node& getParent();
+            Node *getParent();
 
             void setTag(const std::string& tag);
 
             void setData(const std::string& data);
 
-            void setParent(Node& parent);
+            void setParent(Node *parent);
 
             /**
              * Method to find an attribute by its name
              * @param key key of the searched attribute
              * @return the found attribute
              */
-            Attribute findAttribute(const std::string& key);
+            Attribute *findAttribute(const std::string& key);
 
             /**
              * Method to add an attribute to a node by passing a pointer
@@ -88,11 +88,6 @@ namespace myxmlpp {
              * @param key tag of the attribute to pop
              */
             Attribute *popAttribute(const std::string& key);
-
-            /**
-             * @return the number of Attributes in the list
-             */
-            unsigned int getNbAttributes();
 
             /**
              * Method to find a child node by its tag (return the first
