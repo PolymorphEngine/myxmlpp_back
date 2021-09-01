@@ -228,3 +228,17 @@ std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenByPath(
     searchChildren(this, &children, tab, it);
     return children;
 }
+
+myxmlpp::Node *myxmlpp::Node::popChild(const std::string &tag) {
+    myxmlpp::Node *found = NULL;
+
+    for (std::vector<Node *>::iterator it = mChildren.begin();
+         it != mChildren.end(); ++it) {
+        if ((*it)->getTag() == tag) {
+            found = *it;
+            mChildren.erase(it);
+            return found;
+        }
+    }
+    throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
+}
