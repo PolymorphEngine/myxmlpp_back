@@ -87,6 +87,11 @@ namespace myxmlpp {
                                      const std::vector<std::string>& tab,
                                      std::vector<std::string>::iterator it);
 
+            static void searchChildren(Node *current,
+                    std::vector<myxmlpp::Node *> *children,
+                    const std::vector<std::string> &tab,
+                    std::vector<std::string>::iterator it);
+
         public:
             std::string getTag() const;
 

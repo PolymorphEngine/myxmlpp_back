@@ -205,3 +205,26 @@ std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenR(
     findChildrenRecursiveLoopCall(this, &children, tag, maxDepth);
     return children;
 }
+
+void myxmlpp::Node::searchChildren(Node *current,
+        std::vector<myxmlpp::Node *> *children,
+        const std::vector<std::string> &tab,
+        std::vector<std::string>::iterator it) {
+    Node *node = current->findChild(*it);
+
+    if (it != tab.end())
+        searchChild(node, tab, ++it);
+    children->push_back(node);
+}
+
+std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenByPath(
+        const std::string &path,
+        const std::string &tag,
+        char separator) {
+    std::vector<std::string> tab = split(path, separator);
+    std::vector<std::string>::iterator it = tab.begin();
+    std::vector<Node *> children;
+
+    searchChildren(this, &children, tab, it);
+    return children;
+}
