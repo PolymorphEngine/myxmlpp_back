@@ -83,8 +83,8 @@ myxmlpp::Node *myxmlpp::Node::findChild(const std::string& tag) {
 myxmlpp::Node* myxmlpp::Node::findChildRecursiveLoopCall(Node *current,
         const std::string &tag,
         int depth) {
-    for (std::vector<myxmlpp::Node *>::iterator it = current->mChildren.begin();
-         it != current->mChildren.end(); ++it) {
+    for (std::vector<myxmlpp::Node *>::iterator it =
+         current->mChildren.begin(); it != current->mChildren.end(); ++it) {
         try {
             return findChildRecursiveCalled(*it, tag, depth-1);
         } catch (NodeNotFoundException e2) {}
@@ -99,14 +99,14 @@ myxmlpp::Node *myxmlpp::Node::findChildRecursiveCalled(Node *current,
         return current->findChild(tag);
     } catch (NodeNotFoundException& e) {
         if (depth != 0)
-            findChildRecursiveCalled(current, tag, depth);
+            return findChildRecursiveCalled(current, tag, depth);
         throw e;
     }
 }
 
 myxmlpp::Node *myxmlpp::Node::findChildR(const std::string &tag,
                                          int maxDepth) {
-    return findChildRecursiveCalled(this, tag, maxDepth);
+    return findChildRecursiveLoopCall(this, tag, maxDepth);
 }
 
 std::vector<std::string> myxmlpp::Node::split(const std::string &str,
@@ -154,4 +154,54 @@ std::vector<myxmlpp::Node *> myxmlpp::Node::findChildren(
     if (list.empty())
         throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
     return list;
+}
+
+void myxmlpp::Node::findChildren(
+        const std::string &tag,
+        std::vector<myxmlpp::Node *> *children) {
+    std::size_t backupSize = children->size();
+
+    for (std::vector<myxmlpp::Node *>::iterator it = mChildren.begin();
+         it != mChildren.end(); ++it) {
+        if ((*it)->getTag() == tag)
+            children->push_back(*it);
+    }
+    if (children->size() == backupSize)
+        throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
+
+}
+
+void myxmlpp::Node::findChildrenRecursiveLoopCall(Node *current,
+        std::vector<myxmlpp::Node*> *children,
+        const std::string &tag,
+        int depth) {
+    for (std::vector<myxmlpp::Node *>::iterator it =
+         current->mChildren.begin(); it != current->mChildren.end(); ++it) {
+        try {
+            findChildrenRecursiveCalled(*it, children, tag, depth-1);
+        } catch (NodeNotFoundException e2) {}
+    }
+    throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
+}
+
+void myxmlpp::Node::findChildrenRecursiveCalled(Node *current,
+        std::vector<Node *> *children,
+        const std::string &tag,
+        int depth) {
+    try {
+        current->findChildren(tag, children);
+    } catch (NodeNotFoundException& e) {
+        if (depth != 0)
+            findChildrenRecursiveCalled(current, children, tag, depth);
+        throw e;
+    }
+}
+
+std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenR(
+        const std::string &tag,
+        int maxDepth) {
+    std::vector<Node *> children;
+
+    findChildrenRecursiveLoopCall(this, &children, tag, maxDepth);
+    return children;
 }

@@ -47,6 +47,11 @@ namespace myxmlpp {
                                                     const std::string &tag,
                                                     int depth);
 
+            void findChildrenRecursiveLoopCall(Node *current,
+                    std::vector<myxmlpp::Node*> *children,
+                    const std::string &tag,
+                    int depth);
+
             /**
              * Method that will be recursively called to find child for
              * findChildR public method. This method will return the first
@@ -59,6 +64,22 @@ namespace myxmlpp {
             static Node *findChildRecursiveCalled(Node *current,
                                                    const std::string &tag,
                                                    int depth);
+
+            /**
+             * Method that will be recursively called to find children for
+             * findChildrenR public method. This method will return all
+             * matched nodes
+             * @param current the node to search in
+             * @param children the result list to push matched nodes
+             * @param tag the tag of the node to find
+             * @param depth the actual depth
+             * @return the found node
+             */
+            void findChildrenRecursiveCalled(Node *current,
+                    std::vector<Node *> *children,
+                    const std::string &tag,
+                    int depth);
+
             static std::vector<std::string> split(const std::string &str,
                                                   char delim);
 
@@ -148,6 +169,16 @@ namespace myxmlpp {
              * @return tag list of all found nodes
              */
             std::vector<Node *> findChildren(const std::string& tag);
+
+            /**
+             * Method to find all children which have the provided tag. The
+             * difference is that this method fills a provided vector instead
+             * of returning a created one
+             * @param tag tag of the nodes to find
+             * @return tag list of all found nodes
+             */
+            void findChildren(const std::string& tag,
+                                             std::vector<Node *> *children);
 
             /**
              * Method to find all children nodes with the same tag by searching
