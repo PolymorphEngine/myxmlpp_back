@@ -141,3 +141,17 @@ myxmlpp::Node * myxmlpp::Node::findChildByPath(
 
     return searchChild(this, tab, it);
 }
+
+std::vector<myxmlpp::Node *> myxmlpp::Node::findChildren(
+        const std::string &tag) {
+    std::vector<myxmlpp::Node *> list;
+
+    for (std::vector<myxmlpp::Node *>::iterator it = mChildren.begin();
+         it != mChildren.end(); ++it) {
+        if ((*it)->getTag() == tag)
+            list.push_back(*it);
+    }
+    if (list.empty())
+        throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
+    return list;
+}
