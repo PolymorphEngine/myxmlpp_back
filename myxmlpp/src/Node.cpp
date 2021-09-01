@@ -229,6 +229,10 @@ std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenByPath(
     return children;
 }
 
+void myxmlpp::Node::rmChild(const std::string &tag) {
+    delete popChild(tag);
+}
+
 myxmlpp::Node *myxmlpp::Node::popChild(const std::string &tag) {
     myxmlpp::Node *found = NULL;
 
