@@ -13,7 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/AttributeNotFoundException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/AttributeNotFoundException.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/NodeNotFoundException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/NodeNotFoundException.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node.hpp" afterDir="false" />
     </list>
@@ -28,6 +28,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1wzLJR7HZfSy4gs7TrMwTzy22D6" />
   <component name="ProjectLevelVcsManager">
@@ -51,20 +59,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="myxmlpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="myxmlpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myxmlpp" RUN_TARGET_NAME="myxmlpp">
       <method v="2">
         <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_generateDoc" />
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -79,7 +77,9 @@
       <workItem from="1629456400958" duration="123000" />
       <workItem from="1629459452686" duration="8347000" />
       <workItem from="1629476850985" duration="1033000" />
-      <workItem from="1629822058270" duration="20545000" />
+      <workItem from="1629822058270" duration="24237000" />
+      <workItem from="1630352451910" duration="3000000" />
+      <workItem from="1630527720855" duration="1544000" />
     </task>
     <servers />
   </component>

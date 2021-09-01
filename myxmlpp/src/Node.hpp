@@ -43,6 +43,29 @@ namespace myxmlpp {
              */
             std::vector<Node *> mChildren;
 
+            static Node *findChildRecursiveLoopCall(Node *current,
+                                                    const std::string &tag,
+                                                    int depth);
+
+            /**
+             * Method that will be recursively called to find child for
+             * findChildR public method. This method will return the first
+             * matched node
+             * @param current the node to search in
+             * @param tag the tag of the node to find
+             * @param depth the actual depth
+             * @return the found node
+             */
+            static Node *findChildRecursiveCalled(Node *current,
+                                                   const std::string &tag,
+                                                   int depth);
+            static std::vector<std::string> split(const std::string &str,
+                                                  char delim);
+
+            static Node *searchChild(Node *current,
+                                     const std::vector<std::string>& tab,
+                                     std::vector<std::string>::iterator it);
+
         public:
             std::string getTag() const;
 
@@ -57,7 +80,7 @@ namespace myxmlpp {
             void setParent(Node *parent);
 
             /**
-             * Method to find an attribute by its name
+             * Method to find an attribute by its name.
              * @param key key of the searched attribute
              * @return the found attribute
              */
@@ -91,7 +114,7 @@ namespace myxmlpp {
 
             /**
              * Method to find a child node by its tag (return the first
-             * matched)
+             * matched). This method will return the first matched node
              * @param tag tag of the child to find
              * @return A pointer to the matched node
              */
@@ -99,7 +122,8 @@ namespace myxmlpp {
 
             /**
              * Method to find a child node by searching recursively,
-             * a max depth can be set
+             * a max depth can be set. This method will return the first
+             * matched node
              * @param tag tag of the node to find
              * @param maxDepth [optionnal] max depth to search, no limit is -1
              * @return A pointer to the matched node
@@ -108,13 +132,15 @@ namespace myxmlpp {
 
             /**
              * Method to find a child node by a given path. The path is name
-             * tags separated by a slash
+             * tags separated by a slash. This method will return the first
+             * matched node
              * @param path the path relative to the current node
              * @param tag tag of the node to find
              * @return A pointer to the matched node
              */
             Node *findChildByPath(const std::string& path,
-                                  const std::string& tag);
+                                  const std::string& tag,
+                                  char separator='/');
 
             /**
              * Method to find all children which have the provided tag
@@ -135,24 +161,26 @@ namespace myxmlpp {
 
             /**
              * Method to find all children nodes by a given path. The path is
-             * name tags separated by a slash
+             * name tags separated by a slash by default if there no specified
+             * separator
              * @param path the path relative to the current node
              * @param tag tag of the node to find
              * @return A pointer to the matched node
              */
             std::vector<Node *> findChildrenByPath(const std::string& path,
-                                                   const std::string& tag);
+                                                   const std::string& tag,
+                                                   char separator='/');
 
             /**
              * Remove from the children list and delete the matching node
-             * object
+             * object. This method will remove the first matched node
              * @param tag tag of the node to remove
              */
             void rmChild(const std::string& tag);
 
             /**
              * Method to remove a node by searching recursively, a max depth
-             * can be set
+             * can be set. This method will remove the first matched node
              * @param tag tag of the node to remove
              * @param maxDepth [optionnal] max depth to search, no limit is -1
              */
@@ -160,7 +188,8 @@ namespace myxmlpp {
 
             /**
              * Remove a node from the children list of a child node.
-             * The path is name tags separated by a slash.
+             * The path is name tags separated by a slash. This method will
+             * remove the first matched node.
              * This method is equivalent to findChildByPath and then rmChild
              * @param path the path relative to the current node
              * @param tag tag of the node to remove
@@ -192,7 +221,8 @@ namespace myxmlpp {
                                   const std::string& tag);
 
             /**
-            * Method to only remove the object from the children list
+            * Method to only remove the object from the children list.
+            * This method will pop the first matched node.
             * @param key tag of the node to pop
             * @return the popped node
             */
@@ -200,7 +230,7 @@ namespace myxmlpp {
 
             /**
              * Method to pop a node by searching recursively, a max depth
-             * can be set
+             * can be set. This method will pop the first matched node.
              * @param tag tag of the node to remove
              * @param maxDepth [optionnal] max depth to search, no limit is -1
              * @return the popped node
@@ -209,8 +239,9 @@ namespace myxmlpp {
 
             /**
              * Pop a node from the children list of a child node.
-             * The path is name tags separated by a slash.
-             * This method is equivalent to findChildByPath and then popChild
+             * The path is name tags separated by a slash. This method will
+             * pop the first matched node. This method is equivalent to
+             * findChildByPath and then popChild.
              * @param path the path relative to the current node
              * @param tag tag of the node to pop
              * @return the popped node
