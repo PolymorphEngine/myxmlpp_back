@@ -13,10 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/NodeNotFoundException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/NodeNotFoundException.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,8 +91,16 @@
       <workItem from="1632165067899" duration="145000" />
       <workItem from="1632856819051" duration="625000" />
       <workItem from="1633375352680" duration="598000" />
-      <workItem from="1641318263363" duration="1824000" />
+      <workItem from="1641318263363" duration="2888000" />
     </task>
+    <task id="LOCAL-00001" summary="[add] remaining method of Node class">
+      <created>1641329356468</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641329356468</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,5 +114,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[add] remaining method of Node class" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] remaining method of Node class" />
   </component>
 </project>
