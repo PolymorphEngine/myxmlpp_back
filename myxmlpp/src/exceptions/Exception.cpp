@@ -20,12 +20,7 @@ myxmlpp::Exception::Exception(const std::string &file, int line,
 }
 
 std::string myxmlpp::Exception::what() {
-    return std::string("\nError in ") +
-        mFile +
-        std::string(" at line ") +
-        mLine +
-        std::string(": ") +
-        details();
+    return baseWhat();
 }
 
 std::string myxmlpp::Exception::baseWhat() const {

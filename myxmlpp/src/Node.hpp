@@ -52,6 +52,11 @@ namespace myxmlpp {
                     const std::string &tag,
                     int depth);
 
+            static Node *popChildRecursiveLoopCall(
+                    Node *current,
+                    const std::string &tag,
+                    int depth);
+
             /**
              * Method that will be recursively called to find child for
              * findChildR public method. This method will return the first
@@ -80,6 +85,11 @@ namespace myxmlpp {
                     const std::string &tag,
                     int depth);
 
+            static Node *popChildRecursiveCalled(
+                    Node *current,
+                    const std::string &tag,
+                    int depth);
+
             static std::vector<std::string> split(const std::string &str,
                                                   char delim);
 
@@ -91,6 +101,12 @@ namespace myxmlpp {
                     std::vector<myxmlpp::Node *> *children,
                     const std::vector<std::string> &tab,
                     std::vector<std::string>::iterator it);
+
+            std::vector<Node *>::iterator findChildIt(
+                    const std::string &tag);
+
+            std::vector<std::vector<myxmlpp::Node *>::iterator>
+                    findChildrenIt(const std::string &tag);
 
         public:
             std::string getTag() const;

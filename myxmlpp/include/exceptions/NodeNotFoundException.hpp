@@ -26,18 +26,18 @@ namespace myxmlpp {
             NodeNotFoundException(const std::string& tag,
                                   const std::string& file,
                                   int line,
-                                  const std::string& description="");
+                                  const std::string& description="") noexcept;
 
-            std::string getTag() const;
+            std::string getTag() const noexcept;
 
             /**
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            virtual std::string what();
+            std::string what() noexcept override;
 
-            virtual ~NodeNotFoundException() throw()
-            {}
+            ~NodeNotFoundException() noexcept override
+            = default;
     };
 }
 
