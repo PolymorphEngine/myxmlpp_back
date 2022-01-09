@@ -49,7 +49,7 @@ namespace myxmlpp {
             elem = std::strtok(nullptr, delimiter);
         }
         if (arr.size() != 2)
-            throw ParsingException(s, 
+            throw ParsingException(s,
                                    MYXMLPP_ERROR_LOCATION,
                                    "No '={value}' part");
         return arr;
@@ -58,9 +58,14 @@ namespace myxmlpp {
     Attribute::Attribute(std::string &fileContent) {
         std::string extracted = extractAttributeStr(fileContent);
         std::vector<std::string> parts = splitAttributeStr(extracted);
+        std::string value = parts[1];
 
+        if (value[0] != '"' || value[value.length() - 1] != '"')
+            throw ParsingException(value,
+                                   MYXMLPP_ERROR_LOCATION,
+                                   "Attribute value not wrapped in quotes");
         this->mKey = std::string(parts[0]);
-        this->mValue = std::string(parts[1]);
+        this->mValue = std::string(value.substr(1, value.length() - 1));
     }
 
     std::string Attribute::getKey() const {
