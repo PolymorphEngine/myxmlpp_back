@@ -10,10 +10,12 @@
 
 #include <string>
 #include <Doc.hpp>
+#include <vector>
 
 namespace myxmlpp {
 
     typedef enum {OPENRD, OPENWR, OPENRDWR, OPENAPP} openMode_t;
+
     /**
      * Attribute in a node
      */
@@ -32,10 +34,14 @@ namespace myxmlpp {
             static std::ios_base::openmode getValueFileOpenMode(
                     openMode_t mode);
 
+            static std::vector<std::string> splitAttributeStr (std::string s);
+
+            static std::string extractAttributeStr(std::string& s);
+
         public:
             Attribute(const std::string& key, const std::string& value);
 
-            Attribute(const std::string& fileContent);
+            Attribute(std::string& fileContent);
 
 
             std::string getKey() const;
