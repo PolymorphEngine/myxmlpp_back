@@ -144,13 +144,30 @@ myxmlpp::Node *myxmlpp::Node::searchChild(Node *current,
 myxmlpp::Node * myxmlpp::Node::findChildByPath(
         const std::string &path,
         const std::string &tag,
-        char separator) {
-    std::vector<std::string> tab = split(path, separator);
+        char delimiter) {
+    std::vector<std::string> tab = split(path, delimiter);
     auto it = tab.begin();
 
     return searchChild(this, tab, it);
 }
 
+myxmlpp::Node * myxmlpp::Node::findChildBySPath(
+        const std::string &path, char delimiter) {
+    std::size_t last = path.rfind(delimiter);
+    std::string tag = path.substr(last + 1);
+    std::string pathCpy(path);
+
+    pathCpy.erase(last);
+    return findChildByPath(pathCpy, tag, delimiter);
+}
+
+/*
+ ************************* End of findChildByPath methods ********************
+ */
+
+/*
+ ************************* findChildren methods ********************
+ */
 std::vector<myxmlpp::Node *> myxmlpp::Node::findChildren(
         const std::string &tag) {
     std::vector<myxmlpp::Node *> list;
@@ -177,6 +194,14 @@ void myxmlpp::Node::findChildren(
         throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
 
 }
+
+/*
+ ************************* End of findChildren methods ********************
+ */
+
+/*
+ ************************* findChildrenR methods ********************
+ */
 
 void myxmlpp::Node::findChildrenRecursiveLoopCall(Node *current,
         std::vector<myxmlpp::Node*> *children,
@@ -212,6 +237,14 @@ std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenR(
     return children;
 }
 
+/*
+ ************************* End of findChildrenR methods ********************
+ */
+
+/*
+ ************************* findChildrenByPath methods ********************
+ */
+
 void myxmlpp::Node::searchChildren(Node *current,
         std::vector<myxmlpp::Node *> *children,
         const std::vector<std::string> &tab,
@@ -229,8 +262,8 @@ void myxmlpp::Node::searchChildren(Node *current,
 std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenByPath(
         const std::string &path,
         const std::string &tag,
-        char separator) {
-    std::vector<std::string> tab = split(path, separator);
+        char delimiter) {
+    std::vector<std::string> tab = split(path, delimiter);
     auto it = tab.begin();
     std::vector<Node *> children;
 
@@ -238,9 +271,18 @@ std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenByPath(
     return children;
 }
 
-void myxmlpp::Node::rmChild(const std::string &tag) {
-    delete popChild(tag);
+std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenBySPath(
+        const std::string &path, char delimiter) {
+    std::size_t last = path.rfind(delimiter);
+    std::string tag = path.substr(last + 1);
+    std::string pathCpy(path);
+
+    pathCpy.erase(last);
+    return findChildrenByPath(pathCpy, tag, delimiter);
 }
+/*
+ ************************* End of findChildrenByPath methods ******************
+ */
 
 myxmlpp::Node *myxmlpp::Node::popChild(const std::string &tag) {
     myxmlpp::Node *found = NULL;
@@ -255,6 +297,13 @@ myxmlpp::Node *myxmlpp::Node::popChild(const std::string &tag) {
     throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
 }
 
+void myxmlpp::Node::rmChild(const std::string &tag) {
+    delete popChild(tag);
+}
+
+/*
+ ******************************* popChildR methods ***************************
+ */
 std::vector<myxmlpp::Node *>::iterator myxmlpp::Node::findChildIt(
         const std::string& tag) {
     for (auto it = mChildren.begin(); it != mChildren.end(); ++it) {
@@ -264,18 +313,7 @@ std::vector<myxmlpp::Node *>::iterator myxmlpp::Node::findChildIt(
     throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
 }
 
-std::vector<std::vector<myxmlpp::Node *>::iterator>
-        myxmlpp::Node::findChildrenIt(const std::string &tag) {
-    std::vector<std::vector<myxmlpp::Node *>::iterator> list;
 
-    for (auto it = mChildren.begin(); it != mChildren.end(); ++it) {
-        if ((*it)->getTag() == tag)
-            list.push_back(it);
-    }
-    if (list.empty())
-        throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
-    return list;
-}
 
 myxmlpp::Node* myxmlpp::Node::popChildRecursiveLoopCall(Node *current,
         const std::string &tag,
@@ -297,27 +335,170 @@ myxmlpp::Node *myxmlpp::Node::popChildRecursiveCalled(Node *current,
         current->mChildren.erase(itToPop);
         return toPop;
     } catch (NodeNotFoundException& e) {
-        if (depth != 0)
-            return popChildRecursiveCalled(current, tag, depth);
+        if (depth > 0) {
+            for (auto & it : current->mChildren)
+                return popChildRecursiveLoopCall(current, tag, depth);
+        }
         throw;
     }
-}
-
-void myxmlpp::Node::rmChildR(const std::string &tag, int maxDepth) {
-    delete popChildR(tag, maxDepth);
 }
 
 myxmlpp::Node *myxmlpp::Node::popChildR(const std::string &tag, int maxDepth) {
     return popChildRecursiveLoopCall(this, tag, maxDepth);
 }
+/*
+ **************************** End of popChildR methods ************************
+ */
 
+void myxmlpp::Node::rmChildR(const std::string &tag, int maxDepth) {
+    delete popChildR(tag, maxDepth);
+}
+
+myxmlpp::Node *myxmlpp::Node::popChildByPath(const std::string &path,
+                                             const std::string &tag,
+                                             char delimiter) {
+    Node *childParent = findChildBySPath(path, delimiter);
+    return childParent->popChild(tag);
+}
+
+void myxmlpp::Node::rmChildByPath(const std::string &path,
+                                  const std::string &tag,
+                                  char delimiter) {
+    delete popChildByPath(path, tag, delimiter);
+}
+
+myxmlpp::Node *myxmlpp::Node::popChildBySPath(const std::string &path,
+                                              char delimiter) {
+    std::size_t last = path.rfind(delimiter);
+    std::string tag = path.substr(last + 1);
+    std::string pathCpy(path);
+
+    pathCpy.erase(last);
+    return popChildByPath(pathCpy, tag, delimiter);
+}
+
+void myxmlpp::Node::rmChildBySPath(const std::string &path,
+                                  char delimiter) {
+    delete popChildBySPath(path, delimiter);
+}
+
+/*
+ ****************************** popChildren methods ***************************
+ */
+std::vector<std::vector<myxmlpp::Node *>::iterator>
+myxmlpp::Node::findChildrenIt(const std::string &tag) {
+    std::vector<std::vector<myxmlpp::Node *>::iterator> list;
+
+    for (auto it = mChildren.begin(); it != mChildren.end(); ++it) {
+        if ((*it)->getTag() == tag)
+            list.push_back(it);
+    }
+    if (list.empty())
+        throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
+    return list;
+}
+
+std::vector<myxmlpp::Node *> myxmlpp::Node::popChildren(
+        const std::string& tag) {
+    std::vector<std::vector<myxmlpp::Node *>::iterator> toPopList =
+            findChildrenIt(tag);
+    std::vector<myxmlpp::Node *> toPopNodes;
+
+    for (auto it = toPopList.begin(); it != toPopList.end(); ++it) {
+        toPopNodes.push_back(**it);
+        mChildren.erase(*it);
+    }
+    return toPopNodes;
+}
+/*
+ *************************** End of popChildren methods ***********************
+ */
+
+void myxmlpp::Node::rmChildren(const std::string &tag) {
+    auto children = popChildren(tag);
+
+    for (auto it = children.begin(); it != children.end(); ++it)
+        delete *it;
+}
+
+/*
+ ****************************** popChildrenR methods **************************
+ */
+void myxmlpp::Node::popChildrenRecurs(Node *current,
+                                     std::vector<myxmlpp::Node *> &children,
+                                     const std::string &tag,
+                                     unsigned int depth) {
+    if (depth == 0)
+        return;
+
+    auto toPopList = current->findChildrenIt(tag);
+
+    for (auto it = toPopList.begin(); it != toPopList.end(); ++it) {
+        children.push_back(**it);
+        current->mChildren.erase(*it);
+    }
+    for (auto it = current->mChildren.begin();
+            it != current->mChildren.end(); ++it)
+        popChildrenRecurs(current, children, tag, depth - 1);
+}
+
+std::vector<myxmlpp::Node *> myxmlpp::Node::popChildrenR(const std::string &tag,
+                                                         int maxDepth) {
+    std::vector<myxmlpp::Node *> popped;
+
+    popChildrenRecurs(this, popped, tag, maxDepth);
+    return popped;
+}
+/*
+ *************************** End of popChildrenR methods ***********************
+ */
+
+void myxmlpp::Node::rmChildrenR(const std::string &tag,
+                                int maxDepth) {
+    auto children = popChildrenR(tag, maxDepth);
+
+    for (auto it = children.begin(); it != children.end(); ++it)
+        delete *it;
+}
+
+std::vector<myxmlpp::Node *> myxmlpp::Node::popChildrenByPath(
+        const std::string &path, const std::string &tag, char delimiter) {
+    Node *childrenParent = findChildBySPath(path, delimiter);
+
+    return childrenParent->popChildren(tag);
+}
+
+void myxmlpp::Node::rmChildrenByPath(const std::string &path,
+                                    const std::string &tag,
+                                    char delimiter) {
+    auto children = popChildrenByPath(path, tag, delimiter);
+
+    for (auto it = children.begin(); it != children.end(); ++it)
+        delete *it;
+}
+
+std::vector<myxmlpp::Node *> myxmlpp::Node::popChildrenBySPath(
+        const std::string &path, char delimiter) {
+    std::size_t last = path.rfind(delimiter);
+    std::string tag = path.substr(last + 1);
+    std::string pathCpy(path);
+
+    pathCpy.erase(last);
+    return popChildrenByPath(pathCpy, tag, delimiter);
+}
+
+void myxmlpp::Node::rmChildrenBySPath(const std::string &path,
+                                       char delimiter) {
+    auto children = popChildrenBySPath(path, delimiter);
+
+    for (auto it = children.begin(); it != children.end(); ++it)
+        delete *it;
+}
 
 
 unsigned int myxmlpp::Node::getNbChildren() const {
     return mChildren.size();
 }
-
-
 
 unsigned int myxmlpp::Node::getNbChildrenR() const {
     size_t total = mChildren.size();
@@ -326,8 +507,6 @@ unsigned int myxmlpp::Node::getNbChildrenR() const {
         total += (*it)->getNbChildrenR();
     return total;
 }
-
-
 
 unsigned int myxmlpp::Node::getNbAttributes() const {
     return mAttributes.size();

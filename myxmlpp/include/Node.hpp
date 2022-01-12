@@ -108,7 +108,56 @@ namespace myxmlpp {
             std::vector<std::vector<myxmlpp::Node *>::iterator>
                     findChildrenIt(const std::string &tag);
 
+            static void popChildrenRecurs(Node *current,
+                     std::vector<myxmlpp::Node *> &children,
+                     const std::string &tag,
+                     unsigned int depth);
+
         public:
+            /**
+             * Method to create a node with its tag and optionally data.
+             * @param parent parent of the node.
+             * Can be set to null if the node has not parent
+             * @param tag the tag of the node.
+             * @param data the data which is a string between
+             * the two tags in a xml file.
+             * @return the created node.
+             */
+            Node(Node *parent, const std::string &tag,
+                 const std::string& data="");
+
+            /**
+             * Method to create a node with its tag and its children.
+             * @param parent parent of the node.
+             * Can be set to null if the node has not parent
+             * @param tag the tag of the node.
+             * @param children a vector with the children nodes.
+             * @return the created node.
+             */
+            Node(Node *parent, const std::string &tag,
+                 std::vector<Node *> children);
+
+            /**
+             * Method to create a node with its tag, children and attributes.
+             * @param parent parent of the node.
+             * Can be set to null if the node has not parent
+             * @param tag the tag of the node.
+             * @param attributes a vector of attributes for the node.
+             * @param children a vector of the children nodes.
+             * @return the created node.
+             */
+            Node(Node *parent, const std::string &tag,
+                 std::vector<Attribute *> attributes,
+                 std::vector<Node *> children = std::vector<Node *>());
+
+            /**
+             * Method to create a node by parsing a xml file in string format.
+             * @param str the source string.
+             * The beginning of the string should be the beginning of the node.
+             * @return the created node.
+             */
+            Node(std::string& str);
+
             std::string getTag() const;
 
             std::string getData() const;
@@ -178,11 +227,23 @@ namespace myxmlpp {
              * matched node
              * @param path the path relative to the current node
              * @param tag tag of the node to find
+             * @param delimiter the separator used in path to delimit nodes
              * @return A pointer to the matched node
              */
             Node *findChildByPath(const std::string& path,
                                   const std::string& tag,
-                                  char separator='/');
+                                  char delimiter='/');
+
+            /**
+             * Method to find a child node by a given path. The path is name
+             * tags separated by a slash. This method will return the first
+             * matched node
+             * @param path the path relative to the current node
+             * @param delimiter the separator used in path to delimit nodes
+             * @return A pointer to the matched node
+             */
+            Node *findChildBySPath(const std::string& path,
+                                   char delimiter='/');
 
             /**
              * Method to find all children which have the provided tag
@@ -217,11 +278,28 @@ namespace myxmlpp {
              * separator
              * @param path the path relative to the current node
              * @param tag tag of the node to find
+             * @param delimiter the separator used in path to delimit nodes
              * @return A pointer to the matched node
              */
             std::vector<Node *> findChildrenByPath(const std::string& path,
                                                    const std::string& tag,
-                                                   char separator='/');
+                                                   char delimiter='/');
+
+            /**
+             * Method to find all children nodes by a given path. The path is
+             * name tags separated by a slash by default if there no specified
+             * separator
+             * @param path the path relative to the current node
+             * @param delimiter the separator used in path to delimit nodes
+             * @return A pointer to the matched node
+             */
+            std::vector<Node *> findChildrenBySPath(const std::string& path,
+                                                    char delimiter='/');
+
+            void addChild(Node * child);
+
+            void addChildByPath(Node * child, const std::string& path,
+                                char separator='/');
 
             /**
              * Remove from the children list and delete the matching node
@@ -245,9 +323,22 @@ namespace myxmlpp {
              * This method is equivalent to findChildByPath and then rmChild
              * @param path the path relative to the current node
              * @param tag tag of the node to remove
+             * @param delimiter the separator used in path to delimit nodes
              */
             void rmChildByPath(const std::string& path,
-                               const std::string& tag);
+                               const std::string& tag,
+                               char delimiter='/');
+
+            /**
+             * Remove a node from the children list of a child node.
+             * The path is name tags separated by a slash. This method will
+             * remove the first matched node.
+             * This method is equivalent to findChildByPath and then rmChild
+             * @param path the path relative to the current node
+             * @param delimiter the separator used in path to delimit nodes
+             */
+            void rmChildBySPath(const std::string& path,
+                                char delimiter='/');
 
             /**
              * Method to remove all children which have the provided tag
@@ -268,9 +359,20 @@ namespace myxmlpp {
              * is name tags separated by a slash
              * @param path the path relative to the current node
              * @param tag tag of the node to remove
+             * @param delimiter the separator used in path to delimit nodes
              */
             void rmChildrenByPath(const std::string& path,
-                                  const std::string& tag);
+                                  const std::string& tag,
+                                  char delimiter='/');
+
+            /**
+             * Method to find remove children nodes by a given path. The path
+             * is name tags separated by a slash
+             * @param path the path relative to the current node
+             * @param delimiter the separator used in path to delimit nodes
+             */
+            void rmChildrenBySPath(const std::string& path,
+                                   char delimiter='/');
 
             /**
             * Method to only remove the object from the children list.
@@ -296,10 +398,24 @@ namespace myxmlpp {
              * findChildByPath and then popChild.
              * @param path the path relative to the current node
              * @param tag tag of the node to pop
+             * @param delimiter the separator used in path to delimit nodes
              * @return the popped node
              */
             Node *popChildByPath(const std::string& path,
-                                 const std::string& tag);
+                                 const std::string& tag,
+                                 char delimiter='/');
+
+            /**
+            * Pop a node from the children list of a child node.
+            * The path is name tags separated by a slash. This method will
+            * pop the first matched node. This method is equivalent to
+            * findChildByPath and then popChild.
+            * @param path the path relative to the current node
+            * @param delimiter the separator used in path to delimit nodes
+            * @return the popped node
+            */
+            Node *popChildBySPath(const std::string& path,
+                                  char delimiter='/');
 
             /**
              * Method to pop all children which have the provided tag
@@ -323,10 +439,22 @@ namespace myxmlpp {
              * is name tags separated by a slash
              * @param path the path relative to the current node
              * @param tag tag of the node to pop
+             * @param delimiter the separator used in path to delimit nodes
              * @return a list of the popped nodes
              */
             std::vector<Node *> popChildrenByPath(const std::string& path,
-                                                  const std::string& tag);
+                                                  const std::string& tag,
+                                                  char delimiter='/');
+
+            /**
+             * Method to find pop children nodes by a given path. The path
+             * is name tags separated by a slash
+             * @param path the path relative to the current node
+             * @param delimiter the separator used in path to delimit nodes
+             * @return a list of the popped nodes
+             */
+            std::vector<Node *> popChildrenBySPath(const std::string& path,
+                                                   char delimiter='/');
 
             /**
              * Count the number of children of the node, only one level
