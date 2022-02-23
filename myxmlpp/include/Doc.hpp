@@ -10,6 +10,8 @@
 
 #include <string>
 #include <fstream>
+#include <memory>
+#include "Node.hpp"
 
 namespace myxmlpp {
 
@@ -21,17 +23,19 @@ namespace myxmlpp {
             /**
              * The string filepath correspond to the filepath of the xml file
              */
-            std::string mFilepath;
+            std::string _filepath;
 
             /**
              * The string content of the file
              */
-            std::string mContent;
+            std::string _content;
 
             /**
              * The file stream to red/write structure into file
              */
-            std::fstream *mFile;
+            std::fstream _file;
+            
+            std::unique_ptr<Node> _root;
 
             /**
              * @param filepath path of the xml file
@@ -40,9 +44,14 @@ namespace myxmlpp {
             void readFile(const std::string& filepath, bool keepOpen);
 
         public:
-            Doc(const std::string& filepath);
-            const std::string &getMFilepath() const;
-
+            /**
+             * Constructor by filepath
+             * @param filepath path to the xml file 
+             * @param keepOpen keep the file stream opened
+             */
+            Doc(const std::string& filepath, bool keepOpen = false);
+            
+            const std::string &getFilepath() const;
             void setMFilepath(const std::string &m_filepath);
     };
 
