@@ -9,10 +9,12 @@
 #define MYXMLPP_ATTRIBUTE_HPP
 
 #include <string>
-#include <Doc.hpp>
 #include <vector>
+#include <iostream>
 
 namespace myxmlpp {
+    
+    class Doc;
 
     typedef enum {OPENRD, OPENWR, OPENRDWR, OPENAPP} openMode_t;
 

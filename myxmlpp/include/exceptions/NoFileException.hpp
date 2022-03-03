@@ -8,7 +8,7 @@
 #ifndef MYXMLPP_NOFILEEXCEPTION_HPP
 #define MYXMLPP_NOFILEEXCEPTION_HPP
 
-#include <FileException.hpp>
+#include "FileException.hpp"
 
 namespace myxmlpp {
     /**

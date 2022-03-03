@@ -12,11 +12,11 @@ myxmlpp::ParsingException::ParsingException(
         const std::string& content,
         const std::string& file,
         int line,
-        const std::string& description)
+        const std::string& description) noexcept
         :mContent(content), Exception(file, line, description)
 {}
 
-std::string myxmlpp::ParsingException::what() {
+std::string myxmlpp::ParsingException::what() noexcept {
     return baseWhat()
            + std::string("tag not closed ")
            + mContent

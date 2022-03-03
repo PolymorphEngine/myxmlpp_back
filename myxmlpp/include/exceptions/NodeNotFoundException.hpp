@@ -9,7 +9,7 @@
 #define MYXMLPP_NODENOTFOUNDEXCEPTION_HPP
 
 #include <string>
-#include <Exception.hpp>
+#include "Exception.hpp"
 
 namespace myxmlpp {
     /**

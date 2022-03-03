@@ -130,7 +130,7 @@ function initResizable()
   $(window).resize(function() { resizeHeight(); });
   var device = navigator.userAgent.toLowerCase();
   var touch_device = device.match(/(iphone|ipod|ipad|android)/);
-  if (touch_device) { /* wider split bar for touch only devices */
+  if (touch_device) { /* wider _split bar for touch only devices */
     $(sidenav).css({ paddingRight:'20px' });
     $('.ui-resizable-e').css({ width:'20px' });
     $('#nav-sync').css({ right:'34px' });

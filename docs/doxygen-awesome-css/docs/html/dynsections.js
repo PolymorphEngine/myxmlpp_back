@@ -52,7 +52,7 @@ function updateStripes()
 function toggleLevel(level)
 {
   $('table.directory tr').each(function() {
-    var l = this.id.split('_').length-1;
+    var l = this.id._split('_').length-1;
     var i = $('#img'+this.id.substring(3));
     var a = $('#arr'+this.id.substring(3));
     if (l<level+1) {

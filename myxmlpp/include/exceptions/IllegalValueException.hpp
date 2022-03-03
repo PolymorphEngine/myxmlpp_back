@@ -9,7 +9,7 @@
 #define MYXMLPP_ILLEGALVALUEEXCEPTION_HPP
 
 #include <string>
-#include <Exception.hpp>
+#include "Exception.hpp"
 
 namespace myxmlpp {
     /**

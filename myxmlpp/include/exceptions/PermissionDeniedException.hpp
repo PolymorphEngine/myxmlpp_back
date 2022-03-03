@@ -8,7 +8,7 @@
 #ifndef MYXMLPP_PERMISSIONDENIEDEXCEPTION_HPP
 #define MYXMLPP_PERMISSIONDENIEDEXCEPTION_HPP
 
-#include <FileException.hpp>
+#include "FileException.hpp"
 
 namespace myxmlpp {
     /**

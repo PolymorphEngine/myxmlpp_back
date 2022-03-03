@@ -22,16 +22,15 @@ namespace myxmlpp {
             ParsingException(const std::string& content,
                                        const std::string& file,
                                        int line,
-                                       const std::string& description="");
+                                       const std::string& description="") noexcept;
 
             /**
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            virtual std::string what();
+            std::string what() noexcept override;
 
-            virtual ~ParsingException() throw()
-            {}
+            ~ParsingException() noexcept override = default;
     };
 }
 

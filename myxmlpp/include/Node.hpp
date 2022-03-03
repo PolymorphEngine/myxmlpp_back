@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include <Attribute.hpp>
+#include <memory>
 
 namespace myxmlpp {
     /**
@@ -21,38 +22,38 @@ namespace myxmlpp {
             /**
              * Tag of the XML node
              */
-            std::string mTag;
+            std::string _tag;
 
             /**
              * Everything inside the node if it is not a child node
              */
-            std::string mData;
+            std::string _data;
 
             /**
              * A reference to the parent node
              */
-            Node *mParent;
+            Node *_parent;
 
             /**
              * List of attributes present in the node
              */
-            std::vector<Attribute *> mAttributes;
+            std::vector<std::shared_ptr<Attribute>> _attributes;
 
             /**
              * List of child nodes
              */
-            std::vector<Node *> mChildren;
+            std::vector<Node *> _children;
 
-            static Node *findChildRecursiveLoopCall(Node *current,
-                                                    const std::string &tag,
-                                                    int depth);
+            static Node *_findChildRecursiveLoopCall(Node *current,
+                                                     const std::string &tag,
+                                                     int depth);
 
-            void findChildrenRecursiveLoopCall(Node *current,
-                    std::vector<myxmlpp::Node*> *children,
-                    const std::string &tag,
-                    int depth);
+            void _findChildrenRecursiveLoopCall(Node *current,
+                                                std::vector<myxmlpp::Node*> *children,
+                                                const std::string &tag,
+                                                int depth);
 
-            static Node *popChildRecursiveLoopCall(
+            static Node *_popChildRecursiveLoopCall(
                     Node *current,
                     const std::string &tag,
                     int depth);
@@ -66,7 +67,7 @@ namespace myxmlpp {
              * @param depth the actual depth
              * @return the found node
              */
-            static Node *findChildRecursiveCalled(Node *current,
+            static Node *_findChildRecursiveCalled(Node *current,
                                                    const std::string &tag,
                                                    int depth);
 
@@ -80,38 +81,43 @@ namespace myxmlpp {
              * @param depth the actual depth
              * @return the found node
              */
-            void findChildrenRecursiveCalled(Node *current,
-                    std::vector<Node *> *children,
-                    const std::string &tag,
-                    int depth);
+            void _findChildrenRecursiveCalled(Node *current,
+                                              std::vector<Node *> *children,
+                                              const std::string &tag,
+                                              int depth);
 
-            static Node *popChildRecursiveCalled(
+            static Node *_popChildRecursiveCalled( //TODO add _ prefix private methods
                     Node *current,
                     const std::string &tag,
                     int depth);
 
-            static std::vector<std::string> split(const std::string &str,
-                                                  char delim);
+            static std::vector<std::string> _split(const std::string &str,
+                                                   char delim);
 
-            static Node *searchChild(Node *current,
-                                     const std::vector<std::string>& tab,
-                                     std::vector<std::string>::iterator it);
+            static Node *_searchChild(Node *current,
+                                      const std::vector<std::string>& tab,
+                                      std::vector<std::string>::iterator it);
 
-            static void searchChildren(Node *current,
-                    std::vector<myxmlpp::Node *> *children,
-                    const std::vector<std::string> &tab,
-                    std::vector<std::string>::iterator it);
+            static void _searchChildren(Node *current,
+                                        std::vector<myxmlpp::Node *> *children,
+                                        const std::vector<std::string> &tab,
+                                        std::vector<std::string>::iterator it);
 
-            std::vector<Node *>::iterator findChildIt(
+            std::vector<Node *>::iterator _findChildIt(
                     const std::string &tag);
 
             std::vector<std::vector<myxmlpp::Node *>::iterator>
-                    findChildrenIt(const std::string &tag);
+                    _findChildrenIt(const std::string &tag);
 
-            static void popChildrenRecurs(Node *current,
-                     std::vector<myxmlpp::Node *> &children,
-                     const std::string &tag,
-                     unsigned int depth);
+            static void _popChildrenRecurs(Node *current,
+                                           std::vector<myxmlpp::Node *> &children,
+                                           const std::string &tag,
+                                           unsigned int depth);
+            
+            void _extractAttributes(std::string &str);
+            
+            static bool _isEndOfNode(const std::string &str);
+            void _checkEndOfNode(std::string &str);
 
         public:
             /**
@@ -156,7 +162,7 @@ namespace myxmlpp {
              * The beginning of the string should be the beginning of the node.
              * @return the created node.
              */
-            Node(std::string& str);
+            explicit Node(Node *parent, std::string& str);
 
             std::string getTag() const;
 
@@ -201,7 +207,7 @@ namespace myxmlpp {
              * Only remove the object from the attributes list
              * @param key tag of the attribute to pop
              */
-            Attribute *popAttribute(const std::string& key);
+            std::shared_ptr<Attribute> popAttribute(const std::string& key);
 
             /**
              * Method to find a child node by its tag (return the first
@@ -296,10 +302,40 @@ namespace myxmlpp {
             std::vector<Node *> findChildrenBySPath(const std::string& path,
                                                     char delimiter='/');
 
+            /**
+             * Method to add a Node to the children list
+             * @param child the Node to add
+             */
             void addChild(Node * child);
 
+            /**
+             * Method to add children nodes to the children list.
+             * @param children a vector of nodes to add
+             */
+            void addChildren(const std::vector<Node *> &children);
+
+            /**
+             * Method to add a child to a node referenced by its given path.
+             * The path is name tags separated by a slash by default if there
+             * no specified separator
+             * @param child a Node pointer to the child to add
+             * @param path the path relative to the future parent node
+             * @param delimiter the separator used in path to delimit nodes
+             */
             void addChildByPath(Node * child, const std::string& path,
-                                char separator='/');
+                                char delimiter='/');
+
+            /**
+             * Method to add children to a node referenced by its given path.
+             * The path is name tags separated by a slash by default if there
+             * no specified separator
+             * @param children a vector of Node pointers to the children to add
+             * @param path the path relative to the future parent node
+             * @param delimiter the separator used in path to delimit nodes
+             */
+            void addChildrenByPath(const std::vector<Node *> &children,
+                                   const std::string &path,
+                                   char delimiter='/');
 
             /**
              * Remove from the children list and delete the matching node
@@ -497,6 +533,8 @@ namespace myxmlpp {
              * @return true if there is no child and no attribute
              */
             bool fullEmpty() const;
+
+            void move(Node &newParent);
     };
 }
 

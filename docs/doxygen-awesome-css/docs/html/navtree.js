@@ -422,7 +422,7 @@ function navTo(o,root,hash,relpath)
 {
   var link = cachedLink();
   if (link) {
-    var parts = link.split('#');
+    var parts = link._split('#');
     root = parts[0];
     if (parts.length>1) hash = '#'+parts[1].replace(/[^\w\-]/g,'');
     else hash='';

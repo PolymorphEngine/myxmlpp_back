@@ -12,6 +12,7 @@
 #include <FileException.hpp>
 #include <cstring>
 #include "Attribute.hpp"
+#include "Doc.hpp"
 #include "AttributeGlobal.hpp"
 #include "ParsingException.hpp"
 

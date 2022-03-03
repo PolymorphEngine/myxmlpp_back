@@ -16,15 +16,7 @@
 
 myxmlpp::Doc::Doc(const std::string& filepath, bool keepOpen){
     readFile(filepath, keepOpen);
-    auto firstTag = _content.find('<');
-    std::string tmpContent = _content;
-    
-    if (firstTag != std::string::npos){
-        tmpContent.erase(firstTag);
-        _root = std::unique_ptr<Node>(new Node(nullptr, tmpContent));
-    } else 
-        throw ParsingException(_content, MYXMLPP_ERROR_LOCATION, 
-                               "No node found");
+    _root = std::unique_ptr<Node>(new Node(nullptr, _content));
 }
 
 void myxmlpp::Doc::readFile(const std::string& filepath, bool keepOpen) {
