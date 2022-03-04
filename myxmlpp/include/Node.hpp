@@ -128,6 +128,8 @@ namespace myxmlpp {
              */
             explicit Node(Node *parent, std::string& str, std::string &remaining);
             
+            void parseNodeString(std::string &str, std::string &remaining);
+            
             static bool performRegex(std::smatch &matches,
                                      std::string &regexStr, 
                                      std::string &str, 
