@@ -8,9 +8,9 @@
 #include "Node.hpp"
 #include "NodeNotFoundException.hpp"
 
-std::vector<myxmlpp::Node *> myxmlpp::Node::findChildren(
+std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::findChildren(
         const std::string &tag) {
-    std::vector<myxmlpp::Node *> list;
+    std::vector<std::shared_ptr<Node>> list;
 
     for (auto & it : _children) {
         if (it->getTag() == tag)
@@ -23,7 +23,7 @@ std::vector<myxmlpp::Node *> myxmlpp::Node::findChildren(
 
 void myxmlpp::Node::findChildren(
         const std::string &tag,
-        std::vector<myxmlpp::Node *> *children) {
+        std::vector<std::shared_ptr<myxmlpp::Node>> *children) {
     std::size_t backupSize = children->size();
 
     for (auto & it : _children) {

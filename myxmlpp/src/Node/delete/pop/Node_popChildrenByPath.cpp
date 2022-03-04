@@ -7,14 +7,14 @@
 
 #include "Node.hpp"
 
-std::vector<myxmlpp::Node *> myxmlpp::Node::popChildrenByPath(
+std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::popChildrenByPath(
         const std::string &path, const std::string &tag, char delimiter) {
-    Node *childrenParent = findChildBySPath(path, delimiter);
+    std::shared_ptr<Node> childrenParent = findChildBySPath(path, delimiter);
 
     return childrenParent->popChildren(tag);
 }
 
-std::vector<myxmlpp::Node *> myxmlpp::Node::popChildrenBySPath(
+std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::popChildrenBySPath(
         const std::string &path, char delimiter) {
     std::size_t last = path.rfind(delimiter);
     std::string tag = path.substr(last + 1);

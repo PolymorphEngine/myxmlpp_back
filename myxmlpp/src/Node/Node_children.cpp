@@ -24,6 +24,6 @@ bool myxmlpp::Node::empty() const {
 }
 
 void myxmlpp::Node::move(myxmlpp::Node &newParent) {
-    _parent->popChild(_tag);
-    newParent.addChild(this);
+    auto popped = _parent->popChild(_tag);
+    newParent.addChild(popped);
 }

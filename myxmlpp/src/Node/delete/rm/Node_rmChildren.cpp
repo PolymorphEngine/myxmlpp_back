@@ -9,7 +9,4 @@
 
 void myxmlpp::Node::rmChildren(const std::string &tag) {
     auto children = popChildren(tag);
-
-    for (auto it = children.begin(); it != children.end(); ++it)
-        delete *it;
 }

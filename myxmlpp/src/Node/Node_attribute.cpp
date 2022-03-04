@@ -10,10 +10,10 @@
 #include "Node.hpp"
 #include "AttributeNotFoundException.hpp"
 
-myxmlpp::Attribute *myxmlpp::Node::findAttribute(const std::string& key) {
+std::shared_ptr<myxmlpp::Attribute> myxmlpp::Node::findAttribute(const std::string& key) {
     for (auto & mAttribute : _attributes) {
         if (mAttribute->getKey() == key)
-            return mAttribute.get();
+            return mAttribute;
     }
     throw myxmlpp::AttributeNotFoundException(key, MYXMLPP_ERROR_LOCATION);
 }
@@ -25,8 +25,8 @@ void myxmlpp::Node::addAttribute(const std::string& key,
     _attributes.push_back(toAdd);
 }
 
-void myxmlpp::Node::addAttribute(Attribute *attr) {
-    _attributes.push_back(std::shared_ptr<Attribute>(attr));
+void myxmlpp::Node::addAttribute(std::shared_ptr<Attribute> attr) {
+    _attributes.push_back(attr);
 }
 
 void myxmlpp::Node::rmAttribute(const std::string& key) {

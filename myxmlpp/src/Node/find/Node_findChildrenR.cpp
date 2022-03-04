@@ -9,19 +9,19 @@
 #include "NodeNotFoundException.hpp"
 
 void myxmlpp::Node::_findChildrenRecursiveLoopCall(Node *current,
-                                                   std::vector<myxmlpp::Node*> *children,
+                                                   std::vector<std::shared_ptr<Node>> *children,
                                                    const std::string &tag,
                                                    int depth) {
     for (auto & it : current->_children) {
         try {
-            _findChildrenRecursiveCalled(it, children, tag, depth - 1);
+            _findChildrenRecursiveCalled(it.get(), children, tag, depth - 1);
         } catch (NodeNotFoundException &e2) {}
     }
     throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
 }
 
 void myxmlpp::Node::_findChildrenRecursiveCalled(Node *current,
-                                                 std::vector<Node *> *children,
+                                                 std::vector<std::shared_ptr<Node>> *children,
                                                  const std::string &tag,
                                                  int depth) {
     try {
@@ -33,10 +33,10 @@ void myxmlpp::Node::_findChildrenRecursiveCalled(Node *current,
     }
 }
 
-std::vector<myxmlpp::Node *> myxmlpp::Node::findChildrenR(
+std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::findChildrenR(
         const std::string &tag,
         int maxDepth) {
-    std::vector<Node *> children;
+    std::vector<std::shared_ptr<Node>> children;
 
     _findChildrenRecursiveLoopCall(this, &children, tag, maxDepth);
     return children;

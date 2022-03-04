@@ -7,24 +7,24 @@
 
 #include "Node.hpp"
 
-void myxmlpp::Node::addChild(myxmlpp::Node *child) {
+void myxmlpp::Node::addChild(std::shared_ptr<Node> child) {
     _children.push_back(child);
 }
 
-void myxmlpp::Node::addChildren(const std::vector<Node *> &children) {
+void myxmlpp::Node::addChildren(const std::vector<std::shared_ptr<Node>> &children) {
     _children.insert(_children.end(), children.begin(), children.end());
 }
 
-void myxmlpp::Node::addChildByPath(Node *child, const std::string &path,
+void myxmlpp::Node::addChildByPath(std::shared_ptr<Node> child, const std::string &path,
                                    char delimiter) {
-    Node *parent = findChildBySPath(path, delimiter);
+    std::shared_ptr<Node> parent = findChildBySPath(path, delimiter);
 
     parent->addChild(child);
 }
 
-void myxmlpp::Node::addChildrenByPath(const std::vector<Node *> &children,
+void myxmlpp::Node::addChildrenByPath(const std::vector<std::shared_ptr<Node>> &children,
                                       const std::string &path, char delimiter) {
-    Node *parent = findChildBySPath(path, delimiter);
+    std::shared_ptr<Node> parent = findChildBySPath(path, delimiter);
 
     parent->addChildren(children);
 }

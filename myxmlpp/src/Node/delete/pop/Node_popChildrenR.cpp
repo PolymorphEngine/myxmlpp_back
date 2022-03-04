@@ -8,7 +8,7 @@
 #include "Node.hpp"
 
 void myxmlpp::Node::_popChildrenRecurs(Node *current,
-                                       std::vector<myxmlpp::Node *> &children,
+                                       std::vector<std::shared_ptr<Node>> &children,
                                        const std::string &tag,
                                        unsigned int depth) {
     if (depth == 0)
@@ -25,9 +25,9 @@ void myxmlpp::Node::_popChildrenRecurs(Node *current,
         _popChildrenRecurs(current, children, tag, depth - 1);
 }
 
-std::vector<myxmlpp::Node *> myxmlpp::Node::popChildrenR(const std::string &tag,
+std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::popChildrenR(const std::string &tag,
                                                          int maxDepth) {
-    std::vector<myxmlpp::Node *> popped;
+    std::vector<std::shared_ptr<Node>> popped;
 
     _popChildrenRecurs(this, popped, tag, maxDepth);
     return popped;

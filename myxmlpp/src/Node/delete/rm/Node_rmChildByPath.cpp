@@ -10,12 +10,12 @@
 void myxmlpp::Node::rmChildByPath(const std::string &path,
                                   const std::string &tag,
                                   char delimiter) {
-    delete popChildByPath(path, tag, delimiter);
+    popChildByPath(path, tag, delimiter);
 }
 
 
 
 void myxmlpp::Node::rmChildBySPath(const std::string &path,
                                    char delimiter) {
-    delete popChildBySPath(path, delimiter);
+    popChildBySPath(path, delimiter);
 }

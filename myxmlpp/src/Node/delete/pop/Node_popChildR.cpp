@@ -8,7 +8,7 @@
 #include "Node.hpp"
 #include "NodeNotFoundException.hpp"
 
-std::vector<myxmlpp::Node *>::iterator myxmlpp::Node::_findChildIt(
+std::vector<std::shared_ptr<myxmlpp::Node>>::iterator myxmlpp::Node::_findChildIt(
         const std::string& tag) {
     for (auto it = _children.begin(); it != _children.end(); ++it) {
         if ((*it)->getTag() == tag)
@@ -17,23 +17,23 @@ std::vector<myxmlpp::Node *>::iterator myxmlpp::Node::_findChildIt(
     throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
 }
 
-myxmlpp::Node* myxmlpp::Node::_popChildRecursiveLoopCall(Node *current,
+std::shared_ptr<myxmlpp::Node> myxmlpp::Node::_popChildRecursiveLoopCall(Node *current,
                                                          const std::string &tag,
                                                          int depth) {
     for (auto & it : current->_children) {
         try {
-            return _popChildRecursiveCalled(it, tag, depth - 1);
+            return _popChildRecursiveCalled(it.get(), tag, depth - 1);
         } catch (NodeNotFoundException &e2) {}
     }
     throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
 }
 
-myxmlpp::Node *myxmlpp::Node::_popChildRecursiveCalled(Node *current,
+std::shared_ptr<myxmlpp::Node> myxmlpp::Node::_popChildRecursiveCalled(Node *current,
                                                        const std::string &tag,
                                                        int depth) {
     try {
         auto itToPop = current->_findChildIt(tag);
-        Node *toPop = *itToPop;
+        std::shared_ptr<Node> toPop = *itToPop;
         current->_children.erase(itToPop);
         return toPop;
     } catch (NodeNotFoundException& e) {
@@ -44,6 +44,7 @@ myxmlpp::Node *myxmlpp::Node::_popChildRecursiveCalled(Node *current,
         throw;
     }
 }
-myxmlpp::Node *myxmlpp::Node::popChildR(const std::string &tag, int maxDepth) {
+
+std::shared_ptr<myxmlpp::Node> myxmlpp::Node::popChildR(const std::string &tag, int maxDepth) {
     return _popChildRecursiveLoopCall(this, tag, maxDepth);
 }

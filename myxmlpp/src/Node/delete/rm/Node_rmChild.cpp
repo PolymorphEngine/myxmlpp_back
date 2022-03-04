@@ -8,5 +8,5 @@
 #include "Node.hpp"
 
 void myxmlpp::Node::rmChild(const std::string &tag) {
-    delete popChild(tag);
+    popChild(tag);
 }
