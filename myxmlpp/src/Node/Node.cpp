@@ -43,71 +43,55 @@ void myxmlpp::Node::_extractAttributes(std::string &str) {
 }
 
 myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str, std::string &remaining) : _parent(parent) {
-    std::regex rgx("[\r\n\t\f\v ]*(<([a-zA-Z0-9_\\-]*)(?:[\r\n\t\f\v ](.*\")[\r\n\t\f\v ]*?)*(\/?)>)");
+    std::string rgx("[\r\n\t\f\v ]*(<([a-zA-Z0-9_\\-]*)(?:[\r\n\t\f\v ](.*\")[\r\n\t\f\v ]*?)*(\/?)>)");
     std::smatch matches;
-    std::smatch remainingMatches;
-    bool res = std::regex_search(str, matches, rgx);
-    bool res2 = std::regex_search(remaining, remainingMatches, rgx);
-    
-    if (!res2)
-        throw myxmlpp::ParsingException(remaining, MYXMLPP_ERROR_LOCATION, "bullshit in file");
 
-    if (res) {
-        remaining.replace(remainingMatches.position(), remainingMatches.length(), "");
-        std::cout << "Match found\n";
+    if (!performRegex(matches, rgx, str, &remaining))
+        throw myxmlpp::ParsingException(remaining, MYXMLPP_ERROR_LOCATION, "No tag found");
+//        std::cout << "Match found\n";
 
 //        for (size_t i = 0; i < matches.size(); ++i) {
 //            std::cout << i << ": '" << matches[i].str() << "'\n";
 //        }
-        _tag = matches[2].str();
-        if (!matches[3].str().empty()) {
-            std::string attributes = matches[3].str();
-            _extractAttributes(attributes);
+    _tag = matches[2].str();
+    if (!matches[3].str().empty()) {
+        std::string attributes = matches[3].str();
+        _extractAttributes(attributes);
+    }
+    str = matches.suffix().str();
+    if (matches[4].str().empty()) {
+        while (!_isEndOfNode(str)) {
+            addChild(std::shared_ptr<Node>(new Node(this, str, remaining)));
         }
-        str = matches.suffix().str();
-        if (matches[4].str().empty()) {
-            while (!_isEndOfNode(str)) {
-                addChild(std::shared_ptr<Node>(new Node(this, str, remaining)));
-            }
-            _checkEndOfNode(str, remaining);
-        }
-    } else {
-        std::cout << "Match not found\n";
+        _checkEndOfNode(str, remaining);
     }
 }
 
 myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str) : _parent(parent) {
-    std::regex rgx("[\r\n\t\f\v ]*(<([a-zA-Z0-9_\\-]*)(?:[\r\n\t\f\v ](.*\")[\r\n\t\f\v ]*?)*(\/?)>)");
+    std::string rgx("[\r\n\t\f\v ]*(<([a-zA-Z0-9_\\-]*)(?:[\r\n\t\f\v ](.*\")[\r\n\t\f\v ]*?)*(\/?)>)");
     std::string remaining = str;
     std::smatch matches;
-    std::smatch remainingMatches;
-    bool res = std::regex_search(str, matches, rgx);
-    bool res2 = std::regex_search(remaining, remainingMatches, rgx);
+    
+    if (!performRegex(matches, rgx, str, &remaining))
+        throw myxmlpp::ParsingException(remaining, MYXMLPP_ERROR_LOCATION, "No tag found");
 
-    if (!res2)
-        throw myxmlpp::ParsingException(remaining, MYXMLPP_ERROR_LOCATION, "bullshit in file");
-    if (res) {
 //        std::cout << "Match found\n";
 
-        remaining.replace(remainingMatches.position(), remainingMatches.length(), "");
 //        for (size_t i = 0; i < matches.size(); ++i) {
 //            std::cout << i << ": '" << matches[i].str() << "'\n";
 //        }
-        _tag = matches[2].str();
-        if (!matches[3].str().empty()) {
-            std::string attributes = matches[3].str();
-            _extractAttributes(attributes);
-        }
-        str = matches.suffix().str();
-        if (matches[4].str().empty()) {
-            while (!_isEndOfNode(str)) {
-                addChild(std::shared_ptr<Node>(new Node(this, str, remaining)));
-            }
-            _checkEndOfNode(str, remaining);
-        }
-        if (!remaining.empty())
-            throw myxmlpp::ParsingException(remaining, MYXMLPP_ERROR_LOCATION, "bullshit in file");
-    } else {
-        std::cout << "Match not found\n";
+    _tag = matches[2].str();
+    if (!matches[3].str().empty()) {
+        std::string attributes = matches[3].str();
+        _extractAttributes(attributes);
     }
+    str = matches.suffix().str();
+    if (matches[4].str().empty()) {
+        while (!_isEndOfNode(str)) {
+            addChild(std::shared_ptr<Node>(new Node(this, str, remaining)));
+        }
+        _checkEndOfNode(str, remaining);
+    }
+    if (!remaining.empty())
+        throw myxmlpp::ParsingException(remaining, MYXMLPP_ERROR_LOCATION, "bullshit in file");
 }

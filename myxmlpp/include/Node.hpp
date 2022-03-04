@@ -12,6 +12,7 @@
 #include <vector>
 #include <Attribute.hpp>
 #include <memory>
+#include <regex>
 
 namespace myxmlpp {
     /**
@@ -116,7 +117,7 @@ namespace myxmlpp {
             
             void _extractAttributes(std::string &str);
             
-            static bool _isEndOfNode(const std::string &str);
+            static bool _isEndOfNode(std::string &str);
             void _checkEndOfNode(std::string &str, std::string &remaining);
 
             /**
@@ -126,6 +127,11 @@ namespace myxmlpp {
              * @return the created node.
              */
             explicit Node(Node *parent, std::string& str, std::string &remaining);
+            
+            static bool performRegex(std::smatch &matches,
+                                     std::string &regexStr, 
+                                     std::string &str, 
+                                     std::string *remaining = nullptr);
 
         public:
             /**
