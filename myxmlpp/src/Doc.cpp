@@ -6,13 +6,16 @@
 */
 
 
+#include <filesystem>
 #include <iostream>
-#include <fstream>
-#include <sstream>
 #include "Doc.hpp"
 #include "exceptions/FileException.hpp"
 #include "ParsingException.hpp"
+#include "NoFileException.hpp"
+#include "PermissionDeniedException.hpp"
 
+namespace fs = std::filesystem;
+using fs::status;
 
 myxmlpp::Doc::Doc(const std::string& filepath, bool keepOpen){
     readFile(filepath, keepOpen);
@@ -21,13 +24,21 @@ myxmlpp::Doc::Doc(const std::string& filepath, bool keepOpen){
 
 void myxmlpp::Doc::readFile(const std::string& filepath, bool keepOpen) {
     _filepath = filepath;
-    _file = std::fstream(filepath.c_str(), 
-                         keepOpen ? std::ios::in | std::ios::out : std::ios::in);
     std::stringstream strStream;
-
-    if (!_file)
+    _file.exceptions(std::ios::badbit | std::ios::failbit);
+    
+    try {
+        _file.open(filepath.c_str(),
+                   keepOpen ? std::ios::in | std::ios::out : std::ios::in);
+    } catch (const std::ios_base::failure& e) {
+        if (!fs::exists(filepath))
+            throw NoFileException(filepath, MYXMLPP_ERROR_LOCATION);
+        else if ((keepOpen && ((status(filepath).permissions() & (fs::perms::others_read | fs::perms::others_write)) != (fs::perms::others_read | fs::perms::others_write)))
+                || (!keepOpen && ((status(filepath).permissions() & fs::perms::others_read) == fs::perms::none)))
+            throw PermissionDeniedException(filepath, MYXMLPP_ERROR_LOCATION);
         throw myxmlpp::FileException(filepath, MYXMLPP_ERROR_LOCATION,
                                      "Cannot open file");
+    }        
     strStream << _file.rdbuf();
     _content = strStream.str();
     if (!keepOpen)

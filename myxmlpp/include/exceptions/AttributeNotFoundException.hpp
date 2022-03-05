@@ -27,7 +27,7 @@ namespace myxmlpp {
             AttributeNotFoundException(const std::string& key,
                     const std::string& file,
                     int line,
-                    const std::string& description="");
+                    const std::string& description="") noexcept;
 
             std::string getKey() const;
 
@@ -35,10 +35,9 @@ namespace myxmlpp {
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            virtual std::string what();
+            std::string baseWhat() const noexcept override;
 
-            virtual ~AttributeNotFoundException() throw()
-            {}
+            ~AttributeNotFoundException() noexcept override = default;
     };
 }
 

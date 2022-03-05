@@ -8,9 +8,13 @@
 
 #include "PermissionDeniedException.hpp"
 
-std::string myxmlpp::PermissionDeniedException::what() {
-    return baseWhat()
-        + std::string("permission denied at the given filepath ")
-        + mFilepath
-        +details();
+std::string myxmlpp::PermissionDeniedException::baseWhat() const noexcept {
+    return FileException::baseWhat()
+        + std::string(" : permission denied at the given filepath");
+}
+
+myxmlpp::PermissionDeniedException::PermissionDeniedException(
+        const std::string &filepath, const std::string &file, int line) 
+        : FileException(filepath, file, line) {
+    build();
 }

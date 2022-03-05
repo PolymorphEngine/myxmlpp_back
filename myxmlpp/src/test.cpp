@@ -10,6 +10,7 @@
 
 #include "Node.hpp"
 #include "Doc.hpp"
+#include "Exception.hpp"
 
 /*
 class SuperClass
@@ -51,8 +52,14 @@ std::string cut(std::string& s) {
 int main(int argc, char **argv) {
     std::string a = "test ish";
     a.erase(0, 1);
-    myxmlpp::Doc d("../test.xml");
-
+    try {
+//        myxmlpp::Doc d("../noRights.xml");
+//        myxmlpp::Doc d("../mescouilles.xml");
+//        myxmlpp::Doc d("../test.xml");
+        myxmlpp::Doc d("../clean.xml");
+    } catch (myxmlpp::Exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
 
     std::cout << cut(a) << std::endl;
     std::cout << a << std::endl;

@@ -7,43 +7,47 @@
 
 #include <iostream>
 #include <sstream>
+#include <utility>
 #include "Exception.hpp"
 
-myxmlpp::Exception::Exception(const std::string &file, int line,
-                              const std::string &description) :
-    mFile(file),
-    mDescription(description)
+myxmlpp::Exception::Exception(std::string file, int line,
+                              std::string description) noexcept :
+        _file(std::move(file)),
+        _description(std::move(description))
 {
     std::ostringstream str;
     str << line;
-    mLine = str.str();
+    _line = str.str();
 }
 
-std::string myxmlpp::Exception::what() {
-    return baseWhat();
+const char *myxmlpp::Exception::what() const noexcept {
+    return _errorMessage.c_str();
 }
 
-std::string myxmlpp::Exception::baseWhat() const {
+std::string myxmlpp::Exception::baseWhat() const noexcept{
     return std::string("\nError in ") +
-           mFile +
+           _file +
            std::string(" at line ") +
-           mLine +
-           std::string(": ");
+           _line;
 }
 
-std::string myxmlpp::Exception::details() const {
-    if (mDescription.length())
+std::string myxmlpp::Exception::details() const noexcept {
+    if (!_description.empty())
         return std::string("\nOptionnal details : ")
-                + mDescription
-                + std::string("\n");
+               + _description
+               + std::string("\n");
     else
         return std::string("\n");
 }
 
-const std::string &myxmlpp::Exception::getFile() const {
-    return mFile;
+const std::string &myxmlpp::Exception::getFile() const noexcept {
+    return _file;
 }
 
-const std::string &myxmlpp::Exception::getLine() const {
-    return mLine;
+const std::string &myxmlpp::Exception::getLine() const noexcept {
+    return _line;
+}
+
+void myxmlpp::Exception::build() noexcept {
+    _errorMessage = baseWhat() + details();
 }

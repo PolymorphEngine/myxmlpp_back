@@ -21,41 +21,48 @@ namespace myxmlpp {
             /**
              * Short descripition of the error
              */
-            std::string mDescription;
+            std::string _description;
 
             /**
              * File in which the error was raised
              */
-            std::string mFile;
+            std::string _file;
 
             /**
              * Line at which the error was raised
              */
-            std::string mLine;
+            std::string _line;
+            
+            /**
+             * Complete error message
+             */
+            std::string _errorMessage;
 
         public:
-            Exception(const std::string& file, int line,
-                      const std::string& description="");
+            Exception(std::string  file, int line,
+                      std::string  description="") noexcept;
 
             /**
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            virtual std::string what();
+            const char *what() const noexcept override;
+            
+            void build() noexcept;
 
             /**
              * Error message displaying only file and line of the error
              * @return partial error message
              */
-            virtual std::string baseWhat() const;
+            virtual std::string baseWhat() const noexcept;
 
-            virtual std::string details() const;
+            virtual std::string details() const noexcept;
 
-            const std::string &getFile() const;
+            const std::string &getFile() const noexcept;
 
-            const std::string &getLine() const;
+            const std::string &getLine() const noexcept;
 
-            virtual ~Exception() throw() {}
+            ~Exception() noexcept override = default;
     };
 }
 

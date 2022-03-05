@@ -19,7 +19,7 @@ namespace myxmlpp {
             std::string mContent;
 
         public:
-            ParsingException(const std::string& content,
+            ParsingException(std::string  content,
                                        const std::string& file,
                                        int line,
                                        const std::string& description="") noexcept;
@@ -28,7 +28,7 @@ namespace myxmlpp {
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            std::string what() noexcept override;
+            std::string baseWhat() const noexcept override;
 
             ~ParsingException() noexcept override = default;
     };

@@ -34,7 +34,7 @@ namespace myxmlpp {
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            std::string what() noexcept override;
+            std::string baseWhat() const noexcept override;
 
             ~NodeNotFoundException() noexcept override
             = default;

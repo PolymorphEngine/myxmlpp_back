@@ -16,11 +16,14 @@ namespace myxmlpp {
      */
     class NoFileException: public myxmlpp::FileException {
         public:
-            /**
+            NoFileException(const std::string &filepath,
+                            const std::string &file, int line);
+
+/**
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            virtual std::string what();
+            std::string baseWhat() const noexcept override;
     };
 }
 

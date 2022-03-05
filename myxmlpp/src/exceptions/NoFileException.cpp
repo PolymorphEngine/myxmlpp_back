@@ -8,9 +8,14 @@
 #include <string>
 #include "NoFileException.hpp"
 
-std::string myxmlpp::NoFileException::what() {
-    return baseWhat()
-           + std::string("no file at the given filepath ")
-           + mFilepath
-           +details();
+myxmlpp::NoFileException::NoFileException(const std::string &filepath,
+                                          const std::string &file, int line)
+        :FileException(filepath, file, line) {
+    build();
+}
+
+std::string myxmlpp::NoFileException::baseWhat() const noexcept {
+    return FileException::baseWhat()
+           + std::string(": no file at the given filepath ")
+           + mFilepath;
 }

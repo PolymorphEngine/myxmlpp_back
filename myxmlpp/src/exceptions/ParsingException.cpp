@@ -8,17 +8,20 @@
 
 #include "ParsingException.hpp"
 
+#include <utility>
+
 myxmlpp::ParsingException::ParsingException(
-        const std::string& content,
+        std::string  content,
         const std::string& file,
         int line,
         const std::string& description) noexcept
-        :mContent(content), Exception(file, line, description)
-{}
+        :mContent(std::move(content)), Exception(file, line, description)
+{
+    build();
+}
 
-std::string myxmlpp::ParsingException::what() noexcept {
-    return baseWhat()
-           + std::string("tag not closed ")
-           + mContent
-           + details();
+std::string myxmlpp::ParsingException::baseWhat() const noexcept {
+    return Exception::baseWhat()
+           + std::string(": error while parsing file content : ")
+           + mContent;
 }

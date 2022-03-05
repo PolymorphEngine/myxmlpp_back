@@ -33,7 +33,7 @@ namespace myxmlpp {
                                   std::string key,
                                   std::string file,
                                   int line,
-                                  std::string description="");
+                                  std::string description="") noexcept;
 
             std::string getKey() const;
 
@@ -43,10 +43,9 @@ namespace myxmlpp {
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            virtual std::string what();
+            std::string baseWhat() const noexcept override;
 
-            virtual ~IllegalValueException() throw()
-            {}
+            ~IllegalValueException() noexcept override = default;
     };
 }
 

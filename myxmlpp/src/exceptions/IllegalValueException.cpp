@@ -8,13 +8,19 @@
 
 #include "IllegalValueException.hpp"
 
+#include <utility>
+
 myxmlpp::IllegalValueException::IllegalValueException(std::string legalType,
                                                       std::string key,
                                                       std::string file,
                                                       int line,
                                                       std::string description)
-    :mLegalType(legalType), mKey(key), Exception(file, line, description)
-{}
+                                                      noexcept
+    : mLegalType(std::move(legalType)), mKey(std::move(key)), 
+    Exception(std::move(file), line, std::move(description))
+{
+    build();
+}
 
 std::string myxmlpp::IllegalValueException::getKey() const {
     return mKey;
@@ -24,11 +30,10 @@ std::string myxmlpp::IllegalValueException::getLegalType() const {
     return mLegalType;
 }
 
-std::string myxmlpp::IllegalValueException::what() {
-    return baseWhat()
-           + std::string("illegal for attribute ")
+std::string myxmlpp::IllegalValueException::baseWhat() const noexcept{
+    return Exception::baseWhat()
+           + std::string(": illegal for attribute ")
            + mKey
            + std::string(", desired type ")
-           + mLegalType
-           + details();
+           + mLegalType;
 }

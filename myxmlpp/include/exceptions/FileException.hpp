@@ -29,7 +29,7 @@ namespace myxmlpp {
             FileException(const std::string&  filepath,
                           const std::string&  file,
                           int line,
-                          const std::string& description="");
+                          const std::string& description="") noexcept;
 
             const std::string &getFilepath() const;
 
@@ -37,10 +37,9 @@ namespace myxmlpp {
              * Complete error message, ready to log in the console/terminal
              * @return error message
              */
-            virtual std::string what();
+            std::string baseWhat() const noexcept override;
 
-            virtual ~FileException() throw()
-            {}
+            ~FileException() noexcept override = default;
     };
 }
 

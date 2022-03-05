@@ -13,13 +13,14 @@ myxmlpp::NodeNotFoundException::NodeNotFoundException(const std::string& tag,
         int line,
         const std::string& description) noexcept
     :mTag(tag), Exception(file, line, description)
-{}
+{
+    build();
+}
 
-std::string myxmlpp::NodeNotFoundException::what() noexcept {
-    return baseWhat()
-           + std::string("cannot find node ")
-           + mTag
-           +details();
+std::string myxmlpp::NodeNotFoundException::baseWhat() const noexcept {
+    return Exception::baseWhat()
+           + std::string(": cannot find node ")
+           + mTag;
 }
 
 std::string myxmlpp::NodeNotFoundException::getTag() const noexcept {
