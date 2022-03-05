@@ -20,7 +20,7 @@ namespace myxmlpp {
             /**
              * Tag of the wanted node
              */
-            std::string mTag;
+            std::string _tag;
 
         public:
             NodeNotFoundException(const std::string& tag,

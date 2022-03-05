@@ -15,7 +15,7 @@ myxmlpp::ParsingException::ParsingException(
         const std::string& file,
         int line,
         const std::string& description) noexcept
-        :mContent(std::move(content)), Exception(file, line, description)
+        : _content(std::move(content)), Exception(file, line, description)
 {
     build();
 }
@@ -23,5 +23,5 @@ myxmlpp::ParsingException::ParsingException(
 std::string myxmlpp::ParsingException::baseWhat() const noexcept {
     return Exception::baseWhat()
            + std::string(": error while parsing file content : ")
-           + mContent;
+           + _content;
 }

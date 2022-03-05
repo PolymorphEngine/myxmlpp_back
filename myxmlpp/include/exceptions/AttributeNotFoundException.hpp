@@ -21,7 +21,7 @@ namespace myxmlpp {
             /**
              * Key of the anted attribute
              */
-            std::string mKey;
+            std::string _key;
 
         public:
             AttributeNotFoundException(const std::string& key,

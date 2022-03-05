@@ -17,5 +17,5 @@ myxmlpp::NoFileException::NoFileException(const std::string &filepath,
 std::string myxmlpp::NoFileException::baseWhat() const noexcept {
     return FileException::baseWhat()
            + std::string(": no file at the given filepath ")
-           + mFilepath;
+           + _filepath;
 }

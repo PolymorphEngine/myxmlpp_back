@@ -23,7 +23,7 @@ namespace myxmlpp {
             /**
              * Path of the problematic file
              */
-            std::string mFilepath;
+            std::string _filepath;
 
         public:
             FileException(const std::string&  filepath,

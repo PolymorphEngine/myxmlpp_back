@@ -21,12 +21,12 @@ namespace myxmlpp {
             /**
              * Key of the anted attribute
              */
-            std::string mKey;
+            std::string _key;
 
             /**
              * Legal type for the operation
              */
-             std::string mLegalType;
+             std::string _legalType;
 
         public:
             IllegalValueException(std::string legalType,

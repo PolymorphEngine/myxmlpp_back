@@ -11,17 +11,17 @@ myxmlpp::FileException::FileException(const std::string &filepath,
                                       const std::string &file,
                                       int line,
                                       const std::string &description) noexcept
-    :mFilepath(filepath), Exception(file, line, description)
+    : _filepath(filepath), Exception(file, line, description)
 {
     build();
 }
 
 const std::string &myxmlpp::FileException::getFilepath() const {
-    return mFilepath;
+    return _filepath;
 }
 
 std::string myxmlpp::FileException::baseWhat() const noexcept {
     return Exception::baseWhat()
-        + std::string(": error while interacting with file ")
-        + mFilepath;
+           + std::string(": error while interacting with file ")
+           + _filepath;
 }

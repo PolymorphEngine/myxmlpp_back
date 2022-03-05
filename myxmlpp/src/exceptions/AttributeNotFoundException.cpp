@@ -13,7 +13,7 @@ myxmlpp::AttributeNotFoundException::AttributeNotFoundException(
         const std::string& file,
         int line,
         const std::string& description) noexcept
-    :mKey(key), Exception(file, line, description)
+    : _key(key), Exception(file, line, description)
 {
     build();
 }
@@ -21,9 +21,9 @@ myxmlpp::AttributeNotFoundException::AttributeNotFoundException(
 std::string myxmlpp::AttributeNotFoundException::baseWhat() const noexcept {
     return Exception::baseWhat()
            + std::string(" : cannot find attribute ")
-           + mKey;
+           + _key;
 }
 
 std::string myxmlpp::AttributeNotFoundException::getKey() const {
-    return mKey;
+    return _key;
 }

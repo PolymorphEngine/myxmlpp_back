@@ -16,7 +16,7 @@ namespace myxmlpp {
             /**
              * Key of the anted attribute
              */
-            std::string mContent;
+            std::string _content;
 
         public:
             ParsingException(std::string  content,

@@ -16,24 +16,24 @@ myxmlpp::IllegalValueException::IllegalValueException(std::string legalType,
                                                       int line,
                                                       std::string description)
                                                       noexcept
-    : mLegalType(std::move(legalType)), mKey(std::move(key)), 
-    Exception(std::move(file), line, std::move(description))
+    : _legalType(std::move(legalType)), _key(std::move(key)),
+      Exception(std::move(file), line, std::move(description))
 {
     build();
 }
 
 std::string myxmlpp::IllegalValueException::getKey() const {
-    return mKey;
+    return _key;
 }
 
 std::string myxmlpp::IllegalValueException::getLegalType() const {
-    return mLegalType;
+    return _legalType;
 }
 
 std::string myxmlpp::IllegalValueException::baseWhat() const noexcept{
     return Exception::baseWhat()
            + std::string(": illegal for attribute ")
-           + mKey
+           + _key
            + std::string(", desired type ")
-           + mLegalType;
+           + _legalType;
 }
