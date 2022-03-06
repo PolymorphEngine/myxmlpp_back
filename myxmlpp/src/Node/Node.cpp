@@ -5,35 +5,38 @@
 ** Node.cpp.cc
 */
 
-
+#include <utility>
 #include "exceptions/AttributeNotFoundException.hpp"
 #include "exceptions/ParsingException.hpp"
 #include "Node.hpp"
 
+myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
+                    std::string data) 
+    : _parent(parent), _tag(std::move(tag)), _data(std::move(data))
+{}
+
+myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
+                    std::vector<std::shared_ptr<Node>> children)
+        : _parent(parent), _tag(std::move(tag)), _children(std::move(children))
+{}
+
 myxmlpp::Node::Node(myxmlpp::Node *parent, const std::string &tag,
-                    const std::string &data) {
+                    std::vector<std::shared_ptr<Attribute>> attributes,
+                    std::vector<std::shared_ptr<Node>> children) 
+{}
 
+myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str, std::string &remaining) 
+        : _parent(parent)
+{
+    _parseNodeString(str, remaining);
 }
 
-myxmlpp::Node::Node(myxmlpp::Node *parent, const std::string &tag,
-                    std::vector<Node *> children) {
-
-}
-
-myxmlpp::Node::Node(myxmlpp::Node *parent, const std::string &tag,
-                    std::vector<Attribute *> attributes,
-                    std::vector<Node *> children) {
-
-}
-
-myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str, std::string &remaining) : _parent(parent) {
-    parseNodeString(str, remaining);
-}
-
-myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str) : _parent(parent) {
+myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str) 
+        : _parent(parent)
+{
     std::string remaining = str;
-    
-    parseNodeString(str, remaining);
+
+    _parseNodeString(str, remaining);
     if (!remaining.empty())
-        throw myxmlpp::ParsingException(remaining, MYXMLPP_ERROR_LOCATION, "bullshit in file");
+        throw myxmlpp::ParsingException(remaining, MYXMLPP_ERROR_LOCATION, "non matching characters in file");
 }

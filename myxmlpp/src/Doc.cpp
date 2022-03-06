@@ -17,12 +17,19 @@
 namespace fs = std::filesystem;
 using fs::status;
 
-myxmlpp::Doc::Doc(const std::string& filepath, bool keepOpen){
-    readFile(filepath, keepOpen);
-    _root = std::unique_ptr<Node>(new Node(nullptr, _content));
+void myxmlpp::Doc::_throwOpenError(const std::string &filepath,
+                                   bool keepOpen)
+{
+    if (!fs::exists(filepath))
+        throw NoFileException(filepath, MYXMLPP_ERROR_LOCATION);
+    else if ((keepOpen && ((status(filepath).permissions() & (fs::perms::others_read | fs::perms::others_write)) != (fs::perms::others_read | fs::perms::others_write)))
+             || (!keepOpen && ((status(filepath).permissions() & fs::perms::others_read) == fs::perms::none)))
+        throw PermissionDeniedException(filepath, MYXMLPP_ERROR_LOCATION);
+    throw myxmlpp::FileException(filepath, MYXMLPP_ERROR_LOCATION,
+                                 "Cannot open file");
 }
 
-void myxmlpp::Doc::readFile(const std::string& filepath, bool keepOpen) {
+void myxmlpp::Doc::_readFile(const std::string& filepath, bool keepOpen) {
     _filepath = filepath;
     std::stringstream strStream;
     _file.exceptions(std::ios::badbit | std::ios::failbit);
@@ -31,13 +38,7 @@ void myxmlpp::Doc::readFile(const std::string& filepath, bool keepOpen) {
         _file.open(filepath.c_str(),
                    keepOpen ? std::ios::in | std::ios::out : std::ios::in);
     } catch (const std::ios_base::failure& e) {
-        if (!fs::exists(filepath))
-            throw NoFileException(filepath, MYXMLPP_ERROR_LOCATION);
-        else if ((keepOpen && ((status(filepath).permissions() & (fs::perms::others_read | fs::perms::others_write)) != (fs::perms::others_read | fs::perms::others_write)))
-                || (!keepOpen && ((status(filepath).permissions() & fs::perms::others_read) == fs::perms::none)))
-            throw PermissionDeniedException(filepath, MYXMLPP_ERROR_LOCATION);
-        throw myxmlpp::FileException(filepath, MYXMLPP_ERROR_LOCATION,
-                                     "Cannot open file");
+        _throwOpenError(filepath, keepOpen);
     }        
     strStream << _file.rdbuf();
     _content = strStream.str();
@@ -45,10 +46,19 @@ void myxmlpp::Doc::readFile(const std::string& filepath, bool keepOpen) {
         _file.close();
 }
 
+myxmlpp::Doc::Doc(const std::string& filepath, bool keepOpen){
+    _readFile(filepath, keepOpen);
+    _root = std::make_shared<Node>(nullptr, _content);
+}
+
 const std::string &myxmlpp::Doc::getFilepath() const {
     return _filepath;
 }
 
-void myxmlpp::Doc::setMFilepath(const std::string &m_filepath) {
-    _filepath = m_filepath;
+void myxmlpp::Doc::setFilepath(const std::string &filepath) {
+    _filepath = filepath;
+}
+
+std::shared_ptr<myxmlpp::Node> myxmlpp::Doc::getRoot() const {
+    return _root;
 }

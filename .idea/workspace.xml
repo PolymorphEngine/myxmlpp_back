@@ -3,37 +3,30 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="myxmlpp" targetName="myxmlpp" />
+      <config projectName="myxmlpp" targetName="myxmlpp.a" />
+      <config projectName="myxmlpp" targetName="myxmlppexec" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
-    </configurations>
+    <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[refactor] unified common code of Node constructors">
+    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[refactor] unified properties prefix">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Untitled Diagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/Untitled Diagram.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/AttributeNotFoundException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/AttributeNotFoundException.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/FileException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/FileException.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/IllegalValueException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/IllegalValueException.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/NoFileException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/NoFileException.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/NodeNotFoundException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/NodeNotFoundException.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/ParsingException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/ParsingException.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/exceptions/PermissionDeniedException.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/exceptions/PermissionDeniedException.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Doxyfile" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Doxyfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Doc.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Doc.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Attribute.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Attribute.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myxmlpp/src/Doc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Doc.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/AttributeNotFoundException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/AttributeNotFoundException.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/FileException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/FileException.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/IllegalValueException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/IllegalValueException.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/NoFileException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/NoFileException.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/NodeNotFoundException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/NodeNotFoundException.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/ParsingException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/ParsingException.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/exceptions/PermissionDeniedException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/exceptions/PermissionDeniedException.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/test.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/Node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/Node_addChild.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/Node_addChild.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/Node_attribute.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/Node_attribute.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/Node_parseUtils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/Node_parseUtils.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/tests/test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +50,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/myxmlpp/include/AttributeGlobal.hpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myxmlpp/include/exceptions/PermissionDeniedException.hpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myxmlpp/src/Doc.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myxmlpp/include/exceptions/NoFileException.hpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myxmlpp/tests/test.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myxmlpp/include/Node.hpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myxmlpp/src/Node/Node.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/myxmlpp/src/Doc.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myxmlpp/src/exceptions/NoFileException.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myxmlpp/src/exceptions/PermissionDeniedException.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myxmlpp/include/Doc.hpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/noRights.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -86,7 +85,7 @@
     <property name="cmake.loaded.for.project" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -94,14 +93,14 @@
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node/find" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/myxmlpp/tests" />
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node/delete/rm" />
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node/delete/pop" />
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node/remove" />
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node" />
-      <recent name="$PROJECT_DIR$/myxmlpp/include/exceptions" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="CMake Application.myxmlppexec">
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -112,12 +111,23 @@
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="myxmlpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="myxmlpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myxmlpp" RUN_TARGET_NAME="myxmlpp">
+    <configuration name="myxmlpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="myxmlpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_generateDoc" />
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="myxmlppexec" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="myxmlppexec" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myxmlpp" RUN_TARGET_NAME="myxmlppexec">
+      <method v="2">
+        <option name="CMake.Explicit.Target" predefinedTargetName="myxmlpp" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_generateDoc" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.myxmlpp" />
+      <item itemvalue="CMake Application.myxmlppexec" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -156,7 +166,7 @@
       <workItem from="1646163487383" duration="1198000" />
       <workItem from="1646297000600" duration="7832000" />
       <workItem from="1646315666515" duration="72000" />
-      <workItem from="1646322299285" duration="19096000" />
+      <workItem from="1646322299285" duration="31226000" />
     </task>
     <task id="LOCAL-00001" summary="[add] remaining method of Node class">
       <created>1641329356468</created>
@@ -207,7 +217,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646432158530</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[refactor] refactored error messages of exceptions">
+      <created>1646490086629</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1646490086629</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[refactor] unified properties prefix">
+      <created>1646490631670</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1646490631670</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,45 +256,17 @@
     <MESSAGE value="[fix] changed every exposed pointer to smart pointer" />
     <MESSAGE value="[refactor] added method to perform regex in a unique place" />
     <MESSAGE value="[refactor] unified common code of Node constructors" />
-    <option name="LAST_COMMIT_MESSAGE" value="[refactor] unified common code of Node constructors" />
+    <MESSAGE value="[refactor] refactored error messages of exceptions" />
+    <MESSAGE value="[refactor] unified properties prefix" />
+    <option name="LAST_COMMIT_MESSAGE" value="[refactor] unified properties prefix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/myxmlpp/src/Doc.cpp</url>
-          <line>22</line>
+          <line>51</line>
           <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/Doc.cpp</url>
-          <line>33</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/Doc.cpp</url>
-          <line>34</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/Doc.cpp</url>
-          <line>38</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/NoFileException.cpp</url>
-          <line>19</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/NoFileException.cpp</url>
-          <line>17</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/NoFileException.cpp</url>
-          <line>18</line>
-          <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/FileException.cpp</url>
@@ -308,8 +304,8 @@
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/test.cpp</url>
-          <line>57</line>
+          <url>file://$PROJECT_DIR$/myxmlpp/tests/test.cpp</url>
+          <line>60</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>

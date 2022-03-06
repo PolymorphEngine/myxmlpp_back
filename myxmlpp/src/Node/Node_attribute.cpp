@@ -18,14 +18,17 @@ std::shared_ptr<myxmlpp::Attribute> myxmlpp::Node::findAttribute(const std::stri
     throw myxmlpp::AttributeNotFoundException(key, MYXMLPP_ERROR_LOCATION);
 }
 
-void myxmlpp::Node::addAttribute(const std::string& key,
-                                 const std::string& value) {
+std::shared_ptr<myxmlpp::Attribute> myxmlpp::Node::addAttribute(
+        const std::string& key,
+        const std::string& value) 
+{
     auto toAdd = std::make_shared<Attribute>(key, value);
 
     _attributes.push_back(toAdd);
+    return toAdd;
 }
 
-void myxmlpp::Node::addAttribute(std::shared_ptr<Attribute> attr) {
+void myxmlpp::Node::addAttribute(const std::shared_ptr<Attribute>& attr) {
     _attributes.push_back(attr);
 }
 
@@ -53,8 +56,8 @@ unsigned int myxmlpp::Node::getNbAttributes() const {
 unsigned int myxmlpp::Node::getNbAttributesR() const {
     size_t total = _attributes.size();
 
-    for (auto it = _children.begin(); it != _children.end(); ++it)
-        total += (*it)->getNbAttributesR();
+    for (const auto & it : _children)
+        total += it->getNbAttributesR();
     return total;
 }
 

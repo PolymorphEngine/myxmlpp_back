@@ -32,4 +32,5 @@
 *.app
 
 docs/doxygen/**
-cmake-build-debug
+myxmlpp/build*
+myxmlppexec

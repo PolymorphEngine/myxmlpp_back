@@ -35,24 +35,57 @@ namespace myxmlpp {
              */
             std::fstream _file;
             
-            std::unique_ptr<Node> _root;
+            /*
+             * The ml root tag
+             */
+            std::shared_ptr<Node> _root;
+            
+            /**
+             * Check commons file openning errors and throw the correct exception
+             * @throws NoFileException if the required file does not exists
+             * @throws PermissionDeniedException if there is not enough permissions to work with the file
+             * @throws FileException Default exception for other errors
+             */
+             static void _throwOpenError(const std::string &filepath, 
+                                  bool keepOpen) ;
 
             /**
+             * Open the file and put its content to _content property
              * @param filepath path of the xml file
              * @param keepOpen keep the file stream opened
+             * @copydetails _throwOpenError
              */
-            void readFile(const std::string& filepath, bool keepOpen);
+            void _readFile(const std::string& filepath, bool keepOpen);
 
         public:
             /**
              * Constructor by filepath
              * @param filepath path to the xml file 
              * @param keepOpen keep the file stream opened
+             * @throws NoFileException if the required file does not exists
+             * @throws PermissionDeniedException if ther is not enough permissions to work with the file
+             * @throws FileException Default exception for other errors
+             * @throws ParsingException If the file is not correctly formatted
              */
             Doc(const std::string& filepath, bool keepOpen = false);
             
+            /**
+             * Get the current filepath
+             * @returns the current filepath
+             */
             const std::string &getFilepath() const;
-            void setMFilepath(const std::string &m_filepath);
+            
+            /**
+             * Set the filepath
+             * @param filepath the new filepath 
+             */
+            void setFilepath(const std::string &filepath);
+            
+            /**
+             * Get the root node of the document.
+             * @return the XML root node 
+             */
+            std::shared_ptr<Node> getRoot() const;
     };
 
 }

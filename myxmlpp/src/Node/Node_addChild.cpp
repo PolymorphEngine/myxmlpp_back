@@ -5,9 +5,11 @@
 ** Node_addChild.cpp
 */
 
+#include <utility>
+
 #include "Node.hpp"
 
-void myxmlpp::Node::addChild(std::shared_ptr<Node> child) {
+void myxmlpp::Node::addChild(const std::shared_ptr<Node>& child) {
     _children.push_back(child);
 }
 

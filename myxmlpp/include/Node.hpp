@@ -121,19 +121,18 @@ namespace myxmlpp {
             void _checkEndOfNode(std::string &str, std::string &remaining);
 
             /**
-             * Private method to create a node by parsing a xml file in string format.
+             * Private constructor to create a node by parsing a xml file in string format.
              * @param str the source string.
-             * The beginning of the string should be the beginning of the node.
-             * @return the created node.
+             * @param remaining the remaining characters that could not be parsed
              */
             explicit Node(Node *parent, std::string& str, std::string &remaining);
             
-            void parseNodeString(std::string &str, std::string &remaining);
+            void _parseNodeString(std::string &str, std::string &remaining);
             
-            static bool performRegex(std::smatch &matches,
-                                     std::string &regexStr, 
-                                     std::string &str, 
-                                     std::string *remaining = nullptr);
+            static bool _performRegex(std::smatch &matches,
+                                      std::string &regexStr,
+                                      std::string &str,
+                                      std::string *remaining = nullptr);
 
         public:
             /**
@@ -145,8 +144,8 @@ namespace myxmlpp {
              * the two tags in a xml file.
              * @return the created node.
              */
-            Node(Node *parent, const std::string &tag,
-                 const std::string& data="");
+            Node(Node *parent, std::string tag,
+                 std::string  data="");
 
             /**
              * Method to create a node with its tag and its children.
@@ -156,8 +155,8 @@ namespace myxmlpp {
              * @param children a vector with the children nodes.
              * @return the created node.
              */
-            Node(Node *parent, const std::string &tag,
-                 std::vector<Node *> children);
+            Node(Node *parent, std::string tag,
+                 std::vector<std::shared_ptr<Node>> children);
 
             /**
              * Method to create a node with its tag, children and attributes.
@@ -169,33 +168,55 @@ namespace myxmlpp {
              * @return the created node.
              */
             Node(Node *parent, const std::string &tag,
-                 std::vector<Attribute *> attributes,
-                 std::vector<Node *> children = std::vector<Node *>());
+                 std::vector<std::shared_ptr<Attribute>> attributes,
+                 std::vector<std::shared_ptr<Node>> children = {});
 
             /**
              * Method to create a node by parsing a xml file in string format.
              * @param str the source string.
-             * The beginning of the string should be the beginning of the node.
              * @return the created node.
+             * @throws ParsingException if parsing fails.
              */
             explicit Node(Node *parent, std::string& str);
 
+            /**
+             * @return the tag of the XML node
+             */
             std::string getTag() const;
 
+            /**
+             * @return the data of the xml node 
+             */
             std::string getData() const;
 
+            /**
+             * @returns a pointer to the XML parent node
+             */
             Node *getParent();
 
+            /**
+             * A method to change the tag of the XML node
+             * @param tag the new tag 
+             */
             void setTag(const std::string& tag);
 
+            /**
+             * A method to change the data of the XML node
+             * @param tag the new data 
+             */
             void setData(const std::string& data);
 
+            /**
+             * A method to change the parent of the XML node
+             * @param tag the new parent 
+             */
             void setParent(Node *parent);
 
             /**
              * Method to find an attribute by its name.
              * @param key key of the searched attribute
              * @return the found attribute
+             * @throws AttributeNotFoundException if the attribute is not found
              */
             std::shared_ptr<Attribute> findAttribute(const std::string& key);
 
@@ -203,15 +224,15 @@ namespace myxmlpp {
              * Method to add an attribute to a node by passing a pointer
              * @param attr pointer to the created attribute
              */
-            void addAttribute(std::shared_ptr<Attribute> attr);
+            void addAttribute(const std::shared_ptr<Attribute>& attr);
 
             /**
              * Method to add an attribute to a node,
              * this will dynamically allocate an attribute
-             * @param key
-             * @param value
+             * @param key the key of the attribute
+             * @param value the value of the attribute
              */
-            void addAttribute(const std::string& key, const std::string& value);
+            std::shared_ptr<Attribute> addAttribute(const std::string& key, const std::string& value);
 
             /**
              * Remove from the attributes list and delete the attribute object
@@ -221,13 +242,13 @@ namespace myxmlpp {
 
             /**
              * Only remove the object from the attributes list
-             * @param key tag of the attribute to pop
+             * @param key key of the attribute to pop
              */
             std::shared_ptr<Attribute> popAttribute(const std::string& key);
 
             /**
-             * Method to find a child node by its tag (return the first
-             * matched). This method will return the first matched node
+             * Method to find a child node by its tag.
+             * This method will return the first matched node
              * @param tag tag of the child to find
              * @return A pointer to the matched node
              */
@@ -258,8 +279,8 @@ namespace myxmlpp {
 
             /**
              * Method to find a child node by a given path. The path is name
-             * tags separated by a slash. This method will return the first
-             * matched node
+             * tags separated by a slash. The last tag name if the tag of 
+             * the node to find This method will return the first matched node
              * @param path the path relative to the current node
              * @param delimiter the separator used in path to delimit nodes
              * @return A pointer to the matched node
@@ -323,7 +344,7 @@ namespace myxmlpp {
              * Method to add a Node to the children list
              * @param child the Node to add
              */
-            void addChild(std::shared_ptr<Node> child);
+            void addChild(const std::shared_ptr<Node>& child);
 
             /**
              * Method to add children nodes to the children list.
@@ -551,6 +572,10 @@ namespace myxmlpp {
              */
             bool fullEmpty() const;
 
+            /**
+             * Move the current node as a child of the provided node
+             * @param newParent the future parent node 
+             */
             void move(Node &newParent);
     };
 }
