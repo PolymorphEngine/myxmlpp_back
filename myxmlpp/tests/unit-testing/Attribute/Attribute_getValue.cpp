@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include "Attribute.hpp"
 
-Test(kappa, simple)
+Test(Attribute_getValue, simple)
 {
     std::string k = "key";
     std::string v = "value";

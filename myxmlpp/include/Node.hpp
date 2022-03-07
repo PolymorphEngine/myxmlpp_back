@@ -118,6 +118,7 @@ namespace myxmlpp {
             void _extractAttributes(std::string &str);
             
             static bool _isEndOfNode(std::string &str);
+            
             void _checkEndOfNode(std::string &str, std::string &remaining);
 
             /**
