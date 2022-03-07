@@ -12,8 +12,15 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add] Node findChild unit test">
+    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add|fix] Node findChildrenR unit tests and fixed method">
+      <change afterPath="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildrenR/manyLevels.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildrenR/noChildren.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildrenR/oneLevel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Node/Node_findChildrenR.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/tests/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/tests/test.cpp" afterDir="false" />
     </list>
     <list id="f827e104-2762-43de-ae81-f19c93c47d50" name="Changes by mindblower78" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,16 +79,16 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Node" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Node" />
+      <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildrenR" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Attribute" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/myxmlpp/src/Node/find" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
@@ -165,7 +172,7 @@
       <workItem from="1646315666515" duration="72000" />
       <workItem from="1646322299285" duration="38806000" />
       <workItem from="1646659606171" duration="621000" />
-      <workItem from="1646660229507" duration="3250000" />
+      <workItem from="1646660229507" duration="6895000" />
     </task>
     <task id="LOCAL-00001" summary="[add] remaining method of Node class">
       <created>1641329356468</created>
@@ -279,7 +286,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646663329272</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="[add] Node findChildren unit tests">
+      <created>1646664747648</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1646664747648</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[add|fix] Node findChildrenR unit tests and fixed method">
+      <created>1646668287389</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1646668287389</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,55 +334,117 @@
     <MESSAGE value="[add] Attribute getValueFloat unit tests" />
     <MESSAGE value="[add] Attribute getValueBool unit tests" />
     <MESSAGE value="[add] Node findChild unit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] Node findChild unit test" />
+    <MESSAGE value="[add] Node findChildren unit tests" />
+    <MESSAGE value="[add|fix] Node findChildrenR unit tests and fixed method" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add|fix] Node findChildrenR unit tests and fixed method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/Doc.cpp</url>
-          <line>51</line>
-          <option name="timeStamp" value="40" />
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>34</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/FileException.cpp</url>
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>38</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>36</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>37</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>39</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>40</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>13</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>16</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>15</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>17</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>18</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>19</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>20</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>21</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>22</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
           <line>23</line>
-          <option name="timeStamp" value="52" />
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/FileException.cpp</url>
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
           <line>24</line>
-          <option name="timeStamp" value="53" />
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/FileException.cpp</url>
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
           <line>25</line>
-          <option name="timeStamp" value="54" />
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp</url>
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
+          <line>26</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
           <line>27</line>
-          <option name="timeStamp" value="55" />
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp</url>
+          <url>file://$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp</url>
           <line>28</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp</url>
-          <line>29</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/src/exceptions/Exception.cpp</url>
-          <line>30</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/myxmlpp/tests/test.cpp</url>
-          <line>60</line>
-          <option name="timeStamp" value="59" />
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

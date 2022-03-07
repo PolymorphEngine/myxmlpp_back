@@ -49,11 +49,6 @@ namespace myxmlpp {
                                                      const std::string &tag,
                                                      int depth);
 
-            void _findChildrenRecursiveLoopCall(Node *current,
-                                                std::vector<std::shared_ptr<Node>> *children,
-                                                const std::string &tag,
-                                                int depth);
-
             static std::shared_ptr<Node> _popChildRecursiveLoopCall(
                     Node *current,
                     const std::string &tag,
@@ -72,20 +67,10 @@ namespace myxmlpp {
                                                    const std::string &tag,
                                                    int depth);
 
-            /**
-             * Method that will be recursively called to find children for
-             * findChildrenR public method. This method will return all
-             * matched nodes
-             * @param current the node to search in
-             * @param children the result list to push matched nodes
-             * @param tag the tag of the node to find
-             * @param depth the actual depth
-             * @return the found node
-             */
-            void _findChildrenRecursiveCalled(Node *current,
-                                              std::vector<std::shared_ptr<Node>> *children,
-                                              const std::string &tag,
-                                              int depth);
+            void _findChildrenRecursive(std::vector<std::shared_ptr<Node>> *children,
+                                        const std::string &tag,
+                                        int depth);
+
 
             static std::shared_ptr<Node> _popChildRecursiveCalled(
                     Node *current,

@@ -8,29 +8,25 @@
 #include "Node.hpp"
 #include "NodeNotFoundException.hpp"
 
-void myxmlpp::Node::_findChildrenRecursiveLoopCall(Node *current,
-                                                   std::vector<std::shared_ptr<Node>> *children,
-                                                   const std::string &tag,
-                                                   int depth) {
-    for (auto & it : current->_children) {
-        try {
-            _findChildrenRecursiveCalled(it.get(), children, tag, depth - 1);
-        } catch (NodeNotFoundException &e2) {}
-    }
-    throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
-}
-
-void myxmlpp::Node::_findChildrenRecursiveCalled(Node *current,
-                                                 std::vector<std::shared_ptr<Node>> *children,
-                                                 const std::string &tag,
-                                                 int depth) {
+void myxmlpp::Node::_findChildrenRecursive(std::vector<std::shared_ptr<Node>> *children,
+                                           const std::string &tag,
+                                           int depth) {
+    bool found = false;
+    
+    if (!depth)
+        throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
     try {
-        current->findChildren(tag, children);
-    } catch (NodeNotFoundException& e) {
-        if (depth != 0)
-            _findChildrenRecursiveCalled(current, children, tag, depth);
-        throw;
+        findChildren(tag, children);
+        found = true;
+    } catch (NodeNotFoundException& e) {}
+    for (const auto& c : _children) {
+        try {
+            c->_findChildrenRecursive(children, tag, depth - 1);
+            found = true;
+        } catch (NodeNotFoundException& e) {}
     }
+    if (!found)
+        throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
 }
 
 std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::findChildrenR(
@@ -38,6 +34,11 @@ std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::findChildrenR(
         int maxDepth) {
     std::vector<std::shared_ptr<Node>> children;
 
-    _findChildrenRecursiveLoopCall(this, &children, tag, maxDepth);
+    try {
+        _findChildrenRecursive(&children, tag, maxDepth > 1 ? maxDepth - 1 : maxDepth);
+    } catch (NodeNotFoundException& e) {
+        if (maxDepth > 0 || maxDepth == -1)
+            throw;
+    }
     return children;
 }
