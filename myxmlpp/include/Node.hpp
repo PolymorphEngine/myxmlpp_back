@@ -136,16 +136,13 @@ namespace myxmlpp {
 
         public:
             /**
-             * Method to create a node with its tag and optionally data.
+             * Method to create a node with its tag.
              * @param parent parent of the node.
              * Can be set to null if the node has not parent
              * @param tag the tag of the node.
-             * @param data the data which is a string between
-             * the two tags in a xml file.
              * @return the created node.
              */
-            Node(Node *parent, std::string tag,
-                 std::string  data="");
+            Node(Node *parent);
 
             /**
              * Method to create a node with its tag and its children.

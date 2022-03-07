@@ -10,9 +10,8 @@
 #include "exceptions/ParsingException.hpp"
 #include "Node.hpp"
 
-myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
-                    std::string data) 
-    : _parent(parent), _tag(std::move(tag)), _data(std::move(data))
+myxmlpp::Node::Node(myxmlpp::Node *parent) 
+    : _parent(parent)
 {}
 
 myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
