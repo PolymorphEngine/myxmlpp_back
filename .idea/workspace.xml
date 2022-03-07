@@ -12,8 +12,10 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add] Node findChild unit test">
+    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add] Node findChildren unit tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp" afterDir="false" />
     </list>
     <list id="f827e104-2762-43de-ae81-f19c93c47d50" name="Changes by mindblower78" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,16 +74,16 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Node" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Node" />
+      <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildrenR" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Attribute" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/myxmlpp/src/Node/find" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
@@ -165,7 +167,7 @@
       <workItem from="1646315666515" duration="72000" />
       <workItem from="1646322299285" duration="38806000" />
       <workItem from="1646659606171" duration="621000" />
-      <workItem from="1646660229507" duration="3250000" />
+      <workItem from="1646660229507" duration="5965000" />
     </task>
     <task id="LOCAL-00001" summary="[add] remaining method of Node class">
       <created>1641329356468</created>
@@ -279,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646663329272</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="[add] Node findChildren unit tests">
+      <created>1646664747648</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1646664747648</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,7 +322,8 @@
     <MESSAGE value="[add] Attribute getValueFloat unit tests" />
     <MESSAGE value="[add] Attribute getValueBool unit tests" />
     <MESSAGE value="[add] Node findChild unit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] Node findChild unit test" />
+    <MESSAGE value="[add] Node findChildren unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] Node findChildren unit tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
