@@ -12,17 +12,10 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add] Attribute getValueBool unit tests">
+    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add] Node findChild unit test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/tests/files/clean.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Attribute/Attribute_getValue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Attribute/Attribute_getValue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/tests/files/test.xml" afterDir="false" />
     </list>
-    <list id="f827e104-2762-43de-ae81-f19c93c47d50" name="Changes by mindblower78" comment="">
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Attribute.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Attribute.cpp" afterDir="false" />
-    </list>
+    <list id="f827e104-2762-43de-ae81-f19c93c47d50" name="Changes by mindblower78" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,22 +72,23 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Attribute" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node/find" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildren" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests/files" />
       <recent name="$PROJECT_DIR$/myxmlpp/tests" />
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node/delete/rm" />
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node/delete/pop" />
-      <recent name="$PROJECT_DIR$/myxmlpp/src/Node/remove" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.unit-tests">
@@ -171,7 +165,7 @@
       <workItem from="1646315666515" duration="72000" />
       <workItem from="1646322299285" duration="38806000" />
       <workItem from="1646659606171" duration="621000" />
-      <workItem from="1646660229507" duration="1970000" />
+      <workItem from="1646660229507" duration="3250000" />
     </task>
     <task id="LOCAL-00001" summary="[add] remaining method of Node class">
       <created>1641329356468</created>
@@ -278,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646660942178</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="[add] Node findChild unit test">
+      <created>1646663329272</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1646663329272</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,7 +312,8 @@
     <MESSAGE value="[add] Attribute getValueInt unit tests" />
     <MESSAGE value="[add] Attribute getValueFloat unit tests" />
     <MESSAGE value="[add] Attribute getValueBool unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] Attribute getValueBool unit tests" />
+    <MESSAGE value="[add] Node findChild unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] Node findChild unit test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
