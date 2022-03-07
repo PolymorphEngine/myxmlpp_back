@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
+      <config projectName="myxmlpp" targetName="unit-tests" />
       <config projectName="myxmlpp" targetName="myxmlpp" />
       <config projectName="myxmlpp" targetName="myxmlpp.a" />
       <config projectName="myxmlpp" targetName="myxmlppexec" />
@@ -11,22 +12,11 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[refactor] unified properties prefix">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add] all doxygen comments on public methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Untitled Diagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/Untitled Diagram.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Doxyfile" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Doxyfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Attribute.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Doc.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Doc.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Attribute.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Attribute.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Doc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Doc.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/Node_addChild.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/Node_addChild.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/Node_attribute.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/Node_attribute.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/Node_parseUtils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/Node_parseUtils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/tests/test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +74,12 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Attribute" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Attribute" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node/find" />
     </key>
@@ -100,15 +91,15 @@
       <recent name="$PROJECT_DIR$/myxmlpp/src/Node" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.myxmlppexec">
+  <component name="RunManager" selected="CMake Application.unit-tests">
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="myxmlpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="myxmlpp" CONFIG_NAME="Debug">
@@ -124,9 +115,15 @@
         <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_generateDoc" />
       </method>
     </configuration>
+    <configuration name="unit-tests" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="unit-tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myxmlpp" RUN_TARGET_NAME="unit-tests">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake Application.myxmlpp" />
       <item itemvalue="CMake Application.myxmlppexec" />
+      <item itemvalue="CMake Application.unit-tests" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -166,7 +163,8 @@
       <workItem from="1646163487383" duration="1198000" />
       <workItem from="1646297000600" duration="7832000" />
       <workItem from="1646315666515" duration="72000" />
-      <workItem from="1646322299285" duration="31226000" />
+      <workItem from="1646322299285" duration="38806000" />
+      <workItem from="1646659606171" duration="621000" />
     </task>
     <task id="LOCAL-00001" summary="[add] remaining method of Node class">
       <created>1641329356468</created>
@@ -231,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646490631670</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="[add] all doxygen comments on public methods">
+      <created>1646591262983</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1646591262983</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,7 +263,8 @@
     <MESSAGE value="[refactor] unified common code of Node constructors" />
     <MESSAGE value="[refactor] refactored error messages of exceptions" />
     <MESSAGE value="[refactor] unified properties prefix" />
-    <option name="LAST_COMMIT_MESSAGE" value="[refactor] unified properties prefix" />
+    <MESSAGE value="[add] all doxygen comments on public methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] all doxygen comments on public methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
