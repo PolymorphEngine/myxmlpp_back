@@ -13,7 +13,7 @@ jobs:
       - name: mkdir build folder
         run: mkdir -p myxmlpp/build
       - name: build unit test
-        run: cmake --build myxmlpp/build --targer unit-tests --parallel 2
+        run: cmake --build myxmlpp/build --target unit-tests --parallel 2
 
       -name: run tests
        run: cd myxmlpp && ./unit-tests
