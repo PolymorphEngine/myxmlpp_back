@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['getdata_0',['getData',['../classmyxmlpp_1_1Node.html#af7b5dbe8e5ba2b5fab3d2c1b72580485',1,'myxmlpp::Node']]],
+  ['getfilepath_1',['getFilepath',['../classmyxmlpp_1_1Doc.html#acdd9370c72f3dc5f7813fc559bb4b063',1,'myxmlpp::Doc']]],
+  ['getkey_2',['getKey',['../classmyxmlpp_1_1Attribute.html#aefc45c77a9b483f6ab9a46cdf491e19d',1,'myxmlpp::Attribute']]],
+  ['getnbattributes_3',['getNbAttributes',['../classmyxmlpp_1_1Node.html#aaa77b77138c4337e55ae874be7c55894',1,'myxmlpp::Node']]],
+  ['getnbattributesr_4',['getNbAttributesR',['../classmyxmlpp_1_1Node.html#afbc39c26eb9cf0371f1e70e16dcba52c',1,'myxmlpp::Node']]],
+  ['getnbchildren_5',['getNbChildren',['../classmyxmlpp_1_1Node.html#af73e2dee439c6006b7f7be862dceeb3d',1,'myxmlpp::Node']]],
+  ['getnbchildrenr_6',['getNbChildrenR',['../classmyxmlpp_1_1Node.html#abfcf2927f3067720b0dc1ca4b8620193',1,'myxmlpp::Node']]],
+  ['getparent_7',['getParent',['../classmyxmlpp_1_1Node.html#a69b1e0c929a2fee8c0dbce5c23931054',1,'myxmlpp::Node']]],
+  ['getroot_8',['getRoot',['../classmyxmlpp_1_1Doc.html#a29af1aa2a0af1e049aaa07dc5c3366c9',1,'myxmlpp::Doc']]],
+  ['gettag_9',['getTag',['../classmyxmlpp_1_1Node.html#a90053eb57876395e863532829cc955ff',1,'myxmlpp::Node']]],
+  ['getvalue_10',['getValue',['../classmyxmlpp_1_1Attribute.html#a997ac70688b3544983e40ef2193bc0fc',1,'myxmlpp::Attribute']]],
+  ['getvaluebool_11',['getValueBool',['../classmyxmlpp_1_1Attribute.html#a369e0b8a66f48f2b7ffc5aa6c02d80b0',1,'myxmlpp::Attribute']]],
+  ['getvaluefile_12',['getValueFile',['../classmyxmlpp_1_1Attribute.html#a1516a9d314476364d76326211c37043a',1,'myxmlpp::Attribute']]],
+  ['getvaluefloat_13',['getValueFloat',['../classmyxmlpp_1_1Attribute.html#ad2d726c1266f6345985c13fd79da3df1',1,'myxmlpp::Attribute']]],
+  ['getvalueint_14',['getValueInt',['../classmyxmlpp_1_1Attribute.html#a0596730263a274eb904ae28ffc5a0d68',1,'myxmlpp::Attribute']]],
+  ['getvaluexmldoc_15',['getValueXmlDoc',['../classmyxmlpp_1_1Attribute.html#afcb0ec6559249bab694c805726cc9994',1,'myxmlpp::Attribute']]]
+];
