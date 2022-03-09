@@ -1,9 +1,9 @@
 var classmyxmlpp_1_1Node =
 [
     [ "Node", "classmyxmlpp_1_1Node.html#a39d20be91d531273f6d66a5b6cff0cf8", null ],
-    [ "Node", "classmyxmlpp_1_1Node.html#a410b7583e165bea181d485580de172e8", null ],
-    [ "Node", "classmyxmlpp_1_1Node.html#a37d0e6163fc6376b032e0094bb66f326", null ],
-    [ "Node", "classmyxmlpp_1_1Node.html#ad2f1407a64fbb09ef7cb4cebc955450a", null ],
+    [ "Node", "classmyxmlpp_1_1Node.html#a88767e53f5ae9ffa2b1045768342f0de", null ],
+    [ "Node", "classmyxmlpp_1_1Node.html#a19cac8aeeca899c3111b61a89a2c73e6", null ],
+    [ "Node", "classmyxmlpp_1_1Node.html#a8a1658a01fc9eb597a4333177eeec440", null ],
     [ "Node", "classmyxmlpp_1_1Node.html#a9eb6a8268e2f2c2c5c9fab99eef16e9c", null ],
     [ "addAttribute", "classmyxmlpp_1_1Node.html#a9809fc7a2d03d71bc78f9d85c1731af2", null ],
     [ "addAttribute", "classmyxmlpp_1_1Node.html#ae91702069921a08b4d144e9840657827", null ],

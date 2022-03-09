@@ -98,12 +98,12 @@ $(document).ready(function(){initNavTree('classmyxmlpp_1_1Node.html',''); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a410b7583e165bea181d485580de172e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a410b7583e165bea181d485580de172e8">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent)</td></tr>
-<tr class="separator:a410b7583e165bea181d485580de172e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d0e6163fc6376b032e0094bb66f326"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a37d0e6163fc6376b032e0094bb66f326">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent, std::string tag, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> &gt; &gt; children)</td></tr>
-<tr class="separator:a37d0e6163fc6376b032e0094bb66f326"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2f1407a64fbb09ef7cb4cebc955450a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#ad2f1407a64fbb09ef7cb4cebc955450a">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent, std::string tag, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Attribute.html">Attribute</a> &gt; &gt; attributes, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> &gt; &gt; children={})</td></tr>
-<tr class="separator:ad2f1407a64fbb09ef7cb4cebc955450a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88767e53f5ae9ffa2b1045768342f0de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a88767e53f5ae9ffa2b1045768342f0de">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent) noexcept</td></tr>
+<tr class="separator:a88767e53f5ae9ffa2b1045768342f0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19cac8aeeca899c3111b61a89a2c73e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a19cac8aeeca899c3111b61a89a2c73e6">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent, std::string tag, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> &gt; &gt; children) noexcept</td></tr>
+<tr class="separator:a19cac8aeeca899c3111b61a89a2c73e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1658a01fc9eb597a4333177eeec440"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a8a1658a01fc9eb597a4333177eeec440">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent, std::string tag, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Attribute.html">Attribute</a> &gt; &gt; attributes, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> &gt; &gt; children={}) noexcept</td></tr>
+<tr class="separator:a8a1658a01fc9eb597a4333177eeec440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eb6a8268e2f2c2c5c9fab99eef16e9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a9eb6a8268e2f2c2c5c9fab99eef16e9c">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent, std::string &amp;str)</td></tr>
 <tr class="separator:a9eb6a8268e2f2c2c5c9fab99eef16e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90053eb57876395e863532829cc955ff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a90053eb57876395e863532829cc955ff">getTag</a> () const noexcept</td></tr>
@@ -306,11 +306,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a410b7583e165bea181d485580de172e8" name="a410b7583e165bea181d485580de172e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a410b7583e165bea181d485580de172e8">&#9670;&nbsp;</a></span>Node() <span class="overload">[2/5]</span></h2>
+<a id="a88767e53f5ae9ffa2b1045768342f0de" name="a88767e53f5ae9ffa2b1045768342f0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88767e53f5ae9ffa2b1045768342f0de">&#9670;&nbsp;</a></span>Node() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">myxmlpp::Node::Node </td>
@@ -320,6 +323,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p >Method to create a node with its tag. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -334,11 +342,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a37d0e6163fc6376b032e0094bb66f326" name="a37d0e6163fc6376b032e0094bb66f326"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37d0e6163fc6376b032e0094bb66f326">&#9670;&nbsp;</a></span>Node() <span class="overload">[3/5]</span></h2>
+<a id="a19cac8aeeca899c3111b61a89a2c73e6" name="a19cac8aeeca899c3111b61a89a2c73e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19cac8aeeca899c3111b61a89a2c73e6">&#9670;&nbsp;</a></span>Node() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">myxmlpp::Node::Node </td>
@@ -364,6 +375,11 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p >Method to create a node with its tag and its children. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -379,11 +395,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad2f1407a64fbb09ef7cb4cebc955450a" name="ad2f1407a64fbb09ef7cb4cebc955450a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2f1407a64fbb09ef7cb4cebc955450a">&#9670;&nbsp;</a></span>Node() <span class="overload">[4/5]</span></h2>
+<a id="a8a1658a01fc9eb597a4333177eeec440" name="a8a1658a01fc9eb597a4333177eeec440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1658a01fc9eb597a4333177eeec440">&#9670;&nbsp;</a></span>Node() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">myxmlpp::Node::Node </td>
@@ -415,6 +434,11 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p >Method to create a node with its tag, children and attributes. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1119,6 +1143,12 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00023">23</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
 
@@ -1194,6 +1224,12 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramname">children</td><td>a vector of <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> pointers to the children to add </td></tr>
     <tr><td class="paramname">path</td><td>the path relative to the future parent node </td></tr>
     <tr><td class="paramname">delimiter</td><td>the separator used in path to delimit nodes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
   </table>
   </dd>
 </dl>
@@ -1313,6 +1349,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the matched node </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2find_2Node__findChild_8cpp_source.html#l00012">12</a> of file <a class="el" href="src_2Node_2find_2Node__findChild_8cpp_source.html">Node_findChild.cpp</a>.</p>
 
@@ -1358,6 +1400,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the matched node </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2find_2Node__findChildByPath_8cpp_source.html#l00038">38</a> of file <a class="el" href="src_2Node_2find_2Node__findChildByPath_8cpp_source.html">Node_findChildByPath.cpp</a>.</p>
 
@@ -1396,6 +1444,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the matched node </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2find_2Node__findChildByPath_8cpp_source.html#l00049">49</a> of file <a class="el" href="src_2Node_2find_2Node__findChildByPath_8cpp_source.html">Node_findChildByPath.cpp</a>.</p>
 
@@ -1434,6 +1488,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the matched node </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2find_2Node__findChildR_8cpp_source.html#l00028">28</a> of file <a class="el" href="src_2Node_2find_2Node__findChildR_8cpp_source.html">Node_findChildR.cpp</a>.</p>
 
@@ -1461,6 +1521,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>tag list of all found nodes </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2find_2Node__findChildren_8cpp_source.html#l00012">12</a> of file <a class="el" href="src_2Node_2find_2Node__findChildren_8cpp_source.html">Node_findChildren.cpp</a>.</p>
 
@@ -1495,6 +1561,12 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">tag</td><td>tag of the nodes to find </td></tr>
     <tr><td class="paramname">node</td><td>list of all found nodes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
   </table>
   </dd>
 </dl>
@@ -1541,6 +1613,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the matched node </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2find_2Node__findChildrenByPath_8cpp_source.html#l00011">11</a> of file <a class="el" href="src_2Node_2find_2Node__findChildrenByPath_8cpp_source.html">Node_findChildrenByPath.cpp</a>.</p>
 
@@ -1579,6 +1657,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the matched node </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2find_2Node__findChildrenByPath_8cpp_source.html#l00020">20</a> of file <a class="el" href="src_2Node_2find_2Node__findChildrenByPath_8cpp_source.html">Node_findChildrenByPath.cpp</a>.</p>
 
@@ -1617,6 +1701,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the matched node </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classmyxmlpp_1_1NodeNotFoundException.html">NodeNotFoundException</a></td><td>when a node is not found </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2find_2Node__findChildrenR_8cpp_source.html#l00035">35</a> of file <a class="el" href="src_2Node_2find_2Node__findChildrenR_8cpp_source.html">Node_findChildrenR.cpp</a>.</p>
 
@@ -1943,7 +2033,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the popped node </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the popped node or a null pointer if node is not found </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2delete_2pop_2Node__popChild_8cpp_source.html#l00012">12</a> of file <a class="el" href="src_2Node_2delete_2pop_2Node__popChild_8cpp_source.html">Node_popChild.cpp</a>.</p>
 
@@ -1996,7 +2086,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the popped node </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the popped node or a null pointer if node is not found </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__popChildByPath_8cpp_source.html#l00011">11</a> of file <a class="el" href="Node__popChildByPath_8cpp_source.html">Node_popChildByPath.cpp</a>.</p>
 
@@ -2042,7 +2132,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the popped node </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the popped node or a null pointer if node is not found </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__popChildByPath_8cpp_source.html#l00023">23</a> of file <a class="el" href="Node__popChildByPath_8cpp_source.html">Node_popChildByPath.cpp</a>.</p>
 
@@ -2088,7 +2178,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the popped node </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the popped node or a null pointer if node is not found </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2delete_2pop_2Node__popChildR_8cpp_source.html#l00041">41</a> of file <a class="el" href="src_2Node_2delete_2pop_2Node__popChildR_8cpp_source.html">Node_popChildR.cpp</a>.</p>
 
@@ -2123,7 +2213,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes or an empty list if no node is found </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2delete_2pop_2Node__popChildren_8cpp_source.html#l00024">24</a> of file <a class="el" href="src_2Node_2delete_2pop_2Node__popChildren_8cpp_source.html">Node_popChildren.cpp</a>.</p>
 
@@ -2176,7 +2266,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes or an empty list if no node is found </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__popChildrenByPath_8cpp_source.html#l00011">11</a> of file <a class="el" href="Node__popChildrenByPath_8cpp_source.html">Node_popChildrenByPath.cpp</a>.</p>
 
@@ -2222,7 +2312,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes or an empty list if no node is found </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__popChildrenByPath_8cpp_source.html#l00024">24</a> of file <a class="el" href="Node__popChildrenByPath_8cpp_source.html">Node_popChildrenByPath.cpp</a>.</p>
 
@@ -2268,7 +2358,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes or an empty list if no node is found </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="src_2Node_2delete_2pop_2Node__popChildrenR_8cpp_source.html#l00029">29</a> of file <a class="el" href="src_2Node_2delete_2pop_2Node__popChildrenR_8cpp_source.html">Node_popChildrenR.cpp</a>.</p>
 
