@@ -16,6 +16,7 @@ jobs:
         run: sudo apt-get update && sudo add-apt-repository ppa:snaipewastaken/ppa && sudo apt-get update -y && sudo apt-get install -y criterion-dev
       - name: cmake build
         run: cmake -Bmyxmlpp/build -H.
+      - run : gcc -v
       - name: build unit test
         run: cmake --build myxmlpp/build --target unit-tests --parallel 2
       - name: run tests
