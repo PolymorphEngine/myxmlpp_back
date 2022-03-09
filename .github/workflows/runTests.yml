@@ -6,14 +6,14 @@ on:
 
 jobs:
   run-tests:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker
     steps:
       - uses: actions/checkout@v2
 
       - name: mkdir build folder
         run: mkdir -p myxmlpp/build
-      - name: install criterion
-        run: sudo apt-get install -y gcc && sudo add-apt-repository ppa:snaipewastaken/ppa && sudo apt-get update -y && sudo apt-get install -y criterion-dev
       - name: cmake build
         run: cmake -Bmyxmlpp/build -H.
       - run : gcc -v
