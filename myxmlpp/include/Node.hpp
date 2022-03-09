@@ -102,7 +102,7 @@ namespace myxmlpp {
              * @param tag the tag of the node.
              * @return the created node.
              */
-            Node(Node *parent);
+            Node(Node *parent) noexcept;
 
             /**
              * Method to create a node with its tag and its children.
@@ -113,7 +113,7 @@ namespace myxmlpp {
              * @return the created node.
              */
             Node(Node *parent, std::string tag,
-                 std::vector<std::shared_ptr<Node>> children);
+                 std::vector<std::shared_ptr<Node>> children) noexcept;
 
             /**
              * Method to create a node with its tag, children and attributes.
@@ -126,7 +126,7 @@ namespace myxmlpp {
              */
             Node(Node *parent, std::string tag,
                  std::vector<std::shared_ptr<Attribute>> attributes,
-                 std::vector<std::shared_ptr<Node>> children = {});
+                 std::vector<std::shared_ptr<Node>> children = {}) noexcept;
 
             /**
              * Method to create a node by parsing a xml file in string format.
@@ -212,6 +212,7 @@ namespace myxmlpp {
              * This method will return the first matched node
              * @param tag tag of the child to find
              * @return A pointer to the matched node
+             * @throws NodeNotFoundException when a node is not found
              */
             std::shared_ptr<Node> findChild(const std::string& tag) const;
 
@@ -222,6 +223,7 @@ namespace myxmlpp {
              * @param tag tag of the node to find
              * @param maxDepth [optionnal] max depth to search, no limit is -1
              * @return A pointer to the matched node
+             * @throws NodeNotFoundException when a node is not found
              */
             std::shared_ptr<Node>
             findChildR(const std::string& tag, int maxDepth=-1) const;
@@ -234,6 +236,7 @@ namespace myxmlpp {
              * @param tag tag of the node to find
              * @param delimiter the separator used in path to delimit nodes
              * @return A pointer to the matched node
+             * @throws NodeNotFoundException when a node is not found
              */
             std::shared_ptr<Node> findChildByPath(const std::string& path,
                                                   const std::string& tag,
@@ -246,6 +249,7 @@ namespace myxmlpp {
              * @param path the path relative to the current node
              * @param delimiter the separator used in path to delimit nodes
              * @return A pointer to the matched node
+             * @throws NodeNotFoundException when a node is not found
              */
             std::shared_ptr<Node>
             findChildBySPath(const std::string& path,
@@ -255,6 +259,7 @@ namespace myxmlpp {
              * Method to find all children which have the provided tag
              * @param tag tag of the nodes to find
              * @return tag list of all found nodes
+             * @throws NodeNotFoundException when a node is not found
              */
             std::vector<std::shared_ptr<Node>>
             findChildren(const std::string& tag) const;
@@ -265,6 +270,7 @@ namespace myxmlpp {
              * of returning a created one
              * @param tag tag of the nodes to find
              * @param node list of all found nodes
+             * @throws NodeNotFoundException when a node is not found
              */
             void findChildren(const std::string& tag,
                               std::vector<std::shared_ptr<Node>> *children) const;
@@ -275,6 +281,7 @@ namespace myxmlpp {
              * @param tag tag of the nodes to find
              * @param maxDepth [optionnal] max depth to search, no limit is -1
              * @return A pointer to the matched node
+             * @throws NodeNotFoundException when a node is not found
              */
             std::vector<std::shared_ptr<Node>>
             findChildrenR(const std::string& tag, int maxDepth=-1) const;
@@ -287,6 +294,7 @@ namespace myxmlpp {
              * @param tag tag of the node to find
              * @param delimiter the separator used in path to delimit nodes
              * @return A pointer to the matched node
+             * @throws NodeNotFoundException when a node is not found
              */
             std::vector<std::shared_ptr<Node>> findChildrenByPath(
                     const std::string& path,
@@ -300,6 +308,7 @@ namespace myxmlpp {
              * @param path the path relative to the current node
              * @param delimiter the separator used in path to delimit nodes
              * @return A pointer to the matched node
+             * @throws NodeNotFoundException when a node is not found
              */
             std::vector<std::shared_ptr<Node>>
             findChildrenBySPath(const std::string& path,
@@ -326,6 +335,7 @@ namespace myxmlpp {
              * @param child a Node pointer to the child to add
              * @param path the path relative to the future parent node
              * @param delimiter the separator used in path to delimit nodes
+             * @throws NodeNotFoundException when a node is not found
              */
             void addChildByPath(const std::shared_ptr<Node>& child, const std::string& path,
                                 char delimiter='/');
@@ -337,6 +347,7 @@ namespace myxmlpp {
              * @param children a vector of Node pointers to the children to add
              * @param path the path relative to the future parent node
              * @param delimiter the separator used in path to delimit nodes
+             * @throws NodeNotFoundException when a node is not found
              */
             void addChildrenByPath(const std::vector<std::shared_ptr<Node>> &children,
                                    const std::string &path,
@@ -419,7 +430,7 @@ namespace myxmlpp {
             * Method to only remove the object from the children list.
             * This method will pop the first matched node.
             * @param key tag of the node to pop
-            * @return the popped node
+            * @return the popped node or a null pointer if node is not found
             */
             std::shared_ptr<Node> popChild(const std::string& tag) noexcept;
 
@@ -428,7 +439,7 @@ namespace myxmlpp {
              * can be set. This method will pop the first matched node.
              * @param tag tag of the node to remove
              * @param maxDepth [optionnal] max depth to search, no limit is -1
-             * @return the popped node
+             * @return the popped node or a null pointer if node is not found
              */
             std::shared_ptr<Node>
             popChildR(const std::string& tag, int maxDepth=-1) noexcept;
@@ -441,7 +452,7 @@ namespace myxmlpp {
              * @param path the path relative to the current node
              * @param tag tag of the node to pop
              * @param delimiter the separator used in path to delimit nodes
-             * @return the popped node
+             * @return the popped node or a null pointer if node is not found
              */
             std::shared_ptr<Node> popChildByPath(const std::string& path,
                                  const std::string& tag,
@@ -454,7 +465,7 @@ namespace myxmlpp {
             * findChildByPath and then popChild.
             * @param path the path relative to the current node
             * @param delimiter the separator used in path to delimit nodes
-            * @return the popped node
+            * @return the popped node or a null pointer if node is not found
             */
             std::shared_ptr<Node> popChildBySPath(const std::string& path,
                                                   char delimiter='/') noexcept;
@@ -462,7 +473,8 @@ namespace myxmlpp {
             /**
              * Method to pop all children which have the provided tag
              * @param tag tag of the nodes to pop
-             * @return a list of the popped nodes
+             * @return a list of the popped nodes or an empty list
+             * if no node is found
              */
             std::vector<std::shared_ptr<Node>>
             popChildren(const std::string& tag) noexcept;
@@ -472,7 +484,8 @@ namespace myxmlpp {
              * searching recursively, a max depth can be set
              * @param tag tag of the nodes to pop
              * @param maxDepth [optionnal] max depth to search, no limit is -1
-             * @return a list of the popped nodes
+             * @return a list of the popped nodes or an empty list
+             * if no node is found
              */
             std::vector<std::shared_ptr<Node>>
             popChildrenR(const std::string& tag, int maxDepth=-1) noexcept;
@@ -483,7 +496,8 @@ namespace myxmlpp {
              * @param path the path relative to the current node
              * @param tag tag of the node to pop
              * @param delimiter the separator used in path to delimit nodes
-             * @return a list of the popped nodes
+             * @return a list of the popped nodes or an empty list
+             * if no node is found
              */
             std::vector<std::shared_ptr<Node>>
             popChildrenByPath(const std::string& path,
@@ -495,7 +509,8 @@ namespace myxmlpp {
              * is name tags separated by a slash
              * @param path the path relative to the current node
              * @param delimiter the separator used in path to delimit nodes
-             * @return a list of the popped nodes
+             * @return a list of the popped nodes or an empty list
+             * if no node is found
              */
             std::vector<std::shared_ptr<Node>>
             popChildrenBySPath(const std::string& path,

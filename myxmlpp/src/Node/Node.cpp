@@ -10,7 +10,7 @@
 #include "exceptions/ParsingException.hpp"
 #include "Node.hpp"
 
-myxmlpp::Node::Node(myxmlpp::Node *parent)
+myxmlpp::Node::Node(myxmlpp::Node *parent) noexcept
     : _parent(parent)
 {}
 
