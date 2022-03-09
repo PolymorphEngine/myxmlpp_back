@@ -13,7 +13,7 @@ jobs:
       - name: mkdir build folder
         run: mkdir -p myxmlpp/build
       - name: install criterion
-        run: sudo apt-get update && sudo apt-get install -y libcriterion-dev
+        run: sudo apt-get update && sudo add-apt-repository ppa:snaipewastaken/ppa && sudo apt-get update && sudo apt-get install -y criterion-dev
       - name: cmake build
         run: cmake -Bmyxmlpp/build -H.
       - name: build unit test
