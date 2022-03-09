@@ -1,6 +1,6 @@
 name: Run tests
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -20,5 +20,10 @@ jobs:
       - name: build unit test
         run: cmake --build myxmlpp/build --target unit-tests --parallel 2
       - name: run tests
-        run: cd myxmlpp && ./unit-tests
+        run: cd myxmlpp && ./unit-tests --json=tests_report.json || echo ""
+      - name: interpret-criterion-action
+        uses: alexjub94/interpret-criterion-action@v1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
 
