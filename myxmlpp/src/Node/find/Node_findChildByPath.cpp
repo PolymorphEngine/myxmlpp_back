@@ -9,7 +9,8 @@
 #include "Node.hpp"
 
 std::vector<std::string> myxmlpp::Node::_split(const std::string &str,
-                                               char delim) {
+                                               char delim)
+{
     std::vector<std::string> result;
     std::stringstream ss (str);
     std::string item;
@@ -21,9 +22,11 @@ std::vector<std::string> myxmlpp::Node::_split(const std::string &str,
     return result;
 }
 
-std::shared_ptr<myxmlpp::Node> myxmlpp::Node::_searchChild(Node *current,
-                                           const std::vector<std::string> &tab,
-                                           std::vector<std::string>::iterator it) {
+std::shared_ptr<myxmlpp::Node>
+myxmlpp::Node::_searchChild(const Node *current,
+                            const std::vector<std::string> &tab,
+                            std::vector<std::string>::iterator it)
+{
     std::shared_ptr<Node> node = current->findChild(*it);
 
     if (++it != tab.end())
@@ -31,18 +34,20 @@ std::shared_ptr<myxmlpp::Node> myxmlpp::Node::_searchChild(Node *current,
     return node;
 }
 
-std::shared_ptr<myxmlpp::Node> myxmlpp::Node::findChildByPath(
-        const std::string &path,
-        const std::string &tag,
-        char delimiter) {
+std::shared_ptr<myxmlpp::Node>
+myxmlpp::Node::findChildByPath(const std::string &path,
+                               const std::string &tag,
+                               char delimiter) const
+{
     std::vector<std::string> tab = _split(path, delimiter);
     auto it = tab.begin();
     auto node = _searchChild(this, tab, it);
     return node->findChild(tag);
 }
 
-std::shared_ptr<myxmlpp::Node> myxmlpp::Node::findChildBySPath(
-        const std::string &path, char delimiter) {
+std::shared_ptr<myxmlpp::Node>
+myxmlpp::Node::findChildBySPath(const std::string &path, char delimiter) const
+{
     std::size_t last = path.rfind(delimiter);
     std::string tag = path.substr(last + 1);
     std::string pathCpy(path);

@@ -9,7 +9,8 @@
 #include "NodeNotFoundException.hpp"
 
 std::vector<std::vector<std::shared_ptr<myxmlpp::Node>>::iterator>
-myxmlpp::Node::_findChildrenIt(const std::string &tag) {
+myxmlpp::Node::_findChildrenIt(const std::string &tag)
+{
     std::vector<std::vector<std::shared_ptr<Node>>::iterator> list;
 
     for (auto it = _children.begin(); it != _children.end(); ++it) {
@@ -19,8 +20,9 @@ myxmlpp::Node::_findChildrenIt(const std::string &tag) {
     return list;
 }
 
-std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::popChildren(
-        const std::string& tag) {
+std::vector<std::shared_ptr<myxmlpp::Node>>
+myxmlpp::Node::popChildren(const std::string& tag) noexcept
+{
     std::vector<std::vector<std::shared_ptr<Node>>::iterator> toPopList =
             _findChildrenIt(tag);
     std::vector<std::shared_ptr<Node>> toPopNodes;

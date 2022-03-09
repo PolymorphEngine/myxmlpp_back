@@ -8,7 +8,9 @@
 #include "Node.hpp"
 #include "NodeNotFoundException.hpp"
 
-std::shared_ptr<myxmlpp::Node> myxmlpp::Node::findChild(const std::string& tag) {
+std::shared_ptr<myxmlpp::Node>
+myxmlpp::Node::findChild(const std::string& tag) const
+{
     for (auto & it : _children) {
         if (it->getTag() == tag)
             return it;

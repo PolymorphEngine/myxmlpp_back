@@ -7,6 +7,7 @@
 
 #include "Node.hpp"
 
-void myxmlpp::Node::rmChildren(const std::string &tag) {
+void myxmlpp::Node::rmChildren(const std::string &tag) noexcept
+{
     auto children = popChildren(tag);
 }

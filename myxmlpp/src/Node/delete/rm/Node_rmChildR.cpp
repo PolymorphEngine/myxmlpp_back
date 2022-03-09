@@ -7,6 +7,7 @@
 
 #include "Node.hpp"
 
-void myxmlpp::Node::rmChildR(const std::string &tag, int maxDepth) {
+void myxmlpp::Node::rmChildR(const std::string &tag, int maxDepth) noexcept
+{
     popChildR(tag, maxDepth);
 }

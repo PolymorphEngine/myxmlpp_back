@@ -7,30 +7,19 @@
 
 #include "Node.hpp"
 
-void myxmlpp::Node::_searchChildren(Node *current,
-                                    std::vector<std::shared_ptr<myxmlpp::Node>> *children,
-                                    const std::vector<std::string> &tab,
-                                    std::vector<std::string>::iterator it) {
-    std::shared_ptr<Node> node;
-
-    if (++it != tab.end()) {
-        node = current->findChild(*it);
-        _searchChild(node.get(), tab, it);
-    }
-
-    children->push_back(node);
-}
-
-std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::findChildrenByPath(
-        const std::string &path,
-        const std::string &tag,
-        char delimiter) {
+std::vector<std::shared_ptr<myxmlpp::Node>>
+myxmlpp::Node::findChildrenByPath(const std::string &path,
+                                  const std::string &tag,
+                                  char delimiter) const
+{
     auto parent = findChildBySPath(path, delimiter);
 
     return parent->findChildren(tag);
 }
-std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::findChildrenBySPath(
-        const std::string &path, char delimiter) {
+std::vector<std::shared_ptr<myxmlpp::Node>>
+myxmlpp::Node::findChildrenBySPath(const std::string &path,
+                                   char delimiter) const
+{
     std::size_t last = path.rfind(delimiter);
     std::string tag = path.substr(last + 1);
     std::string pathCpy(path);

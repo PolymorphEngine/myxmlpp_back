@@ -8,8 +8,9 @@
 #include "Node.hpp"
 #include "NodeNotFoundException.hpp"
 
-std::vector<std::shared_ptr<myxmlpp::Node>>::iterator myxmlpp::Node::_findChildIt(
-        const std::string& tag) {
+std::vector<std::shared_ptr<myxmlpp::Node>>::iterator
+myxmlpp::Node::_findChildIt(const std::string& tag)
+{
     for (auto it = _children.begin(); it != _children.end(); ++it) {
         if ((*it)->getTag() == tag)
             return it;
@@ -18,7 +19,8 @@ std::vector<std::shared_ptr<myxmlpp::Node>>::iterator myxmlpp::Node::_findChildI
 }
 
 std::shared_ptr<myxmlpp::Node>
-myxmlpp::Node::_popChildRecursive(const std::string &tag, int depth) {
+myxmlpp::Node::_popChildRecursive(const std::string &tag, int depth)
+{
     if (!depth)
         return std::make_shared<Node>(nullptr);
     try {
@@ -35,6 +37,8 @@ myxmlpp::Node::_popChildRecursive(const std::string &tag, int depth) {
     return {nullptr};
 }
 
-std::shared_ptr<myxmlpp::Node> myxmlpp::Node::popChildR(const std::string &tag, int maxDepth) {
+std::shared_ptr<myxmlpp::Node>
+myxmlpp::Node::popChildR(const std::string &tag, int maxDepth) noexcept
+{
     return _popChildRecursive(tag, maxDepth);
 }

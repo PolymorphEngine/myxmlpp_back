@@ -7,8 +7,11 @@
 
 #include "Node.hpp"
 
-std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::popChildrenByPath(
-        const std::string &path, const std::string &tag, char delimiter) {
+std::vector<std::shared_ptr<myxmlpp::Node>>
+myxmlpp::Node::popChildrenByPath(const std::string &path,
+                                 const std::string &tag,
+                                 char delimiter) noexcept
+{
     try {
         std::shared_ptr<Node> childrenParent = findChildBySPath(path,
                                                                 delimiter);
@@ -17,8 +20,10 @@ std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::popChildrenByPath(
     return {nullptr};
 }
 
-std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::popChildrenBySPath(
-        const std::string &path, char delimiter) {
+std::vector<std::shared_ptr<myxmlpp::Node>>
+myxmlpp::Node::popChildrenBySPath(const std::string &path,
+                                  char delimiter) noexcept
+{
     std::size_t last = path.rfind(delimiter);
     std::string tag = path.substr(last + 1);
     std::string pathCpy(path);

@@ -9,12 +9,14 @@
 
 void myxmlpp::Node::rmChildrenByPath(const std::string &path,
                                      const std::string &tag,
-                                     char delimiter) {
+                                     char delimiter) noexcept
+{
     auto children = popChildrenByPath(path, tag, delimiter);
 }
 
 
 void myxmlpp::Node::rmChildrenBySPath(const std::string &path,
-                                      char delimiter) {
+                                      char delimiter) noexcept
+{
     auto children = popChildrenBySPath(path, delimiter);
 }

@@ -26,13 +26,16 @@ myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
         _attributes(std::move(attributes)), _children(std::move(children))
 {}
 
-myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str, std::string &remaining)
+myxmlpp::Node::Node(myxmlpp::Node *parent,
+                    std::string &str,
+                    std::string &remaining)
         : _parent(parent)
 {
     _parseNodeString(str, remaining);
 }
 
-myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str)
+myxmlpp::Node::Node(myxmlpp::Node *parent,
+                    std::string &str)
         : _parent(parent)
 {
     std::string remaining = str;
