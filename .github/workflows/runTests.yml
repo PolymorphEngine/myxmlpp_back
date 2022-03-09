@@ -1,11 +1,11 @@
-name: Generate doc
+name: Run tests
 on:
   push:
     branches:
       - master
 
 jobs:
-  run-doxygen:
+  run-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
