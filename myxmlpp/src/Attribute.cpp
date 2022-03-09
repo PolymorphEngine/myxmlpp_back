@@ -5,15 +5,12 @@
 ** attribute.cpp.cc
 */
 
-#include <stdlib.h>
 #include <fstream>
 #include <sstream>
-#include <IllegalValueException.hpp>
-#include <FileException.hpp>
-#include <cstring>
+#include "IllegalValueException.hpp"
+#include "FileException.hpp"
 #include "Attribute.hpp"
 #include "Doc.hpp"
-#include "AttributeGlobal.hpp"
 #include "ParsingException.hpp"
 
 namespace myxmlpp {
@@ -23,67 +20,35 @@ namespace myxmlpp {
         : _key(key), _value(value)
     {}
 
-    std::string Attribute::_extractAttributeStr(std::string& s) 
-    {
-        ssize_t shortest = -1;
-        ssize_t found = -1;
-        std::string out;
-
-        for (size_t i = 0; endOfStr[i] != '\0' ; ++i) {
-            found = s.find(endOfStr[i]);
-            if (found != std::string::npos &&
-            (found < shortest || shortest == -1))
-                shortest = found;
-        }
-        if (shortest == -1)
-            throw ParsingException(s, MYXMLPP_ERROR_LOCATION);
-        out = s.substr(0, shortest);
-        s.erase(0, shortest + 1);
-        return out;
-    }
-
-    std::vector<std::string> Attribute::_splitAttributeStr(std::string s) {
-        std::vector<std::string> arr;
-        char *elem = std::strtok(const_cast<char *>(s.c_str()), delimiter);
-
-        while (elem) {
-            arr.push_back(std::string(elem));
-            elem = std::strtok(nullptr, delimiter);
-        }
-        if (arr.size() != 2)
-            throw ParsingException(s,
-                                   MYXMLPP_ERROR_LOCATION,
-                                   "No '={value}' part");
-        return arr;
-    }
-
     Attribute::Attribute(std::string &fileContent)
     {
-        std::string extracted = _extractAttributeStr(fileContent);
-        std::vector<std::string> parts = _splitAttributeStr(extracted);
-        std::string value = parts[1];
+        std::regex rgx("[\r\n\t\f\v ]*([a-zA-Z0-9_]+)=\"([^\"]*)\"");
+        std::smatch matches;
 
-        if (value[0] != '"' || value[value.length() - 1] != '"')
-            throw ParsingException(value,
-                                   MYXMLPP_ERROR_LOCATION,
-                                   "Attribute value not wrapped in quotes");
-        this->_key = std::string(parts[0]);
-        this->_value = std::string(value.substr(1, value.length() - 1));
+        if (!std::regex_search(fileContent, matches, rgx)) {
+            throw myxmlpp::ParsingException(fileContent, MYXMLPP_ERROR_LOCATION, "Cannot parse attribute string");
+        }
+        _key = matches[1].str();
+        _value = matches[2].str();
     }
 
-    std::string Attribute::getKey() const {
+    std::string Attribute::getKey() const noexcept
+    {
         return _key;
     }
 
-    void Attribute::setKey(const std::string &value) {
+    void Attribute::setKey(const std::string &value) noexcept
+    {
         _key = value;
     }
 
-    std::string Attribute::getValue() const {
+    std::string Attribute::getValue() const noexcept
+    {
         return _value;
     }
 
-    int Attribute::getValueInt() const {
+    int Attribute::getValueInt() const
+    {
         char *rest;
         int toReturn = (int) strtol(_value.c_str(), &rest, 10);
 
@@ -94,7 +59,8 @@ namespace myxmlpp {
         return toReturn;
     }
 
-    float Attribute::getValueFloat() const {
+    float Attribute::getValueFloat() const
+    {
         char *rest;
         float toReturn = strtof(_value.c_str(), &rest);
 
@@ -106,7 +72,8 @@ namespace myxmlpp {
     }
 
     bool Attribute::getValueBool(const std::string &trueElement,
-                                 const std::string &falseElement) const {
+                                 const std::string &falseElement) const
+    {
         if (_value == trueElement)
             return true;
         else if (_value == falseElement)
@@ -117,13 +84,15 @@ namespace myxmlpp {
                                         _value);
     }
 
-    Doc Attribute::getValueXmlDoc() const {
+    Doc Attribute::getValueXmlDoc() const
+    {
         Doc test(_value);
         return test;
     }
 
     std::ios_base::openmode Attribute::_getValueFileOpenMode(
-            openMode_t mode) {
+            openMode_t mode)
+    {
         switch (mode) {
             case OPENRD:
                 return std::fstream::in;
@@ -138,7 +107,8 @@ namespace myxmlpp {
         }
     }
 
-    std::fstream Attribute::getValueFile(openMode_t mode) const {
+    std::fstream Attribute::getValueFile(openMode_t mode) const
+    {
         std::ios_base::openmode openMode = _getValueFileOpenMode(mode);
 
         try {
@@ -149,17 +119,20 @@ namespace myxmlpp {
 
     }
 
-    void Attribute::setValue(const std::string &value) {
+    void Attribute::setValue(const std::string &value) noexcept
+    {
         _value = value;
     }
 
-    void Attribute::setValueInt(int value) {
+    void Attribute::setValueInt(int value)
+    {
         std::stringstream ss;
         ss << value;
         _value = ss.str();
     }
 
-    void Attribute::setValueFloat(float value) {
+    void Attribute::setValueFloat(float value)
+    {
         std::stringstream ss;
         ss << value;
         _value = ss.str();
@@ -167,7 +140,8 @@ namespace myxmlpp {
 
     void Attribute::setValueBool(bool value,
                                  const std::string &trueElement,
-                                 const std::string &falseElement) {
+                                 const std::string &falseElement)
+    {
         setValue(value ? trueElement : falseElement);
     }
 }
