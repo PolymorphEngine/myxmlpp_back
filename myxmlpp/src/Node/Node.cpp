@@ -10,7 +10,7 @@
 #include "exceptions/ParsingException.hpp"
 #include "Node.hpp"
 
-myxmlpp::Node::Node(myxmlpp::Node *parent) 
+myxmlpp::Node::Node(myxmlpp::Node *parent)
     : _parent(parent)
 {}
 
@@ -19,18 +19,20 @@ myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
         : _parent(parent), _tag(std::move(tag)), _children(std::move(children))
 {}
 
-myxmlpp::Node::Node(myxmlpp::Node *parent, const std::string &tag,
+myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
                     std::vector<std::shared_ptr<Attribute>> attributes,
-                    std::vector<std::shared_ptr<Node>> children) 
+                    std::vector<std::shared_ptr<Node>> children)
+        : _parent(parent), _tag(std::move(tag)),
+        _attributes(std::move(attributes)), _children(std::move(children))
 {}
 
-myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str, std::string &remaining) 
+myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str, std::string &remaining)
         : _parent(parent)
 {
     _parseNodeString(str, remaining);
 }
 
-myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str) 
+myxmlpp::Node::Node(myxmlpp::Node *parent, std::string &str)
         : _parent(parent)
 {
     std::string remaining = str;

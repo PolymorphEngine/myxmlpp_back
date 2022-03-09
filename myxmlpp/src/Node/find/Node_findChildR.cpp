@@ -8,31 +8,22 @@
 #include "Node.hpp"
 #include "NodeNotFoundException.hpp"
 
-std::shared_ptr<myxmlpp::Node> myxmlpp::Node::_findChildRecursiveLoopCall(Node *current,
-                                                          const std::string &tag,
-                                                          int depth) {
-    for (auto & it : current->_children) {
+std::shared_ptr<myxmlpp::Node>
+myxmlpp::Node::_findChildRecursive(const std::string &tag, int depth) {
+    if (!depth)
+        throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
+    try {
+        return findChild(tag);
+    } catch (NodeNotFoundException& e) {}
+    for (const auto& c : _children) {
         try {
-            return _findChildRecursiveCalled(it.get(), tag, depth - 1);
-        } catch (NodeNotFoundException &e2) {}
+            return c->_findChildRecursive(tag, depth - 1);
+        } catch (NodeNotFoundException& e) {}
     }
     throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
 }
 
-std::shared_ptr<myxmlpp::Node> myxmlpp::Node::_findChildRecursiveCalled(
-                                                        Node *current,
-                                                        const std::string &tag,
-                                                        int depth) {
-    try {
-        return current->findChild(tag);
-    } catch (NodeNotFoundException& e) {
-        if (depth != 0)
-            return _findChildRecursiveCalled(current, tag, depth);
-        throw;
-    }
-}
-
 std::shared_ptr<myxmlpp::Node> myxmlpp::Node::findChildR(const std::string &tag,
                                          int maxDepth) {
-    return _findChildRecursiveLoopCall(this, tag, maxDepth);
+    return _findChildRecursive(tag, maxDepth);
 }

@@ -14,7 +14,7 @@ std::vector<std::string> myxmlpp::Node::_split(const std::string &str,
     std::stringstream ss (str);
     std::string item;
 
-    while (getline (ss, item, delim)) {
+    while (getline(ss, item, delim)) {
         result.push_back (item);
     }
 
@@ -26,8 +26,8 @@ std::shared_ptr<myxmlpp::Node> myxmlpp::Node::_searchChild(Node *current,
                                            std::vector<std::string>::iterator it) {
     std::shared_ptr<Node> node = current->findChild(*it);
 
-    if (it != tab.end())
-        return _searchChild(node.get(), tab, ++it);
+    if (++it != tab.end())
+        return _searchChild(node.get(), tab, it);
     return node;
 }
 
@@ -37,8 +37,8 @@ std::shared_ptr<myxmlpp::Node> myxmlpp::Node::findChildByPath(
         char delimiter) {
     std::vector<std::string> tab = _split(path, delimiter);
     auto it = tab.begin();
-
-    return _searchChild(this, tab, it);
+    auto node = _searchChild(this, tab, it);
+    return node->findChild(tag);
 }
 
 std::shared_ptr<myxmlpp::Node> myxmlpp::Node::findChildBySPath(

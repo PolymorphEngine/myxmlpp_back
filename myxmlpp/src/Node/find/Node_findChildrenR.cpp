@@ -12,7 +12,7 @@ void myxmlpp::Node::_findChildrenRecursive(std::vector<std::shared_ptr<Node>> *c
                                            const std::string &tag,
                                            int depth) {
     bool found = false;
-    
+
     if (!depth)
         throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
     try {
@@ -35,7 +35,7 @@ std::vector<std::shared_ptr<myxmlpp::Node>> myxmlpp::Node::findChildrenR(
     std::vector<std::shared_ptr<Node>> children;
 
     try {
-        _findChildrenRecursive(&children, tag, maxDepth > 1 ? maxDepth - 1 : maxDepth);
+        _findChildrenRecursive(&children, tag, maxDepth);
     } catch (NodeNotFoundException& e) {
         if (maxDepth > 0 || maxDepth == -1)
             throw;

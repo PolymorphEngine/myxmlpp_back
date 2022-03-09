@@ -45,27 +45,13 @@ namespace myxmlpp {
              */
             std::vector<std::shared_ptr<Node>> _children;
 
-            static std::shared_ptr<Node> _findChildRecursiveLoopCall(Node *current,
-                                                     const std::string &tag,
-                                                     int depth);
+            std::shared_ptr<myxmlpp::Node>
+            _findChildRecursive(const std::string &tag, int depth);
 
             static std::shared_ptr<Node> _popChildRecursiveLoopCall(
                     Node *current,
                     const std::string &tag,
                     int depth);
-
-            /**
-             * Method that will be recursively called to find child for
-             * findChildR public method. This method will return the first
-             * matched node
-             * @param current the node to search in
-             * @param tag the tag of the node to find
-             * @param depth the actual depth
-             * @return the found node
-             */
-            static std::shared_ptr<Node> _findChildRecursiveCalled(Node *current,
-                                                   const std::string &tag,
-                                                   int depth);
 
             void _findChildrenRecursive(std::vector<std::shared_ptr<Node>> *children,
                                         const std::string &tag,
@@ -99,11 +85,11 @@ namespace myxmlpp {
                                            std::vector<std::shared_ptr<Node>> &children,
                                            const std::string &tag,
                                            unsigned int depth);
-            
+
             void _extractAttributes(std::string &str);
-            
+
             static bool _isEndOfNode(std::string &str);
-            
+
             void _checkEndOfNode(std::string &str, std::string &remaining);
 
             /**
@@ -112,9 +98,9 @@ namespace myxmlpp {
              * @param remaining the remaining characters that could not be parsed
              */
             explicit Node(Node *parent, std::string& str, std::string &remaining);
-            
+
             void _parseNodeString(std::string &str, std::string &remaining);
-            
+
             static bool _performRegex(std::smatch &matches,
                                       std::string &regexStr,
                                       std::string &str,
@@ -150,7 +136,7 @@ namespace myxmlpp {
              * @param children a vector of the children nodes.
              * @return the created node.
              */
-            Node(Node *parent, const std::string &tag,
+            Node(Node *parent, std::string tag,
                  std::vector<std::shared_ptr<Attribute>> attributes,
                  std::vector<std::shared_ptr<Node>> children = {});
 
@@ -168,7 +154,7 @@ namespace myxmlpp {
             std::string getTag() const;
 
             /**
-             * @return the data of the xml node 
+             * @return the data of the xml node
              */
             std::string getData() const;
 
@@ -179,19 +165,19 @@ namespace myxmlpp {
 
             /**
              * A method to change the tag of the XML node
-             * @param tag the new tag 
+             * @param tag the new tag
              */
             void setTag(const std::string& tag);
 
             /**
              * A method to change the data of the XML node
-             * @param tag the new data 
+             * @param tag the new data
              */
             void setData(const std::string& data);
 
             /**
              * A method to change the parent of the XML node
-             * @param tag the new parent 
+             * @param tag the new parent
              */
             void setParent(Node *parent);
 
@@ -262,7 +248,7 @@ namespace myxmlpp {
 
             /**
              * Method to find a child node by a given path. The path is name
-             * tags separated by a slash. The last tag name if the tag of 
+             * tags separated by a slash. The last tag name if the tag of
              * the node to find This method will return the first matched node
              * @param path the path relative to the current node
              * @param delimiter the separator used in path to delimit nodes
@@ -557,7 +543,7 @@ namespace myxmlpp {
 
             /**
              * Move the current node as a child of the provided node
-             * @param newParent the future parent node 
+             * @param newParent the future parent node
              */
             void move(Node &newParent);
     };

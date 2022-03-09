@@ -11,10 +11,10 @@
 
 Test(Node_findChildren, not_found)
 {
-    myxmlpp::Doc d("tests/files/unit-testing/find/findChildren/noChildren.xml");
+    myxmlpp::Doc d("tests/files/unit-testing/findChildren.xml");
 
     try {
-        d.getRoot()->findChildren("child");
+        d.getRoot()->findChildren("kappa");
         cr_expect(0);
     } catch (myxmlpp::NodeNotFoundException &e) {
         cr_expect(1);
@@ -23,13 +23,13 @@ Test(Node_findChildren, not_found)
 
 Test(Node_findChildren, one_found)
 {
-    myxmlpp::Doc d("tests/files/unit-testing/find/findChildren/oneChild.xml");
+    myxmlpp::Doc d("tests/files/unit-testing/findChildren.xml");
 
     try {
-        auto children = d.getRoot()->findChildren("child");
-        
+        auto children = d.getRoot()->findChildren("Head");
+
         cr_expect_eq(children.size(), 1);
-        cr_expect(children[0]->getTag() == "child");
+        cr_expect(children[0]->getTag() == "Head");
     } catch (myxmlpp::NodeNotFoundException &e) {
         cr_expect(0);
     }
@@ -37,13 +37,13 @@ Test(Node_findChildren, one_found)
 
 Test(Node_findChildren, many_found)
 {
-    myxmlpp::Doc d("tests/files/unit-testing/find/findChildren/manyChildren.xml");
+    myxmlpp::Doc d("tests/files/unit-testing/findChildren.xml");
 
     try {
-        auto children = d.getRoot()->findChildren("children");
+        auto children = d.getRoot()->findChildren("EmptyNode");
 
         cr_expect_eq(children.size(), 5);
-        cr_expect(children[0]->getTag() == "children");
+        cr_expect(children[0]->getTag() == "EmptyNode");
     } catch (myxmlpp::NodeNotFoundException &e) {
         cr_expect(0);
     }
