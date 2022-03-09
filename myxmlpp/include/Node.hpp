@@ -48,20 +48,9 @@ namespace myxmlpp {
             std::shared_ptr<myxmlpp::Node>
             _findChildRecursive(const std::string &tag, int depth);
 
-            static std::shared_ptr<Node> _popChildRecursiveLoopCall(
-                    Node *current,
-                    const std::string &tag,
-                    int depth);
-
             void _findChildrenRecursive(std::vector<std::shared_ptr<Node>> *children,
                                         const std::string &tag,
                                         int depth);
-
-
-            static std::shared_ptr<Node> _popChildRecursiveCalled(
-                    Node *current,
-                    const std::string &tag,
-                    int depth);
 
             static std::vector<std::string> _split(const std::string &str,
                                                    char delim);
@@ -78,13 +67,14 @@ namespace myxmlpp {
             std::vector<std::shared_ptr<Node>>::iterator _findChildIt(
                     const std::string &tag);
 
+            std::shared_ptr<Node> _popChildRecursive(const std::string &tag, int depth);
+
             std::vector<std::vector<std::shared_ptr<Node>>::iterator>
                     _findChildrenIt(const std::string &tag);
 
-            static void _popChildrenRecurs(Node *current,
-                                           std::vector<std::shared_ptr<Node>> &children,
-                                           const std::string &tag,
-                                           unsigned int depth);
+            void _popChildrenRecurs(std::vector<std::shared_ptr<Node>> &children,
+                                    const std::string &tag,
+                                    int depth);
 
             void _extractAttributes(std::string &str);
 

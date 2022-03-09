@@ -10,8 +10,11 @@
 std::shared_ptr<myxmlpp::Node> myxmlpp::Node::popChildByPath(const std::string &path,
                                              const std::string &tag,
                                              char delimiter) {
-    std::shared_ptr<Node> childParent = findChildBySPath(path, delimiter);
-    return childParent->popChild(tag);
+    try {
+        std::shared_ptr<Node> childParent = findChildBySPath(path, delimiter);
+        return childParent->popChild(tag);
+    } catch (const std::exception &e) {}
+    return {nullptr};
 }
 
 std::shared_ptr<myxmlpp::Node> myxmlpp::Node::popChildBySPath(const std::string &path,

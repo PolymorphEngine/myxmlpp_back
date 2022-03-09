@@ -16,8 +16,6 @@ myxmlpp::Node::_findChildrenIt(const std::string &tag) {
         if ((*it)->getTag() == tag)
             list.push_back(it);
     }
-    if (list.empty())
-        throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
     return list;
 }
 

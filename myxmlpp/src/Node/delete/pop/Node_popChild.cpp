@@ -8,7 +8,7 @@
 #include "Node.hpp"
 #include "NodeNotFoundException.hpp"
 
-std::shared_ptr<myxmlpp::Node>myxmlpp::Node::popChild(const std::string &tag) {
+std::shared_ptr<myxmlpp::Node> myxmlpp::Node::popChild(const std::string &tag) {
     std::shared_ptr<Node> found;
 
     for (auto it = _children.begin(); it != _children.end(); ++it) {
@@ -18,5 +18,5 @@ std::shared_ptr<myxmlpp::Node>myxmlpp::Node::popChild(const std::string &tag) {
             return found;
         }
     }
-    throw NodeNotFoundException(tag, MYXMLPP_ERROR_LOCATION);
+    return {nullptr};
 }
