@@ -1,0 +1,20 @@
+name: Generate doc
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run-doxygen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: mkdir build folder
+        run: mkdir -p myxmlpp/build
+      - name: build unit test
+        run: cmake --build myxmlpp/build --targer unit-tests --parallel 2
+
+      -name: run tests
+       run: cd myxmlpp && ./unit-tests
+
