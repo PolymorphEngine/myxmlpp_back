@@ -1,5 +1,9 @@
 name: Generate doc
-on: [push]
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   run-doxygen:
     runs-on: ubuntu-latest
