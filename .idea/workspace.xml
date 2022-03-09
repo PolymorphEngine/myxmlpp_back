@@ -12,15 +12,9 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add|fix] Node findChildrenR unit tests and fixed method">
-      <change afterPath="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildrenR/manyLevels.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildrenR/noChildren.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myxmlpp/tests/files/unit-testing/find/findChildrenR/oneLevel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myxmlpp/tests/unit-testing/Node/Node_findChildrenR.cpp" afterDir="false" />
+    <list default="true" id="c7bf04b0-48b2-4f8d-bbe7-aab9497f4b34" name="Default Changelist" comment="[add] test workflow">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/runTests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/runTests.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/include/Node.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/src/Node/find/Node_findChildrenR.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myxmlpp/tests/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myxmlpp/tests/test.cpp" afterDir="false" />
     </list>
     <list id="f827e104-2762-43de-ae81-f19c93c47d50" name="Changes by mindblower78" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +38,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/myxmlpp/include/AttributeGlobal.hpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myxmlpp/include/exceptions/Exception.hpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myxmlpp/include/exceptions/PermissionDeniedException.hpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/myxmlpp/src/Doc.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -104,9 +97,9 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="myxmlpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myxmlpp" TARGET_NAME="myxmlpp" CONFIG_NAME="Debug">
@@ -300,7 +293,84 @@
       <option name="project" value="LOCAL" />
       <updated>1646668287389</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="[fix] rename job">
+      <created>1646858607728</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1646858607728</updated>
+    </task>
+    <task id="LOCAL-00020" summary="[fix] rename job">
+      <created>1646858706276</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1646858706276</updated>
+    </task>
+    <task id="LOCAL-00021" summary="[fix] restricted doc update on pull request">
+      <created>1646859487557</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1646859487557</updated>
+    </task>
+    <task id="LOCAL-00022" summary="[add] test workflow">
+      <created>1646860346414</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1646860346414</updated>
+    </task>
+    <task id="LOCAL-00023" summary="[add] test workflow">
+      <created>1646860402552</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1646860402552</updated>
+    </task>
+    <task id="LOCAL-00024" summary="[add] test workflow">
+      <created>1646860531749</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1646860531749</updated>
+    </task>
+    <task id="LOCAL-00025" summary="[add] test workflow">
+      <created>1646860643229</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1646860643229</updated>
+    </task>
+    <task id="LOCAL-00026" summary="[add] test workflow">
+      <created>1646860731260</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1646860731260</updated>
+    </task>
+    <task id="LOCAL-00027" summary="[add] test workflow">
+      <created>1646860854562</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1646860854562</updated>
+    </task>
+    <task id="LOCAL-00028" summary="[add] test workflow">
+      <created>1646860953180</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1646860953180</updated>
+    </task>
+    <task id="LOCAL-00029" summary="[add] test workflow">
+      <created>1646860986863</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1646860986863</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,7 +406,10 @@
     <MESSAGE value="[add] Node findChild unit test" />
     <MESSAGE value="[add] Node findChildren unit tests" />
     <MESSAGE value="[add|fix] Node findChildrenR unit tests and fixed method" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add|fix] Node findChildrenR unit tests and fixed method" />
+    <MESSAGE value="[fix] rename job" />
+    <MESSAGE value="[fix] restricted doc update on pull request" />
+    <MESSAGE value="[add] test workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] test workflow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
