@@ -14,7 +14,8 @@ jobs:
         run: mkdir -p myxmlpp/build
       - name: build unit test
         run: cmake --build myxmlpp/build --target unit-tests --parallel 2
-
+      - name: cmake build
+        run: cmake -Bbuild -H.
       - name: run tests
         run: cd myxmlpp && ./unit-tests
 
