@@ -51,6 +51,8 @@ namespace myxmlpp {
              */
             explicit Attribute(std::string& str);
 
+            std::string asString() const noexcept;
+
             /**
              * @return the key of the attribute
              */

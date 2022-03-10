@@ -75,6 +75,20 @@ namespace myxmlpp {
             Doc(const std::string& filepath, bool keepOpen = false);
 
             /**
+             * @summary This method will write all the doc structure to a file in a minified way (only necessary spaces)
+             * @param filepathOverride [optional] use this option if you don't
+             * want to write to the current filepath
+             */
+            void write(const std::string &filepathOverride ="");
+
+            /**
+             * @summary This method will write all the doc structure to a file in a pretty formatted way
+             * @param filepathOverride [optional] use this option if you don't
+             * want to write to the current filepath
+             */
+            void writeF(const std::string &filepathOverride ="");
+
+            /**
              * Get the current filepath
              * @returns the current filepath
              */

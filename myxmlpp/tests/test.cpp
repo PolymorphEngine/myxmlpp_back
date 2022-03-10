@@ -56,7 +56,9 @@ int main(int argc, char **argv) {
 //        myxmlpp::Doc d("../noRights.xml");
 //        myxmlpp::Doc d("../mescouilles.xml");
 //        myxmlpp::Doc d("../test.xml");
-        myxmlpp::Doc d("../clean.xml");
+        myxmlpp::Doc d("tests/files/unit-testing/findChild.xml");
+        d.write("test-minified.xml");
+        d.writeF("test.xml");
     } catch (myxmlpp::Exception& e) {
         std::cerr << e.what() << std::endl;
     }
