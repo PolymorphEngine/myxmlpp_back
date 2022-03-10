@@ -56,6 +56,36 @@ myxmlpp::Doc::Doc(const std::string& filepath, bool keepOpen)
     _root = std::make_shared<Node>(nullptr, _content);
 }
 
+void myxmlpp::Doc::write(const std::string &filepathOverride) {
+    if (!filepathOverride.empty())
+        setFilepath(filepathOverride);
+    if (!_keepOpen) {
+        try {
+            _file.open(_filepath.c_str(), std::fstream::out);
+        } catch (const std::ios_base::failure &e) {
+            _throwOpenError(_filepath, _keepOpen);
+        }
+    }
+    _file << _root->asString();
+    if (!_keepOpen)
+        _file.close();
+}
+
+void myxmlpp::Doc::writeF(const std::string &filepathOverride) {
+    if (!filepathOverride.empty())
+        setFilepath(filepathOverride);
+    if (!_keepOpen) {
+        try {
+            _file.open(_filepath.c_str(), std::fstream::out);
+        } catch (const std::ios_base::failure &e) {
+            _throwOpenError(_filepath, _keepOpen);
+        }
+    }
+    _file << _root->asFString(0);
+    if (!_keepOpen)
+        _file.close();
+}
+
 const std::string &myxmlpp::Doc::getFilepath() const noexcept
 {
     return _filepath;
@@ -66,8 +96,7 @@ void myxmlpp::Doc::setFilepath(const std::string &filepath)
     if (_keepOpen) {
         _file.close();
         try {
-            _file.open(filepath.c_str(),
-                       _keepOpen ? std::ios::in | std::ios::out : std::ios::in);
+            _file.open(filepath.c_str(), std::ios::in | std::ios::out);
         } catch (const std::ios_base::failure& e) {
             _throwOpenError(filepath, _keepOpen);
         }
