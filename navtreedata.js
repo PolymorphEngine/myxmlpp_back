@@ -24,12 +24,54 @@
 */
 var NAVTREE =
 [
-  [ "myxmlpp", "index.html", ]
+  [ "myxmlpp", "index.html", [
+    [ "Example Page", "page1.html", [
+      [ "An example section", "page1.html#sec", [
+        [ "The first subsection", "page1.html#subsection1", null ],
+        [ "The second subsection", "page1.html#subsection2", null ]
+      ] ]
+    ] ],
+    [ "Doxygen Awesome", "md_doxygen_awesome_css_README.html", [
+      [ "Motivation", "md_doxygen_awesome_css_README.html#autotoc_md6", null ],
+      [ "Features", "md_doxygen_awesome_css_README.html#autotoc_md7", null ],
+      [ "Installation", "md_doxygen_awesome_css_README.html#autotoc_md8", [
+        [ "Variants", "md_doxygen_awesome_css_README.html#autotoc_md9", null ],
+        [ "Dark Mode Toggle (Experimental)", "md_doxygen_awesome_css_README.html#autotoc_md10", null ]
+      ] ],
+      [ "Examples", "md_doxygen_awesome_css_README.html#autotoc_md11", null ],
+      [ "Configuration", "md_doxygen_awesome_css_README.html#autotoc_md12", [
+        [ "CSS Variables", "md_doxygen_awesome_css_README.html#autotoc_md13", null ],
+        [ "Doxygen generator", "md_doxygen_awesome_css_README.html#autotoc_md14", null ]
+      ] ],
+      [ "Browser support", "md_doxygen_awesome_css_README.html#autotoc_md15", null ],
+      [ "Tips & Tricks", "md_doxygen_awesome_css_README.html#autotoc_md16", [
+        [ "Class Diagrams with Graphviz", "md_doxygen_awesome_css_README.html#autotoc_md17", null ],
+        [ "Share your own theme customizations", "md_doxygen_awesome_css_README.html#autotoc_md18", null ]
+      ] ],
+      [ "Credits", "md_doxygen_awesome_css_README.html#autotoc_md19", null ]
+    ] ],
+    [ "README", "md__github_workspace_README.html", null ],
+    [ "Bug List", "bug.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ]
+    ] ]
+  ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"AttributeNotFoundException_8cpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
