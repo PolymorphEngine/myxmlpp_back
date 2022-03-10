@@ -93,6 +93,27 @@ namespace myxmlpp {
                                       std::string &regexStr,
                                       std::string &str,
                                       std::string *remaining = nullptr);
+            /**
+             * @summary This method build a string which contains the necessary
+             * indent to format a node in a file during writing
+             * @param indent the number of tab to return
+             * @return the indentation helper string
+             */
+            static std::string  _strIdent(std::size_t indent);
+
+            /**
+             * @summary This method will return all the attributes serialized
+             * in a minimized way (no necessary spaces between attributes)
+             * @return the serialized attributes
+             */
+            std::string _dumpAttrs() const noexcept;
+
+            /**
+             * @summary This method will return all the attributes serialized
+             * with correct spacing formatting
+             * @return the serialized attributes
+             */
+            std::string _dumpAttrsF() const noexcept;
 
         public:
             /**
@@ -135,6 +156,21 @@ namespace myxmlpp {
              * @throws ParsingException if parsing fails.
              */
             explicit Node(Node *parent, std::string& str);
+
+            /**
+             * @summary This method will return the serialized node minimized
+             * @return the serialized node
+             */
+            std::string asString(bool includeChildren = true) const noexcept;
+
+            /**
+             * @summary This method will return the serialized node with
+             * indentation formatting
+             *
+             * @return the serialized node
+             */
+            std::string asFString(size_t indent,
+                                  bool includeChildren = true) const noexcept;
 
             /**
              * @return the tag of the XML node
