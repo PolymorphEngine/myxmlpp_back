@@ -25,5 +25,6 @@ jobs:
         uses: alexjub94/interpret-criterion-action@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          reportFilename: myxmlpp/tests_report_json
 
 
