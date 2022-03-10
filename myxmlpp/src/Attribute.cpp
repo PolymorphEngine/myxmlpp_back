@@ -50,7 +50,7 @@ namespace myxmlpp {
     int Attribute::getValueInt() const
     {
         char *rest;
-        int toReturn = (int) strtol(_value.c_str(), &rest, 10);
+        int toReturn = (int)strtol(_value.c_str(), &rest, 10);
 
         if (*rest)
             throw IllegalValueException("Int", _key,
