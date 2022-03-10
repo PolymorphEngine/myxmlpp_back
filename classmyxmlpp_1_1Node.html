@@ -106,6 +106,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8a1658a01fc9eb597a4333177eeec440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eb6a8268e2f2c2c5c9fab99eef16e9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a9eb6a8268e2f2c2c5c9fab99eef16e9c">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent, std::string &amp;str)</td></tr>
 <tr class="separator:a9eb6a8268e2f2c2c5c9fab99eef16e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ec4e50c99b3a9f7004709b66b4c0d3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#aa9ec4e50c99b3a9f7004709b66b4c0d3">asString</a> (bool includeChildren=true) const noexcept</td></tr>
+<tr class="separator:aa9ec4e50c99b3a9f7004709b66b4c0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af717258274c9d596acad21e36db3edab"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#af717258274c9d596acad21e36db3edab">asFString</a> (size_t indent, bool includeChildren=true) const noexcept</td></tr>
+<tr class="separator:af717258274c9d596acad21e36db3edab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90053eb57876395e863532829cc955ff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a90053eb57876395e863532829cc955ff">getTag</a> () const noexcept</td></tr>
 <tr class="separator:a90053eb57876395e863532829cc955ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7b5dbe8e5ba2b5fab3d2c1b72580485"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#af7b5dbe8e5ba2b5fab3d2c1b72580485">getData</a> () const noexcept</td></tr>
@@ -225,6 +229,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a39d20be91d531273f6d66a5b6cff0cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adff6f79700d6a516257ce15a60d9150b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#adff6f79700d6a516257ce15a60d9150b">_parseNodeString</a> (std::string &amp;str, std::string &amp;remaining)</td></tr>
 <tr class="separator:adff6f79700d6a516257ce15a60d9150b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd903492ce38eb67950ec9c70905e1c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a6fd903492ce38eb67950ec9c70905e1c">_dumpAttrs</a> () const noexcept</td></tr>
+<tr class="separator:a6fd903492ce38eb67950ec9c70905e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1104c8b4cc75b4134d696c9829a3b53a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a1104c8b4cc75b4134d696c9829a3b53a">_dumpAttrsF</a> () const noexcept</td></tr>
+<tr class="separator:a1104c8b4cc75b4134d696c9829a3b53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -236,6 +244,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:a24b0f5927465eed1f72d4e880d06fdb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39267d8142f3ce4797f01616aa0a3ca2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a39267d8142f3ce4797f01616aa0a3ca2">_performRegex</a> (std::smatch &amp;matches, std::string &amp;regexStr, std::string &amp;str, std::string *remaining=nullptr)</td></tr>
 <tr class="separator:a39267d8142f3ce4797f01616aa0a3ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24c9501cae3955954bb6c937c5fa301a"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a24c9501cae3955954bb6c937c5fa301a">_strIdent</a> (std::size_t indent)</td></tr>
+<tr class="separator:a24c9501cae3955954bb6c937c5fa301a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -542,6 +552,62 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00026">26</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6fd903492ce38eb67950ec9c70905e1c" name="a6fd903492ce38eb67950ec9c70905e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd903492ce38eb67950ec9c70905e1c">&#9670;&nbsp;</a></span>_dumpAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myxmlpp::Node::_dumpAttrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >@summary This method will return all the attributes serialized in a minimized way (no necessary spaces between attributes) </p><dl class="section return"><dt>Returns</dt><dd>the serialized attributes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00018">18</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1104c8b4cc75b4134d696c9829a3b53a" name="a1104c8b4cc75b4134d696c9829a3b53a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1104c8b4cc75b4134d696c9829a3b53a">&#9670;&nbsp;</a></span>_dumpAttrsF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myxmlpp::Node::_dumpAttrsF </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >@summary This method will return all the attributes serialized with correct spacing formatting </p><dl class="section return"><dt>Returns</dt><dd>the serialized attributes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00033">33</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -991,6 +1057,41 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a24c9501cae3955954bb6c937c5fa301a" name="a24c9501cae3955954bb6c937c5fa301a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24c9501cae3955954bb6c937c5fa301a">&#9670;&nbsp;</a></span>_strIdent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myxmlpp::Node::_strIdent </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>indent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >@summary This method build a string which contains the necessary indent to format a node in a file during writing </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indent</td><td>the number of tab to return </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the indentation helper string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00010">10</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a9809fc7a2d03d71bc78f9d85c1731af2" name="a9809fc7a2d03d71bc78f9d85c1731af2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9809fc7a2d03d71bc78f9d85c1731af2">&#9670;&nbsp;</a></span>addAttribute() <span class="overload">[1/2]</span></h2>
 
@@ -1263,6 +1364,75 @@ Private Attributes</h2></td></tr>
 <p >Combination of empty and noAttributes method </p><dl class="section return"><dt>Returns</dt><dd>true if there is no child and no attribute </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__getSet_8cpp_source.html#l00037">37</a> of file <a class="el" href="Node__getSet_8cpp_source.html">Node_getSet.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af717258274c9d596acad21e36db3edab" name="af717258274c9d596acad21e36db3edab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af717258274c9d596acad21e36db3edab">&#9670;&nbsp;</a></span>asFString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myxmlpp::Node::asFString </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>indent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>includeChildren</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >@summary This method will return the serialized node with indentation formatting</p>
+<dl class="section return"><dt>Returns</dt><dd>the serialized node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00065">65</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa9ec4e50c99b3a9f7004709b66b4c0d3" name="aa9ec4e50c99b3a9f7004709b66b4c0d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ec4e50c99b3a9f7004709b66b4c0d3">&#9670;&nbsp;</a></span>asString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myxmlpp::Node::asString </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>includeChildren</em> = <code>true</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >@summary This method will return the serialized node minimized </p><dl class="section return"><dt>Returns</dt><dd>the serialized node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00045">45</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -3004,6 +3174,7 @@ Private Attributes</h2></td></tr>
 <li>/github/workspace/myxmlpp/src/Node/<a class="el" href="Node__children_8cpp_source.html">Node_children.cpp</a></li>
 <li>/github/workspace/myxmlpp/src/Node/<a class="el" href="Node__getSet_8cpp_source.html">Node_getSet.cpp</a></li>
 <li>/github/workspace/myxmlpp/src/Node/<a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a></li>
+<li>/github/workspace/myxmlpp/src/Node/<a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

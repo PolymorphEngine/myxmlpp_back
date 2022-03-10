@@ -100,6 +100,10 @@ $(document).ready(function(){initNavTree('classmyxmlpp_1_1Doc.html',''); initRes
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3e33945172ec37613fab51f8aa3cb13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Doc.html#ad3e33945172ec37613fab51f8aa3cb13">Doc</a> (const std::string &amp;filepath, bool keepOpen=false)</td></tr>
 <tr class="separator:ad3e33945172ec37613fab51f8aa3cb13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a494d12c5a27f3def4f35ed1c3d3352ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Doc.html#a494d12c5a27f3def4f35ed1c3d3352ef">write</a> (const std::string &amp;filepathOverride=&quot;&quot;)</td></tr>
+<tr class="separator:a494d12c5a27f3def4f35ed1c3d3352ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69125ece74dbab331f38c2c888a91215"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Doc.html#a69125ece74dbab331f38c2c888a91215">writeF</a> (const std::string &amp;filepathOverride=&quot;&quot;)</td></tr>
+<tr class="separator:a69125ece74dbab331f38c2c888a91215"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdd9370c72f3dc5f7813fc559bb4b063"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Doc.html#acdd9370c72f3dc5f7813fc559bb4b063">getFilepath</a> () const noexcept</td></tr>
 <tr class="separator:acdd9370c72f3dc5f7813fc559bb4b063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09337112a19504390181bc5d4666d669"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Doc.html#a09337112a19504390181bc5d4666d669">setFilepath</a> (const std::string &amp;filepath)</td></tr>
@@ -305,7 +309,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the current filepath </p><dl class="section return"><dt>Returns</dt><dd>the current filepath </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Doc_8cpp_source.html#l00059">59</a> of file <a class="el" href="Doc_8cpp_source.html">Doc.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Doc_8cpp_source.html#l00089">89</a> of file <a class="el" href="Doc_8cpp_source.html">Doc.cpp</a>.</p>
 
 </div>
 </div>
@@ -333,7 +337,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the root node of the document. </p><dl class="section return"><dt>Returns</dt><dd>the XML root node </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Doc_8cpp_source.html#l00078">78</a> of file <a class="el" href="Doc_8cpp_source.html">Doc.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Doc_8cpp_source.html#l00107">107</a> of file <a class="el" href="Doc_8cpp_source.html">Doc.cpp</a>.</p>
 
 </div>
 </div>
@@ -367,7 +371,59 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Doc_8cpp_source.html#l00064">64</a> of file <a class="el" href="Doc_8cpp_source.html">Doc.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Doc_8cpp_source.html#l00094">94</a> of file <a class="el" href="Doc_8cpp_source.html">Doc.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a494d12c5a27f3def4f35ed1c3d3352ef" name="a494d12c5a27f3def4f35ed1c3d3352ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a494d12c5a27f3def4f35ed1c3d3352ef">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myxmlpp::Doc::write </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filepathOverride</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >@summary This method will write all the doc structure to a file in a minified way (only necessary spaces) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepathOverride</td><td>[optional] use this option if you don't want to write to the current filepath </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Doc_8cpp_source.html#l00059">59</a> of file <a class="el" href="Doc_8cpp_source.html">Doc.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a69125ece74dbab331f38c2c888a91215" name="a69125ece74dbab331f38c2c888a91215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69125ece74dbab331f38c2c888a91215">&#9670;&nbsp;</a></span>writeF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myxmlpp::Doc::writeF </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filepathOverride</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >@summary This method will write all the doc structure to a file in a pretty formatted way </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepathOverride</td><td>[optional] use this option if you don't want to write to the current filepath </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Doc_8cpp_source.html#l00074">74</a> of file <a class="el" href="Doc_8cpp_source.html">Doc.cpp</a>.</p>
 
 </div>
 </div>
