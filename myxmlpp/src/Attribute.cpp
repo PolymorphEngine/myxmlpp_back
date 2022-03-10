@@ -32,6 +32,10 @@ namespace myxmlpp {
         _value = matches[2].str();
     }
 
+    std::string Attribute::asString() const noexcept {
+        return _key + "=\"" + _value + "\"";
+    }
+
     std::string Attribute::getKey() const noexcept
     {
         return _key;
