@@ -2,9 +2,6 @@ var hierarchy =
 [
     [ "myxmlpp::Attribute", "classmyxmlpp_1_1Attribute.html", null ],
     [ "myxmlpp::Doc", "classmyxmlpp_1_1Doc.html", null ],
-    [ "MyLibrary::Example", "classMyLibrary_1_1Example.html", [
-      [ "MyLibrary::SubclassExample", "classMyLibrary_1_1SubclassExample.html", null ]
-    ] ],
     [ "std::exception", null, [
       [ "myxmlpp::Exception", "classmyxmlpp_1_1Exception.html", [
         [ "myxmlpp::AttributeNotFoundException", "classmyxmlpp_1_1AttributeNotFoundException.html", null ],

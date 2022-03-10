@@ -1,9 +1,5 @@
 var annotated_dup =
 [
-    [ "MyLibrary", null, [
-      [ "Example", "classMyLibrary_1_1Example.html", "classMyLibrary_1_1Example" ],
-      [ "SubclassExample", "classMyLibrary_1_1SubclassExample.html", "classMyLibrary_1_1SubclassExample" ]
-    ] ],
     [ "myxmlpp", null, [
       [ "Attribute", "classmyxmlpp_1_1Attribute.html", "classmyxmlpp_1_1Attribute" ],
       [ "AttributeNotFoundException", "classmyxmlpp_1_1AttributeNotFoundException.html", "classmyxmlpp_1_1AttributeNotFoundException" ],

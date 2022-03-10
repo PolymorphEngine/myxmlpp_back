@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['readme_0',['README',['../md__github_workspace_README.html',1,'']]],
+  ['readme_0',['README',['../md_README.html',1,'']]],
   ['rmattribute_1',['rmAttribute',['../classmyxmlpp_1_1Node.html#a928a6df1f9bd2f2f9954d2aa73f62d75',1,'myxmlpp::Node']]],
   ['rmchild_2',['rmChild',['../classmyxmlpp_1_1Node.html#a17506c8a98c81e92dd3cc1ffdab19519',1,'myxmlpp::Node']]],
   ['rmchildbypath_3',['rmChildByPath',['../classmyxmlpp_1_1Node.html#aa130a25d681119aca2470230c829f9e2',1,'myxmlpp::Node']]],

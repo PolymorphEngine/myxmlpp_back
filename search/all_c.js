@@ -8,6 +8,5 @@ var searchData=
   ['setvalue_5',['setValue',['../classmyxmlpp_1_1Attribute.html#aebf83c4193d5b880b14c6c9d41bea51e',1,'myxmlpp::Attribute']]],
   ['setvaluebool_6',['setValueBool',['../classmyxmlpp_1_1Attribute.html#a24da61f80ceb28e3e8776623818ee873',1,'myxmlpp::Attribute']]],
   ['setvaluefloat_7',['setValueFloat',['../classmyxmlpp_1_1Attribute.html#aaba5f5ba494431b4cab461a244839167',1,'myxmlpp::Attribute']]],
-  ['setvalueint_8',['setValueInt',['../classmyxmlpp_1_1Attribute.html#a35ff0c00d73bbbcf71a568c3aa036d10',1,'myxmlpp::Attribute']]],
-  ['subclassexample_9',['SubclassExample',['../classMyLibrary_1_1SubclassExample.html',1,'MyLibrary']]]
+  ['setvalueint_8',['setValueInt',['../classmyxmlpp_1_1Attribute.html#a35ff0c00d73bbbcf71a568c3aa036d10',1,'myxmlpp::Attribute']]]
 ];
