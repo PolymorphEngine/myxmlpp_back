@@ -15,13 +15,13 @@ myxmlpp::Node::Node(myxmlpp::Node *parent) noexcept
 {}
 
 myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
-                    std::vector<std::shared_ptr<Node>> children)
+                    std::vector<std::shared_ptr<Node>> children) noexcept
         : _parent(parent), _tag(std::move(tag)), _children(std::move(children))
 {}
 
 myxmlpp::Node::Node(myxmlpp::Node *parent, std::string tag,
                     std::vector<std::shared_ptr<Attribute>> attributes,
-                    std::vector<std::shared_ptr<Node>> children)
+                    std::vector<std::shared_ptr<Node>> children) noexcept
         : _parent(parent), _tag(std::move(tag)),
         _attributes(std::move(attributes)), _children(std::move(children))
 {}
