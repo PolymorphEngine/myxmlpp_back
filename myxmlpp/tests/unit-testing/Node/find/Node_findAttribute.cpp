@@ -57,7 +57,3 @@ Test(Node_findAttribute, second_attr)
         cr_expect(0);
     }
 }
-
-Test(kappa, ok) {
-    cr_expect(0);
-}
