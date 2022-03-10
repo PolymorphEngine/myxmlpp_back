@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - master
+      - dev
 
 jobs:
   run-tests:
@@ -15,21 +16,21 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: mkdir build folder
-        run: mkdir -p myxmlpp/build
+        run: mkdir -p build
 
       - name: cmake build
-        run: cmake -Bmyxmlpp/build -H.
+        run: cmake -Bbuild -H.
 
       - name: build unit test
-        run: cmake --build myxmlpp/build --target unit-tests --parallel 2
+        run: cmake --build build --target unit-tests --parallel 2
 
       - name: run tests
-        run: cd myxmlpp && ./unit-tests --json=tests_report.json || echo ""
+        run: ./unit-tests --json=tests_report.json || echo ""
 
       - name: interpret-criterion-action
         uses: alexjub94/interpret-criterion-action@v2.0.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          reportFilepath: myxmlpp/tests_report.json
+          reportFilepath: tests_report.json
 
 
