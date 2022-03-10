@@ -19,6 +19,7 @@ jobs:
       - run : gcc -v
       - name: build unit test
         run: cmake --build myxmlpp/build --target unit-tests --parallel 2
+      - run: cat myxmlpp/tests/unit-testing/Node/Node_findAttribute.cpp
       - name: run tests
         run: cd myxmlpp && ./unit-tests --json=tests_report.json || echo ""
       - name: interpret-criterion-action
