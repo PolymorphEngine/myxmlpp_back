@@ -32,10 +32,9 @@
 *.app
 
 docs/doxygen/**
-myxmlpp/build*
+build*
 myxmlppexec
-myxmlpp/unit-tests
-myxmlpp/myxmlppexec
+unit-tests
 
 # Default ignored files
 .idea/shelf/
