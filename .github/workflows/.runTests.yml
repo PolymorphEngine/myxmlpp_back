@@ -22,9 +22,9 @@ jobs:
       - name: run tests
         run: cd myxmlpp && ./unit-tests --json=tests_report.json || echo ""
       - name: interpret-criterion-action
-        uses: alexjub94/interpret-criterion-action@v1.0.1
+        uses: alexjub94/interpret-criterion-action@v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          reportFilename: myxmlpp/tests_report_json
+          reportFilepath: myxmlpp/tests_report_json
 
 
