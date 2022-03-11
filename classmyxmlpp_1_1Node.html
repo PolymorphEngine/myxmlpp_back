@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('classmyxmlpp_1_1Node.html',''); initRe
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
@@ -96,6 +97,11 @@ $(document).ready(function(){initNavTree('classmyxmlpp_1_1Node.html',''); initRe
 
 <p><code>#include &lt;<a class="el" href="Node_8hpp_source.html">Node.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ab054348db4f2a8d22d99f9236d2998b4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#ab054348db4f2a8d22d99f9236d2998b4">NodeIterator</a> = std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> &gt; &gt;::iterator</td></tr>
+<tr class="separator:ab054348db4f2a8d22d99f9236d2998b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a88767e53f5ae9ffa2b1045768342f0de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a88767e53f5ae9ffa2b1045768342f0de">Node</a> (<a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *parent) noexcept</td></tr>
@@ -132,6 +138,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a928a6df1f9bd2f2f9954d2aa73f62d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab29da839f0b5a78bf3a29fd115af6386"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Attribute.html">Attribute</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#ab29da839f0b5a78bf3a29fd115af6386">popAttribute</a> (const std::string &amp;key) noexcept</td></tr>
 <tr class="separator:ab29da839f0b5a78bf3a29fd115af6386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7cf273d3771ad7effb1d9a6143ea4e"><td class="memItemLeft" align="right" valign="top">NodeIterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a0d7cf273d3771ad7effb1d9a6143ea4e">begin</a> () noexcept</td></tr>
+<tr class="separator:a0d7cf273d3771ad7effb1d9a6143ea4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac20e460b3924f626300c4bde6809dd2c"><td class="memItemLeft" align="right" valign="top">NodeIterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#ac20e460b3924f626300c4bde6809dd2c">end</a> () noexcept</td></tr>
+<tr class="separator:ac20e460b3924f626300c4bde6809dd2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28c5e861aef5209c10ce5ff0f6adada2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a28c5e861aef5209c10ce5ff0f6adada2">findChild</a> (const std::string &amp;tag) const</td></tr>
 <tr class="separator:a28c5e861aef5209c10ce5ff0f6adada2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b0f9a0e16b5f313eb9d73567ae585c2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a4b0f9a0e16b5f313eb9d73567ae585c2">findChildR</a> (const std::string &amp;tag, int maxDepth=-1) const</td></tr>
@@ -264,7 +274,24 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p >Core class that represent a XML node with tag, attributes, children... </p>
 
 <p class="definition">Definition at line <a class="el" href="Node_8hpp_source.html#l00021">21</a> of file <a class="el" href="Node_8hpp_source.html">Node.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ab054348db4f2a8d22d99f9236d2998b4" name="ab054348db4f2a8d22d99f9236d2998b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab054348db4f2a8d22d99f9236d2998b4">&#9670;&nbsp;</a></span>NodeIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using myxmlpp::Node::NodeIterator =  std::vector&lt;std::shared_ptr&lt;<a class="el" href="classmyxmlpp_1_1Node.html">Node</a>&gt; &gt;::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Node_8hpp_source.html#l00246">246</a> of file <a class="el" href="Node_8hpp_source.html">Node.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a39d20be91d531273f6d66a5b6cff0cf8" name="a39d20be91d531273f6d66a5b6cff0cf8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39d20be91d531273f6d66a5b6cff0cf8">&#9670;&nbsp;</a></span>Node() <span class="overload">[1/5]</span></h2>
 
@@ -577,7 +604,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >@summary This method will return all the attributes serialized in a minimized way (no necessary spaces between attributes) </p><dl class="section return"><dt>Returns</dt><dd>the serialized attributes </dd></dl>
+<p >This method will return all the attributes serialized in a minimized way (no necessary spaces between attributes) </p><dl class="section return"><dt>Returns</dt><dd>the serialized attributes </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00018">18</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
 
@@ -605,7 +632,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >@summary This method will return all the attributes serialized with correct spacing formatting </p><dl class="section return"><dt>Returns</dt><dd>the serialized attributes </dd></dl>
+<p >This method will return all the attributes serialized with correct spacing formatting </p><dl class="section return"><dt>Returns</dt><dd>the serialized attributes </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00033">33</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
 
@@ -1080,7 +1107,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >@summary This method build a string which contains the necessary indent to format a node in a file during writing </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This method build a string which contains the necessary indent to format a node in a file during writing </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">indent</td><td>the number of tab to return </td></tr>
   </table>
@@ -1400,7 +1427,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >@summary This method will return the serialized node with indentation formatting</p>
+<p >This method will return the serialized node with indentation formatting</p>
 <dl class="section return"><dt>Returns</dt><dd>the serialized node </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00065">65</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
@@ -1430,9 +1457,37 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >@summary This method will return the serialized node minimized </p><dl class="section return"><dt>Returns</dt><dd>the serialized node </dd></dl>
+<p >This method will return the serialized node minimized </p><dl class="section return"><dt>Returns</dt><dd>the serialized node </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__writeUtils_8cpp_source.html#l00045">45</a> of file <a class="el" href="Node__writeUtils_8cpp_source.html">Node_writeUtils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0d7cf273d3771ad7effb1d9a6143ea4e" name="a0d7cf273d3771ad7effb1d9a6143ea4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d7cf273d3771ad7effb1d9a6143ea4e">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NodeIterator myxmlpp::Node::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Treat a node as an iterator to his children (begin) </p><dl class="section return"><dt>Returns</dt><dd>First iterator of children </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Node_8hpp_source.html#l00251">251</a> of file <a class="el" href="Node_8hpp_source.html">Node.hpp</a>.</p>
 
 </div>
 </div>
@@ -1461,6 +1516,33 @@ Private Attributes</h2></td></tr>
 <p >Check if the node has children </p><dl class="section return"><dt>Returns</dt><dd>true if there is no child </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Node__children_8cpp_source.html#l00024">24</a> of file <a class="el" href="Node__children_8cpp_source.html">Node_children.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac20e460b3924f626300c4bde6809dd2c" name="ac20e460b3924f626300c4bde6809dd2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac20e460b3924f626300c4bde6809dd2c">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NodeIterator myxmlpp::Node::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Node_8hpp_source.html#l00256">256</a> of file <a class="el" href="Node_8hpp_source.html">Node.hpp</a>.</p>
 
 </div>
 </div>

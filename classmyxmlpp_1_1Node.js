@@ -17,6 +17,7 @@ var classmyxmlpp_1_1Node =
     [ "allEmpty", "classmyxmlpp_1_1Node.html#a33e423ced3d45bc9c991d8912c60234f", null ],
     [ "asFString", "classmyxmlpp_1_1Node.html#af717258274c9d596acad21e36db3edab", null ],
     [ "asString", "classmyxmlpp_1_1Node.html#aa9ec4e50c99b3a9f7004709b66b4c0d3", null ],
+    [ "begin", "classmyxmlpp_1_1Node.html#a0d7cf273d3771ad7effb1d9a6143ea4e", null ],
     [ "empty", "classmyxmlpp_1_1Node.html#aa5a6719d8748b1dec09abfec868c16e5", null ],
     [ "findAttribute", "classmyxmlpp_1_1Node.html#a0508f9c1e69f2ca5d825fa9fa5617998", null ],
     [ "findChild", "classmyxmlpp_1_1Node.html#a28c5e861aef5209c10ce5ff0f6adada2", null ],
