@@ -246,16 +246,16 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a2fcf19aa5f13035cb0378e4b24cec7c0"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a2fcf19aa5f13035cb0378e4b24cec7c0">_split</a> (const std::string &amp;str, char delim)</td></tr>
-<tr class="separator:a2fcf19aa5f13035cb0378e4b24cec7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dc768c8909a6d2b0967b1f127070ece"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a9dc768c8909a6d2b0967b1f127070ece">_split</a> (const std::string &amp;str, char delimiter)</td></tr>
+<tr class="separator:a9dc768c8909a6d2b0967b1f127070ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43debeb7e4e338cd1f3c9825c1a9022e"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a43debeb7e4e338cd1f3c9825c1a9022e">_searchChild</a> (const <a class="el" href="classmyxmlpp_1_1Node.html">Node</a> *current, const std::vector&lt; std::string &gt; &amp;tab, std::vector&lt; std::string &gt;::iterator it)</td></tr>
 <tr class="separator:a43debeb7e4e338cd1f3c9825c1a9022e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24b0f5927465eed1f72d4e880d06fdb5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a24b0f5927465eed1f72d4e880d06fdb5">_isEndOfNode</a> (std::string &amp;str)</td></tr>
 <tr class="separator:a24b0f5927465eed1f72d4e880d06fdb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39267d8142f3ce4797f01616aa0a3ca2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a39267d8142f3ce4797f01616aa0a3ca2">_performRegex</a> (std::smatch &amp;matches, std::string &amp;regexStr, std::string &amp;str, std::string *remaining=nullptr)</td></tr>
 <tr class="separator:a39267d8142f3ce4797f01616aa0a3ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c9501cae3955954bb6c937c5fa301a"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#a24c9501cae3955954bb6c937c5fa301a">_strIdent</a> (std::size_t indent)</td></tr>
-<tr class="separator:a24c9501cae3955954bb6c937c5fa301a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf5cd7a97f11472cb035ef12829b748b"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyxmlpp_1_1Node.html#aaf5cd7a97f11472cb035ef12829b748b">_strIndent</a> (std::size_t indent)</td></tr>
+<tr class="separator:aaf5cd7a97f11472cb035ef12829b748b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -362,7 +362,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -578,7 +578,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00026">26</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00027">27</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -662,7 +662,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00078">78</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00079">79</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -828,7 +828,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00012">12</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00013">13</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -866,7 +866,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00056">56</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00057">57</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -916,7 +916,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00038">38</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__parseUtils_8cpp_source.html#l00039">39</a> of file <a class="el" href="Node__parseUtils_8cpp_source.html">Node_parseUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -1046,8 +1046,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2fcf19aa5f13035cb0378e4b24cec7c0" name="a2fcf19aa5f13035cb0378e4b24cec7c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fcf19aa5f13035cb0378e4b24cec7c0">&#9670;&nbsp;</a></span>_split()</h2>
+<a id="a9dc768c8909a6d2b0967b1f127070ece" name="a9dc768c8909a6d2b0967b1f127070ece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dc768c8909a6d2b0967b1f127070ece">&#9670;&nbsp;</a></span>_split()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1065,7 +1065,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>delim</em>&#160;</td>
+          <td class="paramname"><em>delimiter</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1084,8 +1084,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a24c9501cae3955954bb6c937c5fa301a" name="a24c9501cae3955954bb6c937c5fa301a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24c9501cae3955954bb6c937c5fa301a">&#9670;&nbsp;</a></span>_strIdent()</h2>
+<a id="aaf5cd7a97f11472cb035ef12829b748b" name="aaf5cd7a97f11472cb035ef12829b748b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf5cd7a97f11472cb035ef12829b748b">&#9670;&nbsp;</a></span>_strIndent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1094,7 +1094,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string myxmlpp::Node::_strIdent </td>
+          <td class="memname">std::string myxmlpp::Node::_strIndent </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>indent</em></td><td>)</td>
@@ -1228,7 +1228,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00012">12</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00010">10</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
 
 </div>
 </div>
@@ -1278,7 +1278,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00023">23</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00021">21</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
 
 </div>
 </div>
@@ -1312,7 +1312,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00017">17</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00015">15</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
 
 </div>
 </div>
@@ -1362,7 +1362,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00032">32</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Node__addChild_8cpp_source.html#l00030">30</a> of file <a class="el" href="Node__addChild_8cpp_source.html">Node_addChild.cpp</a>.</p>
 
 </div>
 </div>
@@ -2612,7 +2612,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a list of the popped nodes or an empty list if no node is found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="src_2Node_2delete_2pop_2Node__popChildrenR_8cpp_source.html#l00029">29</a> of file <a class="el" href="src_2Node_2delete_2pop_2Node__popChildrenR_8cpp_source.html">Node_popChildrenR.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="src_2Node_2delete_2pop_2Node__popChildrenR_8cpp_source.html#l00028">28</a> of file <a class="el" href="src_2Node_2delete_2pop_2Node__popChildrenR_8cpp_source.html">Node_popChildrenR.cpp</a>.</p>
 
 </div>
 </div>

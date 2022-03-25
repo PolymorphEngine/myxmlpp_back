@@ -16,7 +16,7 @@ var searchData=
   ['_5fline_13',['_line',['../classmyxmlpp_1_1Exception.html#a71fbf9d544df6d506e52620b0aa83800',1,'myxmlpp::Exception']]],
   ['_5fparent_14',['_parent',['../classmyxmlpp_1_1Node.html#acf53cd68206573061acfe93611304d70',1,'myxmlpp::Node']]],
   ['_5freadfile_15',['_readFile',['../classmyxmlpp_1_1Doc.html#aca45c86207e6d4e7bbf8379e59a4ced4',1,'myxmlpp::Doc']]],
-  ['_5fstrident_16',['_strIdent',['../classmyxmlpp_1_1Node.html#a24c9501cae3955954bb6c937c5fa301a',1,'myxmlpp::Node']]],
+  ['_5fstrindent_16',['_strIndent',['../classmyxmlpp_1_1Node.html#aaf5cd7a97f11472cb035ef12829b748b',1,'myxmlpp::Node']]],
   ['_5ftag_17',['_tag',['../classmyxmlpp_1_1NodeNotFoundException.html#ae73535847f15cbccbaf119dbe8d10efb',1,'myxmlpp::NodeNotFoundException::_tag()'],['../classmyxmlpp_1_1Node.html#acbbccac2c569c5bde61e089392c24b7b',1,'myxmlpp::Node::_tag()']]],
   ['_5fthrowopenerror_18',['_throwOpenError',['../classmyxmlpp_1_1Doc.html#a39ed4e6e64979fd42f60db08ec2b495d',1,'myxmlpp::Doc']]],
   ['_5fvalue_19',['_value',['../classmyxmlpp_1_1Attribute.html#ac1e0ae0349f93041bcac7b4ef23b365b',1,'myxmlpp::Attribute']]]

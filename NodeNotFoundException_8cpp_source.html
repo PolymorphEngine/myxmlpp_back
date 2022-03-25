@@ -97,26 +97,28 @@ $(document).ready(function(){initNavTree('NodeNotFoundException_8cpp_source.html
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;NodeNotFoundException.hpp&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>myxmlpp::NodeNotFoundException::NodeNotFoundException(<span class="keyword">const</span> std::string&amp; tag,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">const</span> std::string&amp; file,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">int</span> line,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">const</span> std::string&amp; description) noexcept</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    : _tag(tag), Exception(file, line, description)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    build();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classmyxmlpp_1_1NodeNotFoundException.html#a92cda1917a7723001fe1e9180f55b3f1">   20</a></span>std::string <a class="code hl_function" href="classmyxmlpp_1_1NodeNotFoundException.html#a92cda1917a7723001fe1e9180f55b3f1">myxmlpp::NodeNotFoundException::baseWhat</a>() const noexcept {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmyxmlpp_1_1Exception.html#a29d2ac9485461fe46281af331b4b5eac">Exception::baseWhat</a>()</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>           + std::string(<span class="stringliteral">&quot;: cannot find node &quot;</span>)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>           + <a class="code hl_variable" href="classmyxmlpp_1_1NodeNotFoundException.html#ae73535847f15cbccbaf119dbe8d10efb">_tag</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>std::string myxmlpp::NodeNotFoundException::getTag() const noexcept {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> _tag;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>myxmlpp::NodeNotFoundException::NodeNotFoundException(std::string  tag,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">const</span> std::string&amp; file,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">int</span> line,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">const</span> std::string&amp; description) noexcept</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    : _tag(std::move(tag)), Exception(file, line, description)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    build();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classmyxmlpp_1_1NodeNotFoundException.html#a92cda1917a7723001fe1e9180f55b3f1">   22</a></span>std::string <a class="code hl_function" href="classmyxmlpp_1_1NodeNotFoundException.html#a92cda1917a7723001fe1e9180f55b3f1">myxmlpp::NodeNotFoundException::baseWhat</a>() const noexcept {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmyxmlpp_1_1Exception.html#a29d2ac9485461fe46281af331b4b5eac">Exception::baseWhat</a>()</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>           + std::string(<span class="stringliteral">&quot;: cannot find node &quot;</span>)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>           + <a class="code hl_variable" href="classmyxmlpp_1_1NodeNotFoundException.html#ae73535847f15cbccbaf119dbe8d10efb">_tag</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>std::string myxmlpp::NodeNotFoundException::getTag() const noexcept {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> _tag;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="ttc" id="aclassmyxmlpp_1_1Exception_html_a29d2ac9485461fe46281af331b4b5eac"><div class="ttname"><a href="classmyxmlpp_1_1Exception.html#a29d2ac9485461fe46281af331b4b5eac">myxmlpp::Exception::baseWhat</a></div><div class="ttdeci">virtual std::string baseWhat() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8cpp_source.html#l00027">Exception.cpp:27</a></div></div>
-<div class="ttc" id="aclassmyxmlpp_1_1NodeNotFoundException_html_a92cda1917a7723001fe1e9180f55b3f1"><div class="ttname"><a href="classmyxmlpp_1_1NodeNotFoundException.html#a92cda1917a7723001fe1e9180f55b3f1">myxmlpp::NodeNotFoundException::baseWhat</a></div><div class="ttdeci">std::string baseWhat() const noexcept override</div><div class="ttdef"><b>Definition:</b> <a href="NodeNotFoundException_8cpp_source.html#l00020">NodeNotFoundException.cpp:20</a></div></div>
+<div class="ttc" id="aclassmyxmlpp_1_1NodeNotFoundException_html_a92cda1917a7723001fe1e9180f55b3f1"><div class="ttname"><a href="classmyxmlpp_1_1NodeNotFoundException.html#a92cda1917a7723001fe1e9180f55b3f1">myxmlpp::NodeNotFoundException::baseWhat</a></div><div class="ttdeci">std::string baseWhat() const noexcept override</div><div class="ttdef"><b>Definition:</b> <a href="NodeNotFoundException_8cpp_source.html#l00022">NodeNotFoundException.cpp:22</a></div></div>
 <div class="ttc" id="aclassmyxmlpp_1_1NodeNotFoundException_html_ae73535847f15cbccbaf119dbe8d10efb"><div class="ttname"><a href="classmyxmlpp_1_1NodeNotFoundException.html#ae73535847f15cbccbaf119dbe8d10efb">myxmlpp::NodeNotFoundException::_tag</a></div><div class="ttdeci">std::string _tag</div><div class="ttdef"><b>Definition:</b> <a href="NodeNotFoundException_8hpp_source.html#l00023">NodeNotFoundException.hpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

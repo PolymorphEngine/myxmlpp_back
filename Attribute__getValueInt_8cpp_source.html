@@ -133,9 +133,9 @@ $(document).ready(function(){initNavTree('Attribute__getValueInt_8cpp_source.htm
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::string k = <span class="stringliteral">&quot;key&quot;</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::string v = <span class="stringliteral">&quot;1kappa&quot;</span>;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="classmyxmlpp_1_1Attribute.html">myxmlpp::Attribute</a> a(k, v);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">int</span> i = a.getValueInt();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        (void)a.getValueInt();</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        cr_expect(0);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classmyxmlpp_1_1IllegalValueException.html">myxmlpp::IllegalValueException</a>) {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        cr_expect(1);</div>

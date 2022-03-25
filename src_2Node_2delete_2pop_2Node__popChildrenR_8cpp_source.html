@@ -109,21 +109,20 @@ $(document).ready(function(){initNavTree('src_2Node_2delete_2pop_2Node__popChild
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        children.push_back(**it);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_variable" href="classmyxmlpp_1_1Node.html#a84b13b628481d71b88f4ac802982abde">_children</a>.erase(*it);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code hl_variable" href="classmyxmlpp_1_1Node.html#a84b13b628481d71b88f4ac802982abde">_children</a>.begin();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>         it != <a class="code hl_variable" href="classmyxmlpp_1_1Node.html#a84b13b628481d71b88f4ac802982abde">_children</a>.end(); ++it)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        (*it)-&gt;_popChildrenRecurs(children, tag, depth - 1);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>std::vector&lt;std::shared_ptr&lt;myxmlpp::Node&gt;&gt;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classmyxmlpp_1_1Node.html#a4e1ea310d3b9bbe7b71f99fb3d8400c7">   29</a></span><a class="code hl_function" href="classmyxmlpp_1_1Node.html#a4e1ea310d3b9bbe7b71f99fb3d8400c7">myxmlpp::Node::popChildrenR</a>(<span class="keyword">const</span> std::string &amp;tag,</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                            <span class="keywordtype">int</span> maxDepth) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::vector&lt;std::shared_ptr&lt;Node&gt;&gt; popped;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    _popChildrenRecurs(popped, tag, maxDepth);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> popped;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
-<div class="ttc" id="aclassmyxmlpp_1_1Node_html_a4e1ea310d3b9bbe7b71f99fb3d8400c7"><div class="ttname"><a href="classmyxmlpp_1_1Node.html#a4e1ea310d3b9bbe7b71f99fb3d8400c7">myxmlpp::Node::popChildrenR</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Node &gt; &gt; popChildrenR(const std::string &amp;tag, int maxDepth=-1) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="src_2Node_2delete_2pop_2Node__popChildrenR_8cpp_source.html#l00029">Node_popChildrenR.cpp:29</a></div></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; it : <a class="code hl_variable" href="classmyxmlpp_1_1Node.html#a84b13b628481d71b88f4ac802982abde">_children</a>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        it-&gt;_popChildrenRecurs(children, tag, depth - 1);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>std::vector&lt;std::shared_ptr&lt;myxmlpp::Node&gt;&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classmyxmlpp_1_1Node.html#a4e1ea310d3b9bbe7b71f99fb3d8400c7">   28</a></span><a class="code hl_function" href="classmyxmlpp_1_1Node.html#a4e1ea310d3b9bbe7b71f99fb3d8400c7">myxmlpp::Node::popChildrenR</a>(<span class="keyword">const</span> std::string &amp;tag,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                            <span class="keywordtype">int</span> maxDepth) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::vector&lt;std::shared_ptr&lt;Node&gt;&gt; popped;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    _popChildrenRecurs(popped, tag, maxDepth);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">return</span> popped;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="ttc" id="aclassmyxmlpp_1_1Node_html_a4e1ea310d3b9bbe7b71f99fb3d8400c7"><div class="ttname"><a href="classmyxmlpp_1_1Node.html#a4e1ea310d3b9bbe7b71f99fb3d8400c7">myxmlpp::Node::popChildrenR</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Node &gt; &gt; popChildrenR(const std::string &amp;tag, int maxDepth=-1) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="src_2Node_2delete_2pop_2Node__popChildrenR_8cpp_source.html#l00028">Node_popChildrenR.cpp:28</a></div></div>
 <div class="ttc" id="aclassmyxmlpp_1_1Node_html_a84b13b628481d71b88f4ac802982abde"><div class="ttname"><a href="classmyxmlpp_1_1Node.html#a84b13b628481d71b88f4ac802982abde">myxmlpp::Node::_children</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Node &gt; &gt; _children</div><div class="ttdef"><b>Definition:</b> <a href="Node_8hpp_source.html#l00046">Node.hpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

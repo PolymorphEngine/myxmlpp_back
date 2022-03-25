@@ -7,7 +7,7 @@ var classmyxmlpp_1_1Node =
     [ "Node", "classmyxmlpp_1_1Node.html#a9eb6a8268e2f2c2c5c9fab99eef16e9c", null ],
     [ "_dumpAttrs", "classmyxmlpp_1_1Node.html#a6fd903492ce38eb67950ec9c70905e1c", null ],
     [ "_dumpAttrsF", "classmyxmlpp_1_1Node.html#a1104c8b4cc75b4134d696c9829a3b53a", null ],
-    [ "_strIdent", "classmyxmlpp_1_1Node.html#a24c9501cae3955954bb6c937c5fa301a", null ],
+    [ "_strIndent", "classmyxmlpp_1_1Node.html#aaf5cd7a97f11472cb035ef12829b748b", null ],
     [ "addAttribute", "classmyxmlpp_1_1Node.html#a9809fc7a2d03d71bc78f9d85c1731af2", null ],
     [ "addAttribute", "classmyxmlpp_1_1Node.html#ae91702069921a08b4d144e9840657827", null ],
     [ "addChild", "classmyxmlpp_1_1Node.html#a02120cf8f952812f6717e754a2b9b3f0", null ],

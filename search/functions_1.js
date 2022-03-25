@@ -8,5 +8,5 @@ var searchData=
   ['allempty_5',['allEmpty',['../classmyxmlpp_1_1Node.html#a33e423ced3d45bc9c991d8912c60234f',1,'myxmlpp::Node']]],
   ['asfstring_6',['asFString',['../classmyxmlpp_1_1Node.html#af717258274c9d596acad21e36db3edab',1,'myxmlpp::Node']]],
   ['asstring_7',['asString',['../classmyxmlpp_1_1Node.html#aa9ec4e50c99b3a9f7004709b66b4c0d3',1,'myxmlpp::Node']]],
-  ['attribute_8',['Attribute',['../classmyxmlpp_1_1Attribute.html#a12d2ac68258cece1241fc89727e8e612',1,'myxmlpp::Attribute::Attribute(const std::string &amp;key, const std::string &amp;value)'],['../classmyxmlpp_1_1Attribute.html#ad1d19b7a859422f03167b9f24d4939a9',1,'myxmlpp::Attribute::Attribute(std::string &amp;str)']]]
+  ['attribute_8',['Attribute',['../classmyxmlpp_1_1Attribute.html#a295dae198712ecf4889a04be30054eb0',1,'myxmlpp::Attribute::Attribute(std::string key, std::string value)'],['../classmyxmlpp_1_1Attribute.html#ad1d19b7a859422f03167b9f24d4939a9',1,'myxmlpp::Attribute::Attribute(std::string &amp;str)']]]
 ];

@@ -96,27 +96,29 @@ $(document).ready(function(){initNavTree('FileException_8cpp_source.html',''); i
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;FileException.hpp&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>myxmlpp::FileException::FileException(<span class="keyword">const</span> std::string &amp;filepath,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                                      <span class="keyword">const</span> std::string &amp;file,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                                      <span class="keywordtype">int</span> line,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                      <span class="keyword">const</span> std::string &amp;description) noexcept</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    : _filepath(filepath), Exception(file, line, description)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    build();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">const</span> std::string &amp;myxmlpp::FileException::getFilepath()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmyxmlpp_1_1FileException.html#a8091f05fef036013199ac0a0dc9b8dff">_filepath</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classmyxmlpp_1_1FileException.html#adc8b271a5a99e4aec9fdee8b15a14d5d">   23</a></span>std::string <a class="code hl_function" href="classmyxmlpp_1_1FileException.html#adc8b271a5a99e4aec9fdee8b15a14d5d">myxmlpp::FileException::baseWhat</a>() const noexcept {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmyxmlpp_1_1Exception.html#a29d2ac9485461fe46281af331b4b5eac">Exception::baseWhat</a>()</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>           + std::string(<span class="stringliteral">&quot;: error while interacting with file &quot;</span>)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>           + _filepath;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>myxmlpp::FileException::FileException(std::string filepath,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                      <span class="keyword">const</span> std::string &amp;file,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                                      <span class="keywordtype">int</span> line,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                                      <span class="keyword">const</span> std::string &amp;description) noexcept</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    : _filepath(std::move(filepath)), Exception(file, line, description)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    build();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">const</span> std::string &amp;myxmlpp::FileException::getFilepath()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmyxmlpp_1_1FileException.html#a8091f05fef036013199ac0a0dc9b8dff">_filepath</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classmyxmlpp_1_1FileException.html#adc8b271a5a99e4aec9fdee8b15a14d5d">   25</a></span>std::string <a class="code hl_function" href="classmyxmlpp_1_1FileException.html#adc8b271a5a99e4aec9fdee8b15a14d5d">myxmlpp::FileException::baseWhat</a>() const noexcept {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmyxmlpp_1_1Exception.html#a29d2ac9485461fe46281af331b4b5eac">Exception::baseWhat</a>()</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>           + std::string(<span class="stringliteral">&quot;: error while interacting with file &quot;</span>)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>           + _filepath;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 <div class="ttc" id="aclassmyxmlpp_1_1Exception_html_a29d2ac9485461fe46281af331b4b5eac"><div class="ttname"><a href="classmyxmlpp_1_1Exception.html#a29d2ac9485461fe46281af331b4b5eac">myxmlpp::Exception::baseWhat</a></div><div class="ttdeci">virtual std::string baseWhat() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8cpp_source.html#l00027">Exception.cpp:27</a></div></div>
 <div class="ttc" id="aclassmyxmlpp_1_1FileException_html_a8091f05fef036013199ac0a0dc9b8dff"><div class="ttname"><a href="classmyxmlpp_1_1FileException.html#a8091f05fef036013199ac0a0dc9b8dff">myxmlpp::FileException::_filepath</a></div><div class="ttdeci">std::string _filepath</div><div class="ttdef"><b>Definition:</b> <a href="FileException_8hpp_source.html#l00026">FileException.hpp:26</a></div></div>
-<div class="ttc" id="aclassmyxmlpp_1_1FileException_html_adc8b271a5a99e4aec9fdee8b15a14d5d"><div class="ttname"><a href="classmyxmlpp_1_1FileException.html#adc8b271a5a99e4aec9fdee8b15a14d5d">myxmlpp::FileException::baseWhat</a></div><div class="ttdeci">std::string baseWhat() const noexcept override</div><div class="ttdef"><b>Definition:</b> <a href="FileException_8cpp_source.html#l00023">FileException.cpp:23</a></div></div>
+<div class="ttc" id="aclassmyxmlpp_1_1FileException_html_adc8b271a5a99e4aec9fdee8b15a14d5d"><div class="ttname"><a href="classmyxmlpp_1_1FileException.html#adc8b271a5a99e4aec9fdee8b15a14d5d">myxmlpp::FileException::baseWhat</a></div><div class="ttdeci">std::string baseWhat() const noexcept override</div><div class="ttdef"><b>Definition:</b> <a href="FileException_8cpp_source.html#l00025">FileException.cpp:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

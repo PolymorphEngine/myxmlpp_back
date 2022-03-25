@@ -98,13 +98,13 @@ $(document).ready(function(){initNavTree('src_2Node_2find_2Node__findChildByPath
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Node.hpp&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>std::vector&lt;std::string&gt; myxmlpp::Node::_split(<span class="keyword">const</span> std::string &amp;str,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                                               <span class="keywordtype">char</span> delim)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                                               <span class="keywordtype">char</span> delimiter)</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    std::vector&lt;std::string&gt; result;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::stringstream ss (str);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::string item;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">while</span> (getline(ss, item, delim)) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">while</span> (getline(ss, item, delimiter)) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        result.push_back (item);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
