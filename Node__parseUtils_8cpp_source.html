@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('Node__parseUtils_8cpp_source.html','')
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        _extractAttributes(attributes);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    str = matches.suffix().str();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (matches[4].str().empty()) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (!matches[4].length()) {</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">while</span> (!_isEndOfNode(str)) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            addChild(std::shared_ptr&lt;Node&gt;(<span class="keyword">new</span> Node(<span class="keyword">this</span>, str, remaining)));</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
